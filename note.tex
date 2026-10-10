@@ -1,267 +1,373 @@
 \documentclass[10pt]{article}
 \pdfinfoomitdate=1
 \pdftrailerid{}
-\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage[a4paper,margin=21mm]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,amsmath,amssymb,booktabs,microtype}
-\usepackage[hidelinks]{hyperref}\hypersetup{pdftitle={Finite triangle-local search with exact rational certificates},pdfauthor={Haobo Ma and Wenlin Zhang}}
+\usepackage{lmodern,amsmath,amssymb,booktabs,microtype,graphicx,array,float}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Certified local approximations to triangle-network correlations},pdfauthor={Haobo Ma and Wenlin Zhang}}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt}
-\title{Finite triangle-local search with exact rational certificates}
+\setlength{\textfloatsep}{10pt}
+\newcommand{\R}{\mathbb R}
+\title{Certified local approximations to\\triangle-network correlations}
 \author{\begin{tabular}{cc}
 Haobo Ma & Wenlin Zhang\\
 \small ChronoAI Pte Ltd & \small National University of Singapore\\
 \small The Omega Institute & \small The Omega Institute
 \end{tabular}}
-\date{10 October 2026}
+\date{11 October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We implement a finite-table search for local models in the triangle network,
-with independent source weights, stochastic or deterministic local responses,
-and exact rational verification. Joint optimization is combined with convex
-factor updates, independent source-symbol splitting, and perturbed searches.
-The benchmark compares the Elegant Joint Measurement, Renou, and Fritz families
-with the numerical estimates of Kriv\'achy et al. (2020). At the four reported
-noise transitions, our rational candidates have Euclidean errors below
-$4\times 10^{-8}$. At noiseless Renou $u^2=0.85$, the certified error is
-$2.24\times 10^{-3}$, below both independently reported 2020 values. The certificate checker
-recomputes every probability and model-to-target distance with integer arithmetic.
-It also verifies an explicit symmetric local witness with all-equal probability
-$41/144$. Numerical fits and exact target witnesses are distinguished throughout:
-a positive search residual is an upper bound on distance to the local set.
+We give an exactly symmetric finite triangle-local distribution with
+$P(A=B=C)=41/144>1/4$, addressing the exact-symmetry question posed by
+B\"aumer, Gitton, Kriv\'achy, Gisin, and Renner. We also provide a certification
+and interoperability layer for numerical local models. It exports independent
+source laws and response tables as portable rational witnesses, checks locality
+and squared residuals exactly, and adds a validated target enclosure to obtain
+a rigorous upper bound $U$ on distance to the intended distribution.
+Selected development witnesses approximate noisy EJM and Renou correlations
+with $U$ between $6\times10^{-11}$ and $4\times10^{-8}$.
+A separate CPU experiment compares triangle-local, the public LHV-Net 2020
+architecture, and localmodels on identical target arrays, with ten independent
+cold starts per method and target and 10- and 60-second budgets. Neural
+checkpoints receive fresh held-out evaluation with uncertainty. The software
+supports certification of numerical constructions without rerunning or trusting
+their search procedure.
 \end{abstract}
 
-\section{Finite models and exact verification}
-The triangle has sources $\alpha,\beta,\gamma$ shared respectively by $BC$, $CA$,
-and $AB$. A finite local model consists of probability vectors $q_\alpha,q_\beta,
-q_\gamma$ and row-stochastic response tables
-$A_{jk}^a$, $B_{ki}^b$, and $C_{ij}^c$. Its output law is
-\begin{equation}
- P_M(a,b,c)=\sum_{i,j,k}q_\alpha(i)q_\beta(j)q_\gamma(k)
- A_{jk}^a B_{ki}^b C_{ij}^c.\label{eq:model}
-\end{equation}
-Independence is imposed by the product of the three source laws. This is the
-finite form of the network-locality definition of Fritz~\cite{fritz}; finite
-cardinality bounds are established by Rosset et al.~\cite{rosset}.
+\section{An exactly symmetric triangle-local witness}
+The triangle network has three independent sources $\alpha,\beta,\gamma$,
+shared by $BC$, $CA$, and $AB$, respectively. Local responses depend on the two
+sources incident to each party~\cite{fritz}. B\"aumer et al.~\cite{baumer}
+ask whether a four-outcome triangle-local distribution with full party and
+simultaneous outcome-relabeling symmetry can have $P(A=B=C)>1/4$.
+Their discussion includes approximately symmetric neural examples near $0.29$.
+The following construction gives exact symmetry and an exact probability.
 
-A certificate stores rational source weights, rational response rows, the
-rational target, and exact distances. Checking nonnegativity and row sums gives
-three independent random sources and valid local response kernels. Equation
-\eqref{eq:model} therefore defines a triangle-local distribution. Clearing the
-factor denominators reduces its evaluation to integer multiplication and addition.
-Equality of every output entry with the target gives an exact local witness.
-Otherwise the same computation gives exact L1, squared Euclidean, and maximum
-errors, and hence a certified nearby local distribution. The Euclidean error
-bounds the target's distance to the unrestricted local set from above.
-
-The implementation uses Python integer arithmetic and checks all simplexes,
-normalization, party permutations, and model/target hashes independently of the
-optimizer. It is tested software, rather than a formally verified checker.
-Finite alphabets and nonconvex optimization do not give a complete membership
-test. General Renou targets contain square roots and are stored as explicit
-rational approximations; their certificates refer to those stored targets.
-
-\section{Search and known local seeds}
-Joint L-BFGS optimization uses softmax coordinates and analytical derivatives
-of the full finite contraction. For fixed other factors, each individual source
-vector or party response table enters linearly in \eqref{eq:model}. Squared
-Euclidean fitting is thus a convex quadratic problem on a simplex or a product
-of simplexes. We solve it by projected accelerated gradient and accept only
-updates that decrease the evaluated objective. Inner iteration caps remain
-part of the numerical method. For L1 loss, each block is a sparse linear program.
-Deterministic descent instead minimizes over one output choice at a time;
-all single-row choices are evaluated with floating-point costs and a numerical
-acceptance tolerance, rather than exact arithmetic. This does not give a global
-discrete optimum.
-
-The hybrid method alternates joint optimization and convex polishing, then
-perturbs the best candidate and repeats. Output distributions rounded to seven
-decimal places identify duplicate fits for diagnostics. Every evaluated candidate
-remains eligible to improve the best value. Forward and reverse continuation
-and reuse of nearby fitted models reduce sensitivity to individual starts.
-
-A local seed with larger requested alphabets is embedded by splitting each
-source symbol's weight among copies and pulling back its adjacent response
-tables. Summing over copies in \eqref{eq:model} recovers the original model.
-This operation preserves source independence. Response perturbations then open
-additional directions for optimization. Recognized controls are used as seeds
-and pass through the ordinary rational certificate checker.
-
-The supplied symmetric witness uses uniform independent sources on
-$S=\{(i,j)\in\{0,1,2,3\}^2:i\ne j\}$ and
+Put $O=\{0,1,2,3\}$ and $S=\{(i,j)\in O^2:i\ne j\}$. Choose
+$\alpha,\beta,\gamma$ independently and uniformly from the twelve elements of
+$S$. For $x=(x_1,x_2)$ and $y=(y_1,y_2)$ define
 \[
  f(x,y)=\begin{cases}x_2,&x_2\in\{y_1,y_2\},\\x_1,&\text{otherwise},\end{cases}
  \qquad (A,B,C)=(f(\beta,\gamma),f(\gamma,\alpha),f(\alpha,\beta)).
 \]
-Enumeration of the $12^3$ source triples gives counts $123$, $19$, and $23$ for
-each output triple with one, two, or three distinct labels, respectively.
-Consequently $P(A=B=C)=4(123)/1728=41/144>1/4$, with full party and joint-outcome
-symmetry. This supplies an exact witness relevant to B\"aumer et
-al.~\cite{baumer}. The restricted-class enumeration and a revision-pinned link to the Lean source
-are retained in the supporting witness note; this benchmark runs the independent
-integer checker. The four-symbol token/parity seed for Renou's $u^2=1/2$ uses
-independent token bits and independent edge parity bits and reproduces that
-endpoint exactly. Fritz's CHSH-local embeddings and uniform noise are additional
-exact controls.
-
-\section{Published targets and benchmark comparison}
-Kriv\'achy et al.~\cite{krivachy} use Euclidean distance in Eq.~(3). Their Eq.~(4)
-approximates a noisy-family distance by zero below a fitted $v_*$ and by
-$\|P(v)-P(v_*)\|_2\sin\theta$ above it. Figure~4 and the discussion on page~5
-report EJM source/detector pairs $(v_*,\theta)\simeq(0.80,50^\circ)$ and
-$(0.86,60^\circ)$. Figure~5 and page~5 report Renou pairs
-$(0.89,6^\circ)$ and $(0.91,6^\circ)$ at $u^2=0.85$. These are heuristic numerical
-estimates; the paper explicitly describes the Renou estimates as cruder and
-sensitive to local optima and variation between independent runs. Our reference columns evaluate that equation; they are not digitized
-training data. Gitton and Renner give a computer-assisted nonclassicality proof for
-the ideal EJM~\cite{gitton}, Section 6.2, independently of the present search.
-Their Appendix C.2 uses $vP_{\rm pure}+(1-v)/64$ with equality-pattern entries
-$(1/8,0,1/48)$ for $P_{\rm pure}$; the ideal EJM occurs at $v=3/4$. That
-parameter is distinct from our independent source and detector visibilities.
-
-For EJM, the probabilities of triples with one, two, and three distinct labels
-are the entries of
+Each response is deterministic and uses precisely its incident sources, so
+the resulting law is triangle-local. Enumerating the $12^3$ equally likely
+source triples gives
+\begin{equation}
+ P(a,b,c)=\frac1{1728}
+ \begin{cases}
+ 123,&|\{a,b,c\}|=1,\\
+ 19,&|\{a,b,c\}|=2,\\
+ 23,&|\{a,b,c\}|=3.
+ \end{cases}\label{eq:symmetric}
+\end{equation}
+There are $4$, $36$, and $24$ output triples in these three classes, and
+$4(123)+36(19)+24(23)=1728$. The formula depends only on the equality pattern;
+hence it is invariant under all party permutations and all simultaneous
+permutations of the four output labels. In particular,
 \[
- \frac1{256}\bigl(4+9v+9v^2+3v^3,\ 4+v-3v^2-v^3,\ 4-3v+3v^2+v^3\bigr)
+ P(A=B=C)=\frac{4(123)}{1728}=\frac{41}{144}=\frac14+\frac5{144}.
 \]
-under independent source noise, and
+This is an explicit answer to the existence question as stated in that paper,
+with full symmetry established exactly.
+The small integer enumeration and the complete finite response tables are
+included with the certificate. A separate
+\href{https://github.com/the-omega-institute/trureturing/blob/59c09d64d1050c396df54b58b4f410f09f0c25d0/D5/S3/Quantum/Entanglement/TriangleSymmetricLocalRefutation.lean}{revision-pinned Lean development}
+records the continuous-source formulation; the computations reported here use
+the independent integer checker.
+
+\newpage
+\section{What a certificate establishes}
+A finite model consists of rational probability vectors $q_\alpha,q_\beta,
+q_\gamma$ and rational row-stochastic response tables $A_{jk}^a,B_{ki}^b,C_{ij}^c$.
+Its distribution is
+\begin{equation}
+ Q(a,b,c)=\sum_{i,j,k}q_\alpha(i)q_\beta(j)q_\gamma(k)
+ A_{jk}^a B_{ki}^b C_{ij}^c.\label{eq:model}
+\end{equation}
+Checking nonnegative entries and unit row sums establishes valid response
+kernels and independent source laws. Clearing denominators in
+\eqref{eq:model} reduces the full contraction to integer arithmetic. The
+checker recomputes all probabilities, normalization, symmetry, $L_1$ error,
+and squared Euclidean error; it does not trust an optimizer's success flag.
+Finite-cardinality methods are established in network locality~\cite{rosset,dasilva}.
+Here the deliverable is the exported, independently checkable object.
+
+Write $P$ for the intended target and $\widetilde P$ for the rational target
+stored with the witness. The checker computes
+$E=\|\widetilde P-Q\|_2^2\in\mathbb Q_{\ge0}$ exactly. A separate interval
+calculation supplies $\|P-\widetilde P\|_2\le\delta_{\rm target}$. Thus
+\begin{equation}
+ d_\triangle(P):=\inf_{R\in\mathcal L_\triangle}\|P-R\|_2
+ \le\|P-Q\|_2\le\sqrt E+\delta_{\rm target}\le U.\label{eq:bound}
+\end{equation}
+Every displayed $U$ is rounded upward. The $\delta_{\rm target}$ values are
+outward-rounded interval upper bounds. Separate high-precision point
+evaluations are cross-checks, not the justification of those bounds. The
+interval formulas use 100 decimal digits; their binary endpoints are converted
+to exact rationals, followed by exact endpoint subtraction and an integer
+ceiling for the square root.
+
+If $E=0$, the stored target is local. Locality of the intended target follows
+when target identification also establishes $P=\widetilde P$. A positive $U$
+certifies a nearby local distribution, regardless of its size. A positive fit
+residual supplies neither a nonlocality proof nor a lower bound on
+$d_\triangle(P)$. The integer checker is tested software, not a formally
+verified implementation. A second standard-library audit uses rational
+variable elimination with a different contraction order and no package imports.
+
+\subsection*{Target identity and noise placement}
+Decimal parameters denote their exact decimal rationals: for example,
+$u^2=0.85$ means $17/20$. Outputs use $a,b,c\in\{0,1,2,3\}$ with index
+$16a+4b+c$. For EJM, the entries for one, two, and three distinct labels are
 \[
- \frac1{256}\bigl(4+9v^2+12v^3,\ 4+v^2-4v^3,\ 4-3v^2+4v^3\bigr)
+ \frac1{256}(4+9v+9v^2+3v^3,\;4+v-3v^2-v^3,\;4-3v+3v^2+v^3)
 \]
-under independent detector noise. These distinct physical families are not
-replaced by a global white-noise mixture. Renou's family~\cite{renou} uses three
-$\lvert\phi^+\rangle$ sources and the measurement basis
-$\lvert01\rangle,\lvert10\rangle,u\lvert00\rangle+\sqrt{1-u^2}\lvert11\rangle,
-\sqrt{1-u^2}\lvert00\rangle-u\lvert11\rangle$ in cyclic order. Source noise uses
-a six-qubit Born-rule contraction; detector noise applies independent uniform
-replacement channels. The generators were checked against the 2020 authors'
-\href{https://github.com/tkrivachy/neural-network-for-nonlocality-in-networks/blob/9460fe5340016e9a2f954613a2c07e633449d455/sample_code/targets.py}{revision-pinned target code};
-the largest entry discrepancy in 24 initial checks was $4.21\times10^{-13}$.
-A further 60 Renou source/detector checks, including the high-visibility fits,
-agreed within $6.74\times10^{-13}$ after one spelling correction in the
-reference detector branch, applied in memory.
+under independent source noise and
+\[
+ \frac1{256}(4+9v^2+12v^3,\;4+v^2-4v^3,\;4-3v^2+4v^3)
+\]
+under independent detector noise. Rational $v$ gives exact rational targets,
+so their stored witnesses have $\delta_{\rm target}=0$.
+For Renou~\cite{renou}, the outcome basis is
+$|01\rangle,|10\rangle,u|00\rangle+\sqrt{1-u^2}|11\rangle,
+\sqrt{1-u^2}|00\rangle-u|11\rangle$, in cyclic qubit order, with three
+$|\phi^+\rangle=(|00\rangle+|11\rangle)/\sqrt2$ sources. For source
+visibility $v$, each independent edge instead carries
+\[
+ \rho_v=v|\phi^+\rangle\langle\phi^+|+(1-v)I_4/4,
+ \qquad \rho_{\rm network}=\rho_v^{\otimes3}.
+\]
+This is the source-noise convention in Table~\ref{tab:best}, including $v=0.89$.
+Independent detector noise applies
+$K_v^{\otimes3}$, where $K_v=vI+(1-v)J/4$; it is different from global
+white-noise mixing. General Renou targets require algebraic enclosures.
 
-Table~\ref{tab:noise} compares the first sweep with the final selected rational
-models at the four reported noise transitions. Small certified distances establish
-nearby local models; none of these small residuals is substituted for exact target
-membership. Certificates for Renou refer to the stored rational targets. Independent
-70-digit evaluations of the authors' source-noise polynomial and the detector
-channel found Euclidean target-approximation errors of $5.23\times10^{-13}$ at
-source $v=0.89$, $2.10\times10^{-14}$ at detector $v=0.91$, and
-$2.78\times10^{-14}$ at noiseless $u^2=0.85$. These are numerical
-cross-checks of target generation, separate from exact certificate arithmetic.
-The full scans, including both directions and unsuccessful fits,
-are retained in CSV form. Current-model decimal distances are rounded from
-exact rational squared-distance certificates.
-\begin{table}[ht]
+\subsection*{Transport to lower detector visibility}
+Let $0\le v_L\le v_H$ with $v_H>0$, and $r=v_L/v_H$. Applying $K_r$ to
+each response row preserves locality and gives $Q_L=K_r^{\otimes3}Q_H$.
+Since $K_rK_{v_H}=K_{v_L}$, and the eigenvalues of the symmetric channel $K_r$
+are $1,r,r,r$, its Euclidean operator norm is one. Therefore
+\[
+ \|Q_L-P(v_L)\|_2\le\|Q_H-P(v_H)\|_2\le U_H.
+\]
+An exact high-visibility target model yields exact lower-visibility models;
+an approximate one yields approximations with this controlled error.
+
+\newpage
+\section{Selected development witnesses}
+Table~\ref{tab:best} reports selected witnesses from the complete development
+campaign, including fitted seeds, continuation and polishing. They are separate
+from the cold-start comparison below; their earlier preparation is not free
+initialization for that experiment. Each bound follows from \eqref{eq:bound}.
+\begin{table}[H]
 \centering\small
-\begin{tabular}{@{}lrrrr@{}}\toprule
-Family & $v$ & First-sweep $d$ & Current certified $d$ & Certified L1\\\midrule
-EJM source & 0.80 & $5.38\times 10^{-3}$ & $5.77\times 10^{-11}$ & $3.7\times 10^{-10}$ \\
-EJM detector & 0.86 & $0.01088$ & $1.51\times 10^{-9}$ & $8.68\times 10^{-9}$ \\
-Renou source & 0.89 & $1.07\times 10^{-3}$ & $3.27\times 10^{-8}$ & $2.05\times 10^{-7}$ \\
-Renou detector & 0.91 & $8.29\times 10^{-4}$ & $5.91\times 10^{-9}$ & $3.87\times 10^{-8}$ \\
-\bottomrule\end{tabular}
-\caption{Distance upper bounds at the reported 2020 transitions.}\label{tab:noise}
+\input{benchmarks/round4/best-table.tex}
+\caption{Selected development witnesses. Residuals $\sqrt E$ are rounded
+approximations; both enclosure columns are rounded upward. Renou noise rows
+have $u^2=0.85$. An exact zero is stated only where target identity is exact.}
+\label{tab:best}
+\end{table}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{docs/figures/headline.png}
+\caption{Certified bounds for the selected distributions. Exact zeros occupy a
+separate labeled column; positive bounds use a logarithmic axis. Each point
+represents an exactly local model. Points are not interpolated into a locality
+boundary.}
+\end{figure}
+At $v=1$, source and detector noise give the same noiseless target. It is counted
+once per quantum family. Different continuation paths can find different
+candidate residuals for that one target; these are search outcomes, not two
+physical distances. The noiseless Renou controls $u^2=1/2$ and $u^2=1$ change
+the measurement parameter and are distinct from visibility $v=1$ at $u^2=0.85$.
+
+\begin{center}
+\fbox{\begin{minipage}{0.92\linewidth}
+\textbf{A compact Renou witness: $u^2=0.85$, detector $v=0.93$.}
+\input{benchmarks/round4/compact-box.tex}
+Exact zero-weight removal changes source sizes from $(12,12,12)$ to
+$(8,9,2)$ without changing the output distribution. This is exact trimming;
+minimum cardinality is not asserted. The checking timer includes model parsing,
+simplex checks, exact contraction, distances and hashes, with the bundle
+already decompressed in memory.
+\end{minipage}}
+\end{center}
+
+\newpage
+\section{A matched cold-start comparison}
+The experiment compares triangle-local, LHV-Net-2020~\cite{krivachy}, and
+localmodels~\cite{dasilva} on three declared targets: EJM source $v=0.80$,
+EJM detector $v=0.86$, and Renou detector $u^2=0.85$, $v=0.93$.
+Each method receives the same stored 64-entry double-precision array $T$, with
+its ordering, exact physical parameters and SHA-256 recorded. All reported
+scores are recomputed in double precision against that array, including neural
+outputs. The training loss may differ. In particular, localmodels reports
+$\sqrt{\mathrm{SSE}/64}$ internally: we explicitly verify
+\begin{equation}
+ L_2=\sqrt{\mathrm{SSE}}=8\,\mathrm{RMSE}
+\end{equation}
+from every saved output, rather than reading its internal error field.
+
+There are ten independent runs per method--target pair, each observed at
+10 and 60 seconds. No method receives an analytic control, recognized target,
+fitted seed, or neighboring checkpoint. The run order is deterministically
+shuffled. One solver process runs at a time on an Apple M2 Pro CPU with
+16 GiB memory and one numerical-library thread; GPUs are disabled.
+The timing begins with initialization after loading the target and common
+libraries. It includes model construction, optimization, and checkpoint
+selection. Held-out evaluation, export, and certification are additional costs.
+
+Both finite methods use seven symbols per source, with unrestricted stochastic
+responses and free independent source weights. Triangle-local alternates
+L-BFGS (400-iteration cap), convex polishing (120 sweeps, 120 inner steps), and
+two perturbation searches, restarting if the cycle completes. It calls the
+hybrid routine directly, bypassing target recognition. Localmodels uses its
+public constrained trust-region optimizer, one random trial per call and zero
+outer error tolerance, restarting on return. The benchmark retains the best
+feasible output evaluated before each deadline; infeasible optimizer trial
+points are excluded.
+
+LHV-Net uses the pinned public response routing and architecture with three
+hidden tanh layers of width 16, batch size 256, and Adadelta learning rate 2
+on the KL loss. An eager TensorFlow wrapper replaces obsolete Keras generator
+calls. This is a small CPU configuration of the public code, not a replication
+of every architecture and training budget used in the 2020 paper. Neural
+checkpoints minimize a fixed validation-set residual, with all validation
+charged to search time. Final testing is separate, as detailed below.
+
+\begin{table}[H]
+\centering\small
+\input{benchmarks/round4/comparison-table.tex}
+\caption{Cold-start $L_2$ to the common target: median [first, third quartile]
+over ten runs. LHV-Net-2020 uses the small CPU configuration with an eager
+TensorFlow wrapper. Success counts use the predeclared threshold $10^{-3}$.
+For neural outputs a success requires the upper endpoint of the held-out
+95\% interval to meet the threshold. The two budgets are checkpoints of the
+same ten runs, not twenty independent trials.}
+\label{tab:comparison}
+\end{table}
+\input{benchmarks/round4/comparison-prose.tex}
+
+\newpage
+\section{Evaluation precision and interoperability}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{docs/figures/baseline-time.png}
+\caption{All ten individual runs at each completed budget, with horizontal
+jitter for legibility. LHV-Net-2020 uses the small CPU configuration with an
+eager TensorFlow wrapper. Neural error bars are held-out approximate 95\% intervals;
+finite models are evaluated by full contraction. Neural intervals are usually
+narrower than the markers. Only the two measured budgets are shown. The vertical axis is an operational
+$L_2$ score, not a certificate bound.}
+\end{figure}
+For a fixed neural checkpoint let $X$ be its conditional-product probability
+vector, $Q=\mathbb EX$, and $\widehat Q_N=N^{-1}\sum_{i=1}^N X_i$.
+Fresh independent source triples give
+\[
+ \mathbb E\|\widehat Q_N-T\|_2^2
+ =\|Q-T\|_2^2+
+ \frac{\operatorname{tr}\operatorname{Cov}(X)}{N}.
+\]
+Each selected checkpoint receives $N=2^{20}$ fresh samples in 32 blocks,
+after both checkpoint choices are frozen. These samples are independent of
+training and validation and never select a checkpoint. Tables and Figure~2
+report the raw score $s=\|\widehat Q_N-T\|_2$, without variance correction
+or truncation. For the $B=32$ block means $\overline X_b$, we save
+\[
+ \widehat V=\frac{1}{B(B-1)}\sum_{b=1}^{B}
+ \|\overline X_b-\widehat Q_N\|_2^2.
+\]
+The separate diagnostic $\sqrt{\max(0,s^2-\widehat V)}$ and estimated RMS
+sampling error $\sqrt{\widehat V}$ are not the plotted score. Each of 2,000
+bootstrap resamples draws $B$ block means with replacement and recomputes the
+raw norm $s^*$. If $q_p$ is the empirical $p$-quantile of these norms
+(NumPy's default linear interpolation), the displayed basic 95\% interval is
+\[
+ [\max(0,2s-q_{0.975}),\;\max(0,2s-q_{0.025})].
+\]
+Thus both interval endpoints are clipped at zero. These are approximate
+statistical intervals, not rigorous enclosures. Finite-model outputs use full
+contractions.
+\input{benchmarks/round4/evaluation-prose.tex}
+
+\newpage
+\subsection*{From a saved neural checkpoint to a rational witness}
+We reload the preselected 60-second Renou checkpoint from repetition zero.
+Four uniform support points are chosen independently for each source; every
+incident pair is evaluated and the full Cartesian product is contracted.
+Rationalization gives a finite triangle-local witness. An empirical average over
+sampled triples would not enforce a product source law, and the extracted
+finite model need not equal the continuous network.
+
+\begin{table}[H]
+\centering\small
+\input{benchmarks/round4/extraction-table.tex}
+\caption{Native neural evaluation, finite extraction, and subsequent polishing
+are distinct objects. Finite rows report the original-target bound $U$.
+Random controls use the same four-symbol cardinalities and two-second
+polishing budget. Training, extraction, rationalization and checking costs
+are recorded separately.}
+\label{tab:extraction}
 \end{table}
 
-The noiseless Renou scan includes the known local endpoints and the difficult
-region near $u^2\simeq0.785$ (Table~\ref{tab:scan}). At $u^2=0.85$, the final
-certified distance is $2.24\times 10^{-3}$; the 2020 paper separately reports about
-$0.0034$ and $0.0055$ in two runs (Figure~5, page~5). Our candidate is below both reported values. The ideal EJM error
-$0.04834$ is about $0.37\%$ above the source Eq.~(4) estimate $0.04816$;
-the detector estimate is $0.05268$; these approximate curves do not
-supply the authors' raw saved models. These comparisons describe candidate
-quality, not lower bounds on the true distances. Blind L-BFGS still
-misses $u^2=1/2$ in the component test; explicit or recognized token/parity
-seeding produces its exact certificate. Fritz's clipped-CHSH construction
-matches the reference $\max(v/\sqrt2-1/2,0)/4$, with exact rational local controls
-at correlator magnitudes $0$, $1/4$, and $1/2$.
-\begin{table}[ht]
+\section{Scope, context, and reproducibility}
+The practical contribution is a certification and interoperability layer:
+portable rational source distributions and response tables, rigorous accounting
+for target approximation, compact representations, and a small checker.
+LHV-Net already defines generative local models, and localmodels already
+provides finite response tables. Both can supply numerical constructions for
+this certificate pipeline. The finite-model benchmark exports from both finite
+solvers are rationalized and independently checked after timing; the native
+search comparison remains separate from that certificate-production cost.
+
+\input{benchmarks/round4/extraction-prose.tex}
+
+The numerical search uses full finite contractions and nonconvex optimization.
+Fixing five factors makes the sixth factor's squared-loss subproblem convex,
+but finite inner iteration caps remain part of the method. Recognizers, lifted
+analytic seeds, and continuation are useful optional workflows whose preparation
+costs must be accounted for. The earlier configuration study is descriptive:
+its runs have different total budgets and do not isolate causal effects.
+\begin{table}[H]
 \centering\small
-\begin{tabular}{@{}rrc@{}}\toprule
-$u^2$ & Certified Euclidean distance & Exact stored target\\\midrule
-0.5 & $0$ & yes \\
-0.63 & $8.01\times 10^{-3}$ & no \\
-0.785 & $5.52\times 10^{-9}$ & no \\
-0.85 & $2.24\times 10^{-3}$ & no \\
-1 & $0$ & yes \\
-\bottomrule\end{tabular}
-\caption{Selected noiseless Renou points. The decimal $0.785$ is a sampled
-parameter, not the exact critical parameter of the original theorem.}\label{tab:scan}
+\input{benchmarks/round4/configuration-table.tex}
+\caption{Illustrative earlier EJM source configurations at $v=0.80$.
+Both polishing variants branch from the same seeded L-BFGS model. Additional
+and total times are separated. The residual is to the stored target.}
 \end{table}
 
-\section{Which components help}
-Table~\ref{tab:components} compares configurations at EJM source visibility
-$0.80$. Larger alphabets, deterministic descent, least squares, and the small
-response network are useful alternative starts, but do not by themselves recover
-this target in the measured trials. The strongest improvement comes from a
-lifted local seed, free source-weight updates, and perturbed hybrid searches.
-The symmetric families are restricted constructions; their persistent residuals
-are not nonlocality certificates. The neural component has two hidden ReLU layers
-of width 24 on finite source grids and uses NumPy Adam. It is distinct from the
-2020 EJM architecture (depth 5, width 30, Monte Carlo batches around 8,000;
-page~6 of~\cite{krivachy}).
-\begin{table}[ht]
-\centering\small
-\begin{tabular}{@{}lrr@{}}\toprule
-Configuration & Certified distance & Search seconds\\\midrule
-Blind L-BFGS, 12 symbols & $0.01985$ & 4.6 \\
-Blind L-BFGS, 24 symbols & $0.01211$ & 32.0 \\
-Least squares, 12 symbols & $8.06\times 10^{-3}$ & 3.2 \\
-Deterministic descent, 24 symbols & $8.35\times 10^{-3}$ & 11.2 \\
-Pair symmetry, 12 symbols & $5.38\times 10^{-3}$ & 0.5 \\
-Pair symmetry, 24 symbols & $5.38\times 10^{-3}$ & 2.8 \\
-NumPy response network, 24 symbols & $0.01707$ & 23.8 \\
-Lifted witness + L-BFGS & $5.43\times 10^{-3}$ & 3.8 \\
-Then convex polish, fixed weights & $1.63\times 10^{-3}$ & 5.8 \\
-Then convex polish, free weights & $4.07\times 10^{-4}$ & 8.2 \\
-Seeded hybrid + two perturbations & $5.06\times 10^{-10}$ & 28.0 \\
-\bottomrule\end{tabular}
-\caption{Component comparisons use the same pseudorandom seed, with recorded
-method-specific iteration and restart caps. They are descriptive comparisons,
-not equal-budget statistical estimates. Polishing rows start from the same
-seeded L-BFGS model and report their additional runtime.}\label{tab:components}
-\end{table}
+Kriv\'achy et al.'s fitted noise curves are historical context, not measured
+baseline outcomes or certified lower bounds. The present CPU experiment does
+not compare GPUs, long continuation workflows, or the adaptive PyTorch toolbox
+of Girardin et al.~\cite{girardin}; it establishes no unrestricted
+state-of-the-art optimizer ranking. Gitton and Renner's exact-arithmetic
+nonclassicality proof for ideal EJM~\cite{gitton} is complementary to our
+constructive upper bounds. An exclusion alone is not a numerical distance
+lower bound. The unrestricted optimum is not determined here.
 
-\section{Reproduction}
-The NumPy/SciPy package provides JSON/CSV input, a command line, MIT licensing,
-and gzip-compressed rational bundles. The base sweep uses two starts, at most
-1,800 joint iterations, 200 convex sweeps, and seed 20261010. Boundary refinements
-and component tests record their separate caps and seeds. One optimizer runs at a
-time with two numerical-library threads. The measured base sweep and targeted
-refinements took 1678.5 seconds and had largest recorded process peak RSS 104.1 MB;
-exploratory probes are excluded. All 50 selected bundles were
-independently recomputed successfully. These timings are not a hardware-matched
-comparison with the original neural-network training.
+\newpage
+\subsection*{Artifacts and checking}
+The \href{https://github.com/the-omega-institute/triangle-local}{triangle-local repository}
+contains the public source and prior certificate collection. The accompanying
+revision-labelled archive contains this note, the checker, tests, exact
+witnesses, target arrays, frozen protocol, all raw outcomes, saved neural
+weights, and a content-hash manifest. It is a local reproducibility artifact;
+no unpushed revision is presented as a published release. External implementations
+are identified by immutable source revisions and require separate installation.
+The archived target-generator spelling patch is applied only in a downstream
+reference check.
 
-The repository README gives installation, complete reproduction commands,
-certificate schemas, and target arithmetic conventions. The tests exercise analytical Jacobians, convex descent, seed lifting, exact
-controls, malformed and altered certificates, and command-line round trips.
+The exact-symmetry enumeration is reproducible without running an optimizer.
+The test suite covers analytical derivatives, simplex constraints, changed
+certificates, detector-channel composition, zero-weight trimming, and outward
+rounding. The independent rational audit checks every selected witness and
+every newly exported finite checkpoint. Raw distributions and target hashes
+also allow the three-way scores to be recomputed independently of optimizer logs.
+\input{benchmarks/round4/validation-prose.tex}
 
-\begin{thebibliography}{9}
-\bibitem{fritz} T. Fritz, Beyond Bell's theorem: correlation scenarios,
-\emph{New J. Phys.} \textbf{14}, 103001 (2012),
-\href{https://doi.org/10.1088/1367-2630/14/10/103001}{doi:10.1088/1367-2630/14/10/103001}.
-\bibitem{rosset} D. Rosset, N. Gisin, and E. Wolfe, Universal bound on the
-cardinality of local hidden variables in networks,
-\emph{Quantum Inf. Comput.} \textbf{18}, 910--926 (2018),
-\href{https://doi.org/10.26421/QIC18.11-12-2}{doi:10.26421/QIC18.11-12-2}.
-\bibitem{krivachy} T. Kriv\'achy, Y. Cai, D. Cavalcanti, A. Tavakoli, N. Gisin,
-and N. Brunner, A neural network oracle for quantum nonlocality problems in
-networks, \emph{npj Quantum Inf.} \textbf{6}, 70 (2020),
-\href{https://doi.org/10.1038/s41534-020-00305-x}{doi:10.1038/s41534-020-00305-x}.
-\bibitem{baumer} E. B\"aumer, V. Gitton, T. Kriv\'achy, N. Gisin, and R. Renner,
-Exploring the local landscape in the triangle network,
-\emph{Phys. Rev. A} \textbf{111}, 052453 (2025),
-\href{https://doi.org/10.1103/PhysRevA.111.052453}{doi:10.1103/PhysRevA.111.052453}.
-\bibitem{renou} M.-O. Renou, E. B\"aumer, S. Boreiri, N. Brunner, N. Gisin,
-and S. Beigi, Genuine Quantum Nonlocality in the Triangle Network,
-\emph{Phys. Rev. Lett.} \textbf{123}, 140401 (2019),
-\href{https://doi.org/10.1103/PhysRevLett.123.140401}{doi:10.1103/PhysRevLett.123.140401}.
-\bibitem{gitton} V. Gitton and R. Renner, The Elegant Joint Measurement is
-Non-Classical in the Triangle Network,
-\href{https://arxiv.org/abs/2510.15143v1}{arXiv:2510.15143v1} (2025).
-\end{thebibliography}
+\input{benchmarks/round4/references.tex}
 \end{document}

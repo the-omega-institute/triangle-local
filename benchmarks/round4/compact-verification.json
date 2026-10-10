@@ -1,0 +1,24 @@
+{
+  "bundle_bytes": 6007,
+  "repetitions": 11,
+  "median_check_seconds": 0.0036275419988669455,
+  "check_seconds": [
+    0.0038070830050855875,
+    0.003699207998579368,
+    0.0036649999965447932,
+    0.003638458001660183,
+    0.0036275419988669455,
+    0.0036222499911673367,
+    0.003615167021052912,
+    0.00361654200241901,
+    0.0036197500012349337,
+    0.0036138749856036156,
+    0.0036632090050261468
+  ],
+  "scope": "verify(): rational model parsing, simplex checks, integer contraction, errors, symmetry and hashes; excludes gzip/JSON IO and prior target parsing",
+  "active_sizes": [
+    8,
+    9,
+    2
+  ]
+}

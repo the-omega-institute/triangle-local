@@ -82,6 +82,66 @@ def rationalize(model, max_denominator=10000):
             "weights": weights, "responses": responses}
 
 
+def apply_uniform_output_channel(model, ratio):
+    """Apply the exact detector-noise map to every rational response row.
+
+    For an output alphabet of size ``m``, ``K_ratio(x) = ratio*x +
+    (1-ratio)/m``.  Source weights remain independent and unchanged.  This
+    maps a local model Q_H to a local model Q_L. For the independent
+    detector-noise target family, ||Q_L-P(v_L)||_2 <= ||Q_H-P(v_H)||_2
+    when v_L = ratio*v_H. Exact target equality propagates only if the
+    starting model equals its intended target exactly.
+    """
+    ratio = fraction(ratio)
+    if not 0 <= ratio <= 1:
+        raise ValueError("Noise-channel ratio must be in [0,1]")
+    ws, rs = _parse(model)
+    out = {"schema": SCHEMA,
+           "symmetry_parameterization": model.get("symmetry_parameterization", "none"),
+           "weights": {name: [str(x) for x in row] for name, row in
+                       zip(("alpha", "beta", "gamma"), ws)},
+           "responses": {}}
+    for name, table in zip(("A", "B", "C"), rs):
+        m = len(table[0][0])
+        out["responses"][name] = [
+            [[str(ratio * x + (1 - ratio) / m) for x in row]
+             for row in slab]
+            for slab in table]
+    return out
+
+
+def trim_zero_weight_symbols(model):
+    """Remove zero-weight source symbols and return a compact rational model.
+
+    Symbols are ordered by decreasing source weight, with their original index
+    as a stable tie-breaker.  The three response tables are permuted along
+    their incident source axes, so the resulting contraction is exactly the
+    same distribution.  The returned metadata records the original indices.
+    """
+    ws, rs = _parse(model)
+    active = [sorted((i for i, value in enumerate(w) if value),
+                     key=lambda i: (-w[i], i)) for w in ws]
+    if any(not indices for indices in active):
+        raise ValueError("Cannot trim an empty source support")
+    new = {"schema": SCHEMA,
+           "symmetry_parameterization": model.get("symmetry_parameterization", "none"),
+           "weights": {}, "responses": {},
+           "trimmed_from_sizes": [len(w) for w in ws],
+           "trimmed_permutations": active}
+    for name, w, indices in zip(("alpha", "beta", "gamma"), ws, active):
+        new["weights"][name] = [str(w[i]) for i in indices]
+    # A[beta,gamma], B[gamma,alpha], C[alpha,beta].
+    axes = {"A": (1, 2), "B": (2, 0), "C": (0, 1)}
+    for name, table in zip(("A", "B", "C"), rs):
+        left, right = axes[name]
+        new["responses"][name] = [
+            [[str(value) for value in table[i][j]]
+             for j in active[right]]
+            for i in active[left]
+        ]
+    return new
+
+
 def _parse(model):
     if not isinstance(model,dict):
         raise ValueError("Rational model must be a JSON object")

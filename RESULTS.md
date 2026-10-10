@@ -1,110 +1,81 @@
-**Round 2 combines local-model seeds, convex factor updates, and perturbation searches with exact rational certificates.** The benchmark now fits all four reported noise-transition targets with certified Euclidean distances below four times ten to the minus eight. The tables below report the final candidates for all four reported noise transitions and preserve the remaining gaps. Small residuals certify nearby local distributions; exact target locality requires `exact_match`.
+# Results: certificates and a matched comparison
 
-| Family | 2020 reported transition | Round 1 Euclidean error | Round 2 certified Euclidean error | Round 2 certified L1 |
-|---|---:|---:|---:|---:|
-| EJM source | 0.80 | 0.00537513 | 5.77334e-11 | 3.6955e-10 |
-| EJM detector | 0.86 | 0.010883 | 1.50971e-09 | 8.68419e-09 |
-| Renou source | 0.89 | 0.00107392 | 3.2699e-08 | 2.04649e-07 |
-| Renou detector | 0.91 | 0.000828942 | 5.90947e-09 | 3.86994e-08 |
+The exactly symmetric construction has **P(A=B=C)=41/144 > 1/4** and equal probabilities within all 4 all-equal, 36 exactly-two-equal, and 24 all-distinct cells. It directly addresses the exact-symmetry question posed by Bäumer et al.; the point is exact symmetry, not surpassing their approximately symmetric numerical examples.
 
-The 2020 references are Tamás Kriváchy et al., “A neural network oracle for quantum nonlocality problems in networks,” *npj Quantum Information* **6**, 70 (2020), [doi:10.1038/s41534-020-00305-x](https://doi.org/10.1038/s41534-020-00305-x). Equation (3), p. 3, defines Euclidean distance. Equation (4), p. 3, gives the approximate reference curve. Figure 4 and p. 5 give EJM source/detector estimates `(0.80, 50°)` and `(0.86, 60°)`. Figure 5 and p. 5 give Renou estimates `(0.89, 6°)` and `(0.91, 6°)` at `u²=0.85`, and independently reported noiseless errors around **0.0034** and **0.0055**. The paper explicitly describes the Renou estimates as cruder than the EJM estimates, with local optima and variation between independent runs. Reference columns evaluate Eq. (4) here; they are not digitized neural-network measurements.
+## Three-way cold-start comparison
 
-The base sweep uses seed 20261010, two starts, at most 1800 joint iterations, and 200 convex sweeps with 150 inner projected-gradient steps. It pools single fitted models as warm starts, runs every family in both directions, and polishes the four boundary targets for up to 1200 sweeps. Component comparisons use separate recorded caps. The follow-up adds symmetric fallbacks, four perturbation searches at difficult targets, and numerical Fritz checks. The final pass adds the 24-symbol detector-boundary fit, continuation from the fitted Renou critical-region point, and retention/refinement of the earlier ideal EJM seed. Complete settings and diagnostics are in the bundles and `all-fits.csv`.
+| Common target | Method | 10 s L2 median [Q1, Q3] | Success | 60 s L2 median [Q1, Q3] | Success |
+|---|---|---:|---:|---:|---:|
+| EJM source, v=0.80 | triangle-local | 0.0109 [0.0063, 0.0125] | 0/10 | 0.00544 [0.00431, 0.00658] | 0/10 |
+| EJM source, v=0.80 | LHV-Net-2020 (small CPU configuration) | 0.0722 [0.0669, 0.0767] | 0/10 | 0.0511 [0.0506, 0.053] | 0/10 |
+| EJM source, v=0.80 | localmodels | 0.11 [0.103, 0.118] | 0/10 | 0.0518 [0.0494, 0.0538] | 0/10 |
+| EJM detector, v=0.86 | triangle-local | 0.017 [0.014, 0.0233] | 0/10 | 0.00674 [0.00508, 0.0075] | 0/10 |
+| EJM detector, v=0.86 | LHV-Net-2020 (small CPU configuration) | 0.0703 [0.0668, 0.0745] | 0/10 | 0.0499 [0.0488, 0.0505] | 0/10 |
+| EJM detector, v=0.86 | localmodels | 0.103 [0.102, 0.105] | 0/10 | 0.0496 [0.0475, 0.0512] | 0/10 |
+| Renou detector, u²=0.85, v=0.93 | triangle-local | 2.86e-05 [1.22e-05, 7.64e-05] | 10/10 | 3.91e-06 [1.67e-06, 5.59e-06] | 10/10 |
+| Renou detector, u²=0.85, v=0.93 | LHV-Net-2020 (small CPU configuration) | 0.0279 [0.0268, 0.0295] | 0/10 | 0.0172 [0.0154, 0.0188] | 0/10 |
+| Renou detector, u²=0.85, v=0.93 | localmodels | 0.122 [0.0258, 0.216] | 0/10 | 0.00792 [0.00715, 0.00919] | 0/10 |
 
-At squared-loss block updates, one source or party factor is linear while the other five are fixed. The resulting simplex quadratic subproblem is convex, but its iterative solve can hit its cap. L1 blocks use a sparse LP. Deterministic descent enumerates single-row output choices using floating-point costs and a numerical acceptance tolerance. The hybrid pipeline retains the best evaluated model and records duplicate output distributions; it never constructs a global mixture flag.
+Each cell has ten independent starts. The same runs supply the 10- and 60-second checkpoints. The declared success threshold is L2 ≤ 10⁻³; for neural outputs success requires the upper end of the held-out approximate 95% interval to meet it. All scores are recomputed from saved outputs against the **same hashed target array** for each problem. No target-specific seeds or continuation from other targets are used. Localmodels' internal RMSE is explicitly converted and checked: **L2 = 8 × RMSE** for 64 entries. The Renou shape is exactly 17/20. Neural point estimates are the raw norm `s = ||Q̂_N−T||₂`, without variance correction or truncation. The approximate 95% basic block-bootstrap interval is `[max(0, 2s−q_0.975), max(0, 2s−q_0.025)]`, where q denotes quantiles (linear interpolation) of 2,000 raw norms obtained by resampling the 32 held-out block means. The separate zero-truncated variance-corrected diagnostic is not plotted; [BENCHMARK.md](BENCHMARK.md#metric-and-checkpoint-evaluation) gives its formula.
 
-**Component comparison at EJM source visibility 0.80.** These are descriptive experiments with method-specific restart/iteration caps, not equal-budget statistical estimates. Both polishing variants start from the same seeded L-BFGS candidate and report additional runtime.
+![Three-method comparison with individual runs](docs/figures/baseline-time.png)
 
-| Configuration | Sizes | Certified Euclidean error | Search seconds |
-|---|---|---:|---:|
-| blind-lbfgs-none-12 | 12x12x12 | 0.0198499 | 4.57 |
-| blind-lbfgs-none-24 | 24x24x24 | 0.0121058 | 32.02 |
-| blind-least-squares-none-12 | 12x12x12 | 0.00805933 | 3.21 |
-| blind-deterministic-none-12 | 12x12x12 | 0.011553 | 1.31 |
-| blind-deterministic-none-24 | 24x24x24 | 0.00835333 | 11.19 |
-| blind-lbfgs-outcome-equivariant-12 | 12x12x12 | 0.00537632 | 0.50 |
-| blind-lbfgs-pair-equivariant-24 | 24x24x24 | 0.00537512 | 2.84 |
-| blind-lbfgs-color-equivariant-24 | 24x24x24 | 0.0342312 | 2.27 |
-| blind-neural-none-24 | 24x24x24 | 0.0170738 | 23.83 |
-| seeded-lbfgs-12 | 12x12x12 | 0.00543094 | 3.76 |
-| polish-fixed-weights | 12x12x12 | 0.00162916 | 5.80 |
-| polish-free-weights | 12x12x12 | 0.000407216 | 8.23 |
-| seeded-hybrid-hops-12 | 12x12x12 | 5.06378e-10 | 27.98 |
+**What the tool does better, and what it does not.** The tool's demonstrated advantage is the production of portable rational witnesses with exactly checked locality, rigorous error bounds to the intended target, and a compact independent checking path. In this one-thread CPU configuration, its 60-second median L2 values were 0.00544, 0.00674, 3.91e-06 on EJM source, EJM detector, and Renou detector respectively, with 10/30 runs meeting the declared accuracy threshold; the measured counts were 0/30 for the small LHV-Net-2020 configuration and 0/30 for localmodels. These counts describe three selected targets and ten starts each. They do not establish a universal optimizer ranking, a comparison with the larger published neural configurations or the 2026 adaptive toolbox, exact locality of positive-error targets, or optimality of the reported fits. The neural extraction example demonstrates interoperability; a single checkpoint does not establish that neural initialization usually helps.
 
-Seed lifting, convex polishing with free source weights, and perturbations supply the strongest improvement at this target. Increasing cardinality alone and the tested symmetric extensions do not remove the gap. Deterministic descent and least squares improve some blind starts but remain weaker than the seeded hybrid result. The small NumPy response network is also weaker in these trials. It uses two hidden ReLU layers of width 24 on finite grids, so this is not a rerun of the paper’s depth-5, width-30 EJM architecture or its Monte Carlo training.
+The table is descriptive and is not a hypothesis test or global solver ranking. Raw values, model factors, checkpoint times, neural weights, evaluation uncertainty, and success flags are in [outcomes.csv](benchmarks/round4/outcomes.csv) and the [run records](benchmarks/round4/runs/). The complete contract and resource scope are in [BENCHMARK.md](BENCHMARK.md).
 
-**EJM source and independent detector noise.** Rational visibility gives exact target polynomials. A missing table cell means that family was not sampled at that visibility.
+## Selected development witnesses, outside the timing comparison
 
-| v | Source certified distance | Detector certified distance | 2020 source Eq. (4) | 2020 detector Eq. (4) |
-|---:|---:|---:|---:|---:|
-| 0 | 0 | 0 | 0 | 0 |
-| 0.5 | 1.77649e-10 | 1.30388e-10 | 0 | 0 |
-| 0.7 | 3.12665e-09 | 2.16273e-10 | 0 | 0 |
-| 0.75 | 1.6322e-11 | - | 0 | - |
-| 0.78 | 7.65001e-11 | - | 0 | - |
-| 0.79 | 8.22094e-11 | - | 0 | - |
-| 0.8 | 5.77334e-11 | 6.11106e-11 | 0 | 0 |
-| 0.81 | 0.000615834 | - | 0.00211196 | - |
-| 0.84 | 0.00763466 | 9.86652e-11 | 0.00862839 | 0 |
-| 0.85 | - | 4.7672e-10 | - | 0 |
-| 0.86 | 0.0128866 | 1.50971e-09 | 0.0131252 | 0 |
-| 0.87 | - | 0.00473399 | - | 0.00329088 |
-| 0.9 | 0.0221296 | 0.012609 | 0.0224923 | 0.0135838 |
-| 1 | 0.0483442 | 0.0483442 | 0.0481638 | 0.052681 |
+| Target | Stored-target residual √E | Target enclosure δ | Certified U |
+|---|---:|---:|---:|
+| Exactly symmetric construction | 0 | 0 | 0 |
+| Renou noiseless, u²=0.50 | 0 | 0 | 0 |
+| EJM source, v=0.80 | 5.77e-11 | 0 | 5.774e-11 |
+| EJM detector, v=0.86 | 1.51e-09 | 0 | 1.51e-9 |
+| Renou source, v=0.89 | 3.27e-08 | 5.227e-13 | 3.27e-8 |
+| Renou detector, v=0.93 | 8.21e-09 | 2.238e-14 | 8.208e-9 |
+| EJM noiseless | 0.0483 | 0 | 0.04835 |
+| Renou noiseless, u²=0.85 | 0.00224 | 2.782e-14 | 0.002241 |
 
-The reference estimates are approximate fitted curves. A candidate below an Eq. (4) value beats that estimate at that point, not necessarily the authors’ best saved model. Positive errors above a transition can still include optimization or finite-alphabet error. The ideal EJM distance is 0.0483442, about 0.37% above the source Eq. (4) estimate 0.0481638; the detector estimate is 0.052681. These compare approximate analytic curves, not unavailable raw neural-network fits. The empirical comparison does not establish a new locality threshold. The EJM ideal endpoint is the same exact target in both noise families, so a common best candidate is reused by target hash.
+The checker establishes `Q ∈ L_triangle` and exact `E = ||P_stored-Q||₂²`. A validated interval enclosure supplies `δ >= ||P-P_stored||₂`; the principal bound is the upward-rounded `U >= sqrt(E)+δ`. Positive U proves a nearby local model, not exact target locality, nonlocality, or optimality. Exact stored-target equality establishes intended-target locality only when target identity is also exact. EJM's rational polynomials have δ=0. The Renou bounds use outward-rounded intervals, not high-precision point discrepancies. Renou source noise uses `ρ_v = v|φ⁺⟩⟨φ⁺| + (1−v)I₄/4` on each independent edge, with `|φ⁺⟩ = (|00⟩+|11⟩)/√2` and network state `ρ_v ⊗ ρ_v ⊗ ρ_v`. This is the convention for the selected v=0.89 source-noise witness; detector noise acts on the outputs instead. [All original-target bounds](benchmarks/target-bounds.json) retain the exact target identity and the source of every selected witness.
 
-**Noiseless Renou scan.**
+![Certified local approximations](docs/figures/headline.png)
 
-| u² | Round 1 distance, when sampled | Round 2 certified distance | Certified L1 | Exact stored target |
-|---:|---:|---:|---:|:---:|
-| 0.5 | 0 | 0 | 0 | yes |
-| 0.6 | - | 0.00732373 | 0.027957 | no |
-| 0.63 | 0.0374563 | 0.00801052 | 0.0319322 | no |
-| 0.7 | - | 0.00159344 | 0.00569924 | no |
-| 0.75 | - | 2.40227e-08 | 1.46559e-07 | no |
-| 0.785 | 0.0239539 | 5.51535e-09 | 2.50721e-08 | no |
-| 0.8 | - | 0.000763773 | 0.00365829 | no |
-| 0.85 | 0.00620112 | 0.00224085 | 0.0107432 | no |
-| 0.9 | - | 0.00227656 | 0.0107802 | no |
-| 0.95 | - | 0.00124114 | 0.00584299 | no |
-| 1 | 0 | 0 | 0 | yes |
+At visibility v=1, source and detector noise lead to one noiseless target for each quantum family. The headline shows the best eligible witness once; different continuation-path residuals are outcomes for that same target. Changing Renou u² to 1/2 or 1 is a change of measurement parameter, not the same operation as setting v=1 at u²=0.85.
 
-At `u²=0.85`, the certified distance **0.00224085** is below both reported values. The decimal sample `0.785` is not the exact critical parameter of the original theorem. A remaining residual there cannot be interpreted as an exclusion. Blind L-BFGS still returns a nonzero residual at the known local half endpoint; the explicit token/parity control and the default hybrid recognizer recover its exact rational model. This separates a corrected default behavior from the persistent limitation of blind search.
+## Compact witness
 
-**Renou independent noise, fixed u²=0.85.** General square-root probabilities are quantized rational targets; detector noise is exact convolution of the stored base target. Independent 70-digit evaluations give Euclidean target-approximation errors of 5.23e-13 at source v=0.89, 2.10e-14 at detector v=0.91, and 2.78e-14 at noiseless u²=0.85. These numerical target checks are separate from exact rational certificate verification.
+The Renou detector witness at u²=0.85, v=0.93 trims exactly from (12,12,12) to **(8,9,2)**. Its original-target bound is **U ≤ 8.208e-9**, its compressed bundle is **6,007 bytes**, and its median exact check takes **3.63 ms**. The timer starts with decompressed JSON and parsed target already in memory and includes rational model parsing, simplex checks, integer contraction, distances, symmetry and hashes. Cardinality minimality is not asserted.
 
-| Family | v | Certified Euclidean distance | Certified L1 | 2020 Eq. (4) estimate |
-|---|---:|---:|---:|---:|
-| renou-source | 0 | 0 | 0 | 0 |
-| renou-source | 0.8 | 1.49682e-09 | 8.18793e-09 | 0 |
-| renou-source | 0.87 | 3.66785e-08 | 7.66878e-08 | 0 |
-| renou-source | 0.89 | 3.2699e-08 | 2.04649e-07 | 0 |
-| renou-source | 0.9 | 8.80961e-06 | 5.20197e-05 | 0.000473959 |
-| renou-source | 0.95 | 3.03795e-05 | 0.000155102 | 0.00295237 |
-| renou-source | 1 | 0.00224085 | 0.0107432 | 0.0056189 |
-| renou-detector | 0 | 0 | 0 | 0 |
-| renou-detector | 0.8 | 2.6735e-09 | 1.49427e-08 | 0 |
-| renou-detector | 0.89 | 4.995e-09 | 2.92849e-08 | 0 |
-| renou-detector | 0.91 | 5.90947e-09 | 3.86994e-08 | 0 |
-| renou-detector | 0.93 | 8.20762e-09 | 3.84859e-08 | 0.00126003 |
-| renou-detector | 0.95 | 5.582e-08 | 2.27133e-07 | 0.00256868 |
-| renou-detector | 1 | 0.00224085 | 0.0107432 | 0.00605951 |
+![Compact witness summary](docs/figures/local-model.png)
 
-**Fritz.** The clipped-CHSH construction and seeded numerical checks are recorded separately. The reference is `max(v/sqrt(2)-1/2,0)/4`, with the reported transition at `1/sqrt(2)` (Figure 3, pp. 4–5). The visibility-derived irrational correlator is stored as an explicit decimal rational; exact controls at rational `t=0,1/4,1/2` establish locality separately. The CSV visibility parameter is a display label rounded to eight significant digits. In particular, the row labeled `0.70710678` was generated at the numerical value of `1/sqrt(2)`, not at that exact truncated decimal; its bundle records the exact stored correlator.
+For 0 ≤ v_L ≤ v_H with v_H>0, applying K_(v_L/v_H) to all response rows produces another exactly local model Q_L. The detector-noise channel gives `||Q_L-P(v_L)||₂ ≤ ||Q_H-P(v_H)||₂ ≤ U_H`. Exact high-visibility models therefore propagate exact equality; positive-error witnesses propagate controlled approximations. This does not extend automatically to independent source noise.
 
-| v | Certified Euclidean distance | Clipped-CHSH reference | Exact stored target |
-|---:|---:|---:|:---:|
-| 0 | 0 | 0 | yes |
-| 0.5 | 2.34794e-19 | 0 | no |
-| 1/sqrt(2) | 1.5e-17 | 0 | no |
-| 0.8 | 0.0164214 | 0.0164214 | no |
-| 1 | 0.0517767 | 0.0517767 | no |
+## Native neural checkpoint → finite certificate → polishing
 
-The base sweep and targeted refinements took **1678.51 seconds** with a **104.12 MB** largest recorded optimizer-process high-water mark. One optimizer ran at a time, with `OMP_NUM_THREADS=2`, `OPENBLAS_NUM_THREADS=2`, and `VECLIB_MAXIMUM_THREADS=2`. The memory figure is a process high-water mark, not whole-machine memory. The first refinement was sampled below 83 MB; its high-water mark was not saved after a promotion error. Exploratory probes, documentation, plotting, tests, and certificate-only verification are excluded from this timing. There was no controlled hardware comparison with the original neural-network training.
+| Object | Accuracy | Additional measured cost |
+|---|---:|---:|
+| Continuous neural checkpoint | held-out L2 0.0165, 95% interval [0.0163, 0.0167] | 60.02 s training/selection; 0.87 s test |
+| Extracted 4³ finite model | U ≤ 0.03136 | 0.288 s extraction |
+| Extracted model + polishing | U ≤ 0.0006423 | 2.004 s polishing |
+| Random 4³ controls + same polishing, n=10 | median U 0.001602; range [0.0005051, 0.008027] | 2 s budget each |
 
-There are **167 candidate rows**, **52 target summaries**, and **50 selected bundles**. Every selected certificate was independently recomputed and matched exactly; **8** selected bundles have exact target equality. Intermediate bundles are regenerable in the ignored `benchmarks/runs/` directory; selected gzip bundles keep the public data small. See [all-fits.csv](benchmarks/all-fits.csv), [best-fits.csv](benchmarks/best-fits.csv), [ablation.csv](benchmarks/ablation.csv), [environment.json](benchmarks/environment.json), and [verification.json](benchmarks/verification.json).
+The neural checkpoint was fixed in advance as repetition zero at 60 seconds on the Renou detector target. Its source revision, saved-weight hash, native held-out estimate, extraction supports, costs and exact before/after bundles are in [interoperability.json](benchmarks/round4/interoperability.json). Each source has its own uniform four-point support; the full Cartesian contraction enforces independence. The extracted finite model is distinct from the continuous network. The polished extraction lies below the random-control median in this example. Ten random controls receive the same two-second polishing budget; this one neural checkpoint does not establish typical initialization benefit.
 
-The note has authors **Haobo Ma** (ChronoAI Pte Ltd; The Omega Institute), followed by **Wenlin Zhang** (National University of Singapore; The Omega Institute). The symmetric witness has exact all-equal probability **41/144**. MIT licensing, installable package metadata, input/certificate documentation, and regeneration commands are supplied. Final test and document-render receipts are in [validation.json](benchmarks/validation.json).
+All 120 finite timed outputs from **both** triangle-local and localmodels were also rationalized, exactly checked, and independently audited after timing. Their conversion and checking costs, stored-target residuals, δ and U are separate columns in the outcome table. A native floating-point score is never labeled a certificate.
 
-The exact verifier certifies the reported finite rational model and its distances. It does not certify global minima, completeness, or nonlocality from failed searches.
+## Illustrative earlier configurations
+
+| Configuration | Stored-target residual | Additional seconds | Total seconds |
+|---|---:|---:|---:|
+| Blind L-BFGS, 12 symbols | 0.0198 | — | 4.57 |
+| Seeded L-BFGS | 0.00543 | — | 3.76 |
+| Seeded L-BFGS + fixed-weight polish | 0.00163 | 5.80 | 9.56 |
+| Seeded L-BFGS + free-weight polish | 0.000407 | 8.23 | 11.99 |
+| Seeded hybrid + perturbations | 5.06e-10 | — | 27.98 |
+
+Both polishing rows branch from the same seeded L-BFGS model. This is a descriptive earlier configuration study, not an equal-budget ablation. The complete historical records remain in [all-fits.csv](benchmarks/all-fits.csv), [best-fits.csv](benchmarks/best-fits.csv), and [ablation.csv](benchmarks/ablation.csv). Historical fitted 2020 curves are not measured baselines and are omitted from the main figures.
+
+## Validation and artifact scope
+
+68 tests passed. The native-output audit checked 180 outcomes and their deadline/target hashes; the independent rational audit checked 120 new finite checkpoint certificates and the selected development collection. The content-hash manifest, pinned external revisions, source snapshot, patch, and local archive provide reproducibility without claiming that these unpushed changes have been published. No email was sent and no repository was pushed.

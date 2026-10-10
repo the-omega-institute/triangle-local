@@ -7,6 +7,28 @@ import numpy as np
 from scipy.special import softmax
 
 
+def apply_uniform_output_channel(model, ratio):
+    """Apply ``K_ratio = ratio I + (1-ratio)J/m`` to every response row.
+
+    If ``model`` approximates an independently detector-noised target at
+    visibility ``v_H``, the returned model approximates the same target at
+    ``v_L = ratio*v_H``.  The source weights and their product law are kept
+    unchanged.  The map is a stochastic contraction: on the uniform output
+    direction its eigenvalue is one and on the orthogonal directions it is
+    ``ratio``, so the three-party tensor channel cannot increase an L2 error.
+    ``ratio`` may be a float or an exact rational; the numerical model API
+    stores the resulting tables as floating-point arrays.
+    """
+    ratio = float(ratio)
+    if not 0 <= ratio <= 1:
+        raise ValueError("Noise-channel ratio must be in [0,1]")
+    responses = []
+    for table in model.responses:
+        m = table.shape[-1]
+        responses.append(ratio * table + (1 - ratio) / m)
+    return Model(model.weights, tuple(responses), model.symmetry)
+
+
 @lru_cache(maxsize=128)
 def _path(expr, shapes):
     return np.einsum_path(expr, *(np.empty(s) for s in shapes), optimize="greedy")[0]

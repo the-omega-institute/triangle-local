@@ -1,0 +1,850 @@
+{
+  "outcomes": 180,
+  "finite_certificates": 120,
+  "checks": [
+    {
+      "file": "ejm-source-080__triangle-local__00__10s.json.gz",
+      "sha256": "1611a7e2e1407571c5d7b4f58fedc99441131bdc335857d4205409dbdcd56262",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__00__60s.json.gz",
+      "sha256": "d700e474ba2bd7f28ec9459b9f6502596cf93d285a581420025acf27019df9cc",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__01__10s.json.gz",
+      "sha256": "d3fce7d84467fedd1ce83327e94b9d5014fad708c369a3555729327c520d2088",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__01__60s.json.gz",
+      "sha256": "e11b1b7169a62802dd1fe74d1d8dcc9784f09eb28c098833417b2812d9024fdf",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__02__10s.json.gz",
+      "sha256": "4b8816beb83b326c1a873c5e9af285ae0434f209c037f521412d5bd5247cfce1",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__02__60s.json.gz",
+      "sha256": "99aa6e1e6aafdc68d0631cad5ac05db3917d4e3a66c0ecb715ab025a48732e23",
+      "independent_verified": true,
+      "native_distribution_max_difference": 5.204170427930421e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__03__10s.json.gz",
+      "sha256": "b4f2db0c78ec2ad9d8f31e783f4245b0ec44f1a8943d007ae00b3cc8e6e09034",
+      "independent_verified": true,
+      "native_distribution_max_difference": 2.7755575615628914e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__03__60s.json.gz",
+      "sha256": "8755a40a61623ec57cbce916e0af1d7ee22f70dd5aa8c5aa1d33def5e42f0f56",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__04__10s.json.gz",
+      "sha256": "7b03c24eddaacc4d81c23f2b971d4241cefa96afcb35020d48c936177a32ee21",
+      "independent_verified": true,
+      "native_distribution_max_difference": 6.938893903907228e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__04__60s.json.gz",
+      "sha256": "5aec7e967983b6939a145b5b262dbaa407fbbc9297a19f703adb1422b86d464b",
+      "independent_verified": true,
+      "native_distribution_max_difference": 6.938893903907228e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__05__10s.json.gz",
+      "sha256": "4b868a016055cfe93f0cacccc338987583546ce514b6dd23c8a3e054edf10698",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__05__60s.json.gz",
+      "sha256": "e73e46a2b8f99ea67bb5f0647fbbae726dfc85f1bea9ab520b51c96fe194b985",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__06__10s.json.gz",
+      "sha256": "e81f3fdae5aa0dc03ff3cddb8d330d77d0e6d74da81c9014b3d4ea9776f2ff51",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__06__60s.json.gz",
+      "sha256": "5019501c1f118366b9e70537a99f2f1d092f2885dc187cc88bff43f938e11add",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__07__10s.json.gz",
+      "sha256": "cb239e672724b6e44b5998dc7519f6f4fec33059c72df693e2bba15a3e148f4c",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__07__60s.json.gz",
+      "sha256": "8eff925ba25fefc1c4f697c449ee9c39066443269c7adfb2451efb5bc9a6ac9c",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__08__10s.json.gz",
+      "sha256": "33518e31814cec302a7da53dd90d8628f8679eb76af0682a7a3a9d784eb6aa9a",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__08__60s.json.gz",
+      "sha256": "584944392dbd8ed6b0b5317ef1e72bb8cfc34d2fd2260a70ffc28fe18711f15e",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__09__10s.json.gz",
+      "sha256": "9eaae7457b6714131dcd04c57d8490c7ccce109f014152d02d0da3c01a9f57a9",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__triangle-local__09__60s.json.gz",
+      "sha256": "795a39cc3f5e43e0d434d78b3507101136075bdc149d782b72a76d3b9041f939",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__00__10s.json.gz",
+      "sha256": "4bff7220ca3575b31ea8872c7e8507858cbbade2290dcb7cbebf808282920236",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__00__60s.json.gz",
+      "sha256": "b8c5df3317bad392788aa239c5d1432f8f9d83afea6dfbfd2a2b0286485a0980",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__01__10s.json.gz",
+      "sha256": "85c886dabaf11729c5f40bbdf1d4e8cf00a47829dd849d117b3eb5974560820e",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__01__60s.json.gz",
+      "sha256": "0c66f65dfc3fe60098586af2376ec3c7c061688868943f347fb4575e66cbd0ce",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__02__10s.json.gz",
+      "sha256": "1225489eecc9c95c00369a1d463d53c35d52f344c1dbd3965b974ae9841af795",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__02__60s.json.gz",
+      "sha256": "3978494e6a3a779f885920260fcf84451ff00e3f7c0039dca9c56f04728a3310",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__03__10s.json.gz",
+      "sha256": "928c7768759d03506aab65504db6ae89237365c65c2aefda55a57e87a59d5b4a",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__03__60s.json.gz",
+      "sha256": "118a8a59f43b5cbff1b353a51f735994423e55d9976de42233b6a2eae75db1ae",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__04__10s.json.gz",
+      "sha256": "1e42ed70e95e0bd29395a0aa5be4d81a15ca9f23dda461cf9bbb43d77eb10d67",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__04__60s.json.gz",
+      "sha256": "6208fb6bc1e062143e7b9a813826e13566a66fab23a44cf3de3727d66c3f481c",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__05__10s.json.gz",
+      "sha256": "1f2c30f8b7348a2e6a1e4f730d272e8ea3253d9409e4adc6acf343e313eb3dfa",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__05__60s.json.gz",
+      "sha256": "870eca81a6da8f949346fbbaf52d0b4b540ed64e484961d1b1aa7b3dcbc30cab",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__06__10s.json.gz",
+      "sha256": "647c38e6021bacd56e0cfdf1abb50cc43bcc1e6aabf729bcc0a88a2ff757047f",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__06__60s.json.gz",
+      "sha256": "0966803cdbb39f1dc3fa00a41236f4c5178b23c72684d57c72cacc73da245d55",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__07__10s.json.gz",
+      "sha256": "26763af74fef29323a27efb537887a8dc83f35771cc9fa2fb598e109d84503d9",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__07__60s.json.gz",
+      "sha256": "d9b529a63c3b9e19f5e0beed057554e87320d2687161af08eb1143b2c049e017",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__08__10s.json.gz",
+      "sha256": "aa15fbaefec678faaf52dc0efb27a950151080375ae3638c9f28abbab5b0dd26",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__08__60s.json.gz",
+      "sha256": "9271a2c734c6caaa37e6ec708f3d15ffd08a1998c72dc09f2c41b905f8c70039",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__09__10s.json.gz",
+      "sha256": "b8516ec77429b034aad2a32cf74705ce92f0886c7b355a166a8abae55f85f065",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-source-080__localmodels__09__60s.json.gz",
+      "sha256": "29e4c21becfc6a9ab372bd8809236a359c03cf4b6570220fadb5e522861a571b",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__00__10s.json.gz",
+      "sha256": "add4327d18030682de8602551ff75018bede069e7339332b64a9a7d4ff2d130b",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__00__60s.json.gz",
+      "sha256": "4f64a6b61b83510b5c37f4cee09d63781fee781af4f07e92945d405abd9e7dfe",
+      "independent_verified": true,
+      "native_distribution_max_difference": 6.938893903907228e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__01__10s.json.gz",
+      "sha256": "d73a946da2ec98aac0366bb28590e1d3bd8548226b8cc15334d727d29f300396",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__01__60s.json.gz",
+      "sha256": "84dc04db1f4ac0391d75fe08bc0e9e6c269d7a97e9a857179d95e362a6142b58",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__02__10s.json.gz",
+      "sha256": "73c4d17c7a795784469872b9eb0f3fbf308fcc3694209a50300f87f47cca43c9",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__02__60s.json.gz",
+      "sha256": "f561cb25e1b54dfac594bcd9337f23e46b5c5c230bd65d33b55130612651bdad",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__03__10s.json.gz",
+      "sha256": "0c76b552541eed4b25108a3f1de4ff35e9bcf8de9119d1c47f04b70de004a009",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__03__60s.json.gz",
+      "sha256": "c316151f580002a57a2769902aa592da6de8540c83c500a4f8322a27c4bb28ec",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__04__10s.json.gz",
+      "sha256": "c379da3fbca1c2ccf742815bd88a634cfab0759e33b4bff4969580118037e3b5",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__04__60s.json.gz",
+      "sha256": "0db80f8d591f975f7e704c9355b18e8a48c8c78127210e4b1c65f66950a1bd56",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__05__10s.json.gz",
+      "sha256": "8b7047085f6584b40f17aae8c782e59bca622b869fe23dac827394419824ec1c",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__05__60s.json.gz",
+      "sha256": "daf02927d2ce0f40abf232082aac71e5939780ce975397a72aaf17c6fc3e98c5",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__06__10s.json.gz",
+      "sha256": "a7e3c1a1a36e5002798c6d73c7b5d0f148e57e702cb32771fe61fa4cd95ac28d",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__06__60s.json.gz",
+      "sha256": "e6930ec57ceedf6da9512c0484b4af7065f3d291474a51988262fe5686b31a84",
+      "independent_verified": true,
+      "native_distribution_max_difference": 2.7755575615628914e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__07__10s.json.gz",
+      "sha256": "4d7c00a78ea446af9471da0f8c4e4d9a004c5e0ce98ef143d05322bd2433e6ab",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__07__60s.json.gz",
+      "sha256": "20cc6d4490489925f8ddc5c52e2a2036330f17ae89e5b10e40264e6d4dad4e09",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__08__10s.json.gz",
+      "sha256": "ff79777897deb9b91b4ac79310741fa1603e65ab2618078749e58da57ffdd8b7",
+      "independent_verified": true,
+      "native_distribution_max_difference": 6.938893903907228e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__08__60s.json.gz",
+      "sha256": "b05b2fcb4087a027003403332cb5868556073b0345e321cd292f9b13cbb7843e",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__09__10s.json.gz",
+      "sha256": "b67c3aa309259408eb71ed3ff25b1f22950780883c2a720b509a4a10390f4c18",
+      "independent_verified": true,
+      "native_distribution_max_difference": 3.469446951953614e-18,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__triangle-local__09__60s.json.gz",
+      "sha256": "eee7b69a2396e0cb9e80a93320ca9ca5434c43d580b8f62419dc8371ce1f3125",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__00__10s.json.gz",
+      "sha256": "0caf24bd4aa3678e95770f58ce9db1cdf6915ee8706e5771cbbb0084a4ccccf5",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__00__60s.json.gz",
+      "sha256": "062fb564877d0a002632feb26278420b2c69c92914d9d44728d2b756c430fa0a",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__01__10s.json.gz",
+      "sha256": "eb29cfa9a11d02452c24fc110d30dac6aa07c7cd61d915b29b0f9e7faca65c19",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__01__60s.json.gz",
+      "sha256": "ac5f98ab8125961ac965f7bac3b0f2b2da774ee17a3e48cc6623970af388f3d7",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__02__10s.json.gz",
+      "sha256": "972d8ab5229582d5df6932b0de9414ddc1f2e639b80ed96ff7bea1b4a87966d5",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__02__60s.json.gz",
+      "sha256": "59a8937fb8ad6216982d8502e97d554fddcb3a8b01ba8fd5e7a021d5e625e82a",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__03__10s.json.gz",
+      "sha256": "c609134f66e23d14703ca3328b92badfafb1e3719cdea31d8fae2a562a7b7664",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__03__60s.json.gz",
+      "sha256": "71275c350a2146349119cd3ca5e4cb462a17469702a80df502cc5c4e0889ea5b",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__04__10s.json.gz",
+      "sha256": "a51de6412eb1d890c80338655bb91f776fa1414f02d576f1c2642abc99041320",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__04__60s.json.gz",
+      "sha256": "85b2edd169b7ad6cbef1a52196a590f4ccd4e1090cea2d562b8646fd14719864",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__05__10s.json.gz",
+      "sha256": "40bb343a78137bfd0ece14ea85152c3f377f5b43682ec23b3e3d63590905cb36",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__05__60s.json.gz",
+      "sha256": "6b033ba483c28e4fa04d7d3b5ceb199e0ecfb5efa100ec50fbbb3645d40bde0d",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__06__10s.json.gz",
+      "sha256": "b540d18f1cd998e17c3c21df2efb68a8ca722bd753d0937cbea973f5a51cb541",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__06__60s.json.gz",
+      "sha256": "16a56408914b96d3722d6020937273e8fd73570b5a8f69abdbca5f1a5764bdc2",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__07__10s.json.gz",
+      "sha256": "9713eeb5b588afe243a87f9cff61166276a9f9fb6d801d6d40226dd02616b9cb",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__07__60s.json.gz",
+      "sha256": "79203ae55cce8e89f4a75b4388054595d3205b53dffdfa708c737ae44caba041",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__08__10s.json.gz",
+      "sha256": "ede6ec13bd93de6926ed3a935516dee30e8bed23e591f1f38d5d60a0788c751b",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__08__60s.json.gz",
+      "sha256": "931804155a9b150472714501a24cd43f9a3c2067b930209bf8f2ea72ddefe314",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__09__10s.json.gz",
+      "sha256": "c8effb585666ff236590f47ff45c68bb6cd994376bc190d4e63c8f18bc736f0f",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "ejm-detector-086__localmodels__09__60s.json.gz",
+      "sha256": "851c288df73c84211b8f3a09350ce921016c13463ad5a97bddf3c2fb6af01524",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__00__10s.json.gz",
+      "sha256": "609fdc87ac8a9622ccd857085db351973f10083699c47358052b0ee010c7adeb",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__00__60s.json.gz",
+      "sha256": "86334249112c0232057c9d60aeed01c0f9ed1336c5260f7e1cdd921f511cea0d",
+      "independent_verified": true,
+      "native_distribution_max_difference": 2.7755575615628914e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__01__10s.json.gz",
+      "sha256": "9fea51dc2435b8a52758ba6bd3e3e55a56c6103caeaa3818a89a1020f2c432ab",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__01__60s.json.gz",
+      "sha256": "2cba7f8822deed4f1280b0a82d46699749699745b3fbc893f1a406f84e188009",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__02__10s.json.gz",
+      "sha256": "e9923016bc7595d047c50d102de03fa46bcbeebac77fff001df6f149db82a227",
+      "independent_verified": true,
+      "native_distribution_max_difference": 2.7755575615628914e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__02__60s.json.gz",
+      "sha256": "0e824338e13cac643fce547a4058e87306957b0df3d6118cbe6865d3e50464f6",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__03__10s.json.gz",
+      "sha256": "cf54e4b08a1b951bf4c0a4f47e0be35e139323d1675eb0bc74b0536bf18ab6a5",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__03__60s.json.gz",
+      "sha256": "fa5529deb9889820129f7932683b665c0f99de9718dae5d086e6ef9a67a33204",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__04__10s.json.gz",
+      "sha256": "55fb6c819f09bea14ee18d4bb74faf8f1bfff62312045592e161510f014571b9",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__04__60s.json.gz",
+      "sha256": "80c9652e492fc9c5e8122fe0519fdf395609097363554605f6af07ad8b063c58",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__05__10s.json.gz",
+      "sha256": "9e52c84222f3ae57288681e9d390e7c837ada23a57e44fc13c1b019aabc278af",
+      "independent_verified": true,
+      "native_distribution_max_difference": 2.0816681711721685e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__05__60s.json.gz",
+      "sha256": "2fc2c9f77edfc02845d235eaad6feba0455880c51a7d8725a94c14a7fb3d84ea",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__06__10s.json.gz",
+      "sha256": "8c0e54175bce52112b83c2f66c5939a07adb74facf2ee076a99fc1b557fdd1ac",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__06__60s.json.gz",
+      "sha256": "6a2cd0229ccc9d6bc5f9edcc9725def2569d12901030c39973a41928fc3cdfb8",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__07__10s.json.gz",
+      "sha256": "5a87a2c80845cfe2e73d64971ddd74493c044d5f0eb45e9a38f5c38bbf3f90a3",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__07__60s.json.gz",
+      "sha256": "5feca4a0ca3457f93298e1c9231041ce63d0b740d7e7e63e247a64a227a96013",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__08__10s.json.gz",
+      "sha256": "c909e255c6065530e480bb1f263eb79ba9b241542c961f68353dd01fbba6be44",
+      "independent_verified": true,
+      "native_distribution_max_difference": 2.7755575615628914e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__08__60s.json.gz",
+      "sha256": "521b32a3f2f20c0bba1a8a1d4275355d222189c837576e01af0bbe325671e2a6",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__09__10s.json.gz",
+      "sha256": "86e846a68f9035eb8eb22068cf19573b8456b4568cd5e3668396bb0f880cc48b",
+      "independent_verified": true,
+      "native_distribution_max_difference": 2.7755575615628914e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__triangle-local__09__60s.json.gz",
+      "sha256": "a2a48442659a026829c6f1804fe5cb3ebf1222176fe3582cb9e31c95ec327c82",
+      "independent_verified": true,
+      "native_distribution_max_difference": 1.3877787807814457e-17,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__00__10s.json.gz",
+      "sha256": "a8e723b23ab2f443aa86a422cf7f4ad3da149f7adac1a11364e98c8b2e0f53c6",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__00__60s.json.gz",
+      "sha256": "5c051fb0d7395e810e2611b688cf129efc679b9504f3bde5cf73906cfbf03a09",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__01__10s.json.gz",
+      "sha256": "c0ef43995fc2496abb882e562d72326fac71c8f91b1d64271c9c6e04fdbcb905",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__01__60s.json.gz",
+      "sha256": "89d1b507de9e9915f28d25976bf5afbe7626f3eb6c29a17fa5c33a6ee7e0d346",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__02__10s.json.gz",
+      "sha256": "5d893503888b599665f5ccacfede8fee18d2ac6ead579afd542851ddad4e0517",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__02__60s.json.gz",
+      "sha256": "4d00d2d1eb5bba9dc77ac45f822848c6274304f70e626ea3d23476f21435da10",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__03__10s.json.gz",
+      "sha256": "3fef5e512011acea061c246e676d925fa5c2684468e896e432f512840829fe47",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__03__60s.json.gz",
+      "sha256": "d36619e090bae7afc9d72f473a02ea3e69d584b13c8e29067e2e264673d2e0b0",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__04__10s.json.gz",
+      "sha256": "ac57d3e47c03d834c650d64bc070018b8f1b8dc47fcc12940756db919b946ffb",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__04__60s.json.gz",
+      "sha256": "e4704567b2742acdf459749b8ce2e40125c5995f52d7a1a485a4e5ee263c5414",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__05__10s.json.gz",
+      "sha256": "1d5483ea17a1802940baf9e8802250fbfa1d86c4646746653cfc4ba4403d7dc1",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__05__60s.json.gz",
+      "sha256": "c20144d1a14ae5b4e592f6e920c90c12772bcf7c1847cb9eec096ce84c083b0f",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__06__10s.json.gz",
+      "sha256": "93de2a9aa2218888cd87151118dbcf9627160f2863db306cdb95d02b05716edf",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__06__60s.json.gz",
+      "sha256": "b2ee1184204299bf43ad43f6fec297b8d30f46ab0c55ad4c87b6341dba5d2d8d",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__07__10s.json.gz",
+      "sha256": "19f4e653042a53b6eff646427a08b139d401ac9dc17c7766eabd427a72963e93",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__07__60s.json.gz",
+      "sha256": "a5cf925007c8559a742fd6e4c8b87635adb7f580f1b6d1449b54c3e7368c0809",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__08__10s.json.gz",
+      "sha256": "f6f6acc62a724c6b6c71c9f9db063c7783f26832e1306fdefe4dc4470caa8f5a",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__08__60s.json.gz",
+      "sha256": "abe1c5f4b07898d3525d9954a119f6ace8ad69044613664e5c3a9788e4a13d77",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__09__10s.json.gz",
+      "sha256": "de1cb4207dd410f0fde87a28952bcc24f78547a89eca85f0c8b4dbfff09c45db",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    },
+    {
+      "file": "renou-detector-093__localmodels__09__60s.json.gz",
+      "sha256": "2dd57ad659880a697bb55d0fd81ca25edb17f79862df4f8c154457a28590718a",
+      "independent_verified": true,
+      "native_distribution_max_difference": 0.0,
+      "l2_equals_8_rmse": true
+    }
+  ],
+  "target_identity_verified": true,
+  "checkpoint_deadlines_verified": true,
+  "run_seeds_verified": 90,
+  "heldout_intervals_recomputed": 60
+}

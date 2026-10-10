@@ -1,0 +1,335 @@
+{
+  "schema": "triangle-local-external-baseline/v1",
+  "solver": "LHV-Net-2020",
+  "repository": "https://github.com/tkrivachy/neural-network-for-nonlocality-in-networks",
+  "revision": "9460fe5340016e9a2f954613a2c07e633449d455",
+  "protocol": "Original build_model and KL objective from sample_code, TensorFlow-MacOS 2.16.2 compatibility wrapper for removed Keras generator APIs, CPU threads 2, batch 256, depth 3 width 16, one fresh repetition per stress point, 65 second wall budget, 4096-sample independent evaluation of the output. Final scoring is Euclidean L2 over 64 entries; evaluation sampling noise is not a certificate.",
+  "target_convention": "Our exact target generators; Renou detector uses independent K_v tensor K_v; no global mixture.",
+  "repetitions": 2,
+  "results": [
+    {
+      "solver": "LHV-Net-2020",
+      "family": "elegant-source",
+      "parameter": "4/5",
+      "rep": 1,
+      "status": "completed",
+      "elapsed_seconds": 65.01227195799584,
+      "steps": 2314,
+      "best_l2": 0.04990198090672493,
+      "final_l2": 0.054095104336738586,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 12.310614624992013,
+          "l2": 0.08065538108348846
+        },
+        "60": {
+          "elapsed_seconds": 61.896240125002805,
+          "l2": 0.04990198090672493
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 449134592,
+      "seed": 20261010
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "elegant-source",
+      "parameter": "21/25",
+      "rep": 1,
+      "status": "completed",
+      "elapsed_seconds": 65.01379949998227,
+      "steps": 2345,
+      "best_l2": 0.06290654093027115,
+      "final_l2": 0.06290654093027115,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 11.113577832991723,
+          "l2": 0.08541680872440338
+        },
+        "60": {
+          "elapsed_seconds": 60.96404395799618,
+          "l2": 0.0639527440071106
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 489717760,
+      "seed": 20261010
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "elegant-detector",
+      "parameter": "43/50",
+      "rep": 1,
+      "status": "completed",
+      "elapsed_seconds": 65.01163204098702,
+      "steps": 2332,
+      "best_l2": 0.05382223427295685,
+      "final_l2": 0.0557270273566246,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 11.176479999994626,
+          "l2": 0.0806366577744484
+        },
+        "60": {
+          "elapsed_seconds": 61.35847916599596,
+          "l2": 0.05382223427295685
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 478937088,
+      "seed": 20261010
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "renou-detector",
+      "parameter": "93/100",
+      "rep": 1,
+      "status": "completed",
+      "elapsed_seconds": 65.00363675001427,
+      "steps": 2383,
+      "best_l2": 0.018458621576428413,
+      "final_l2": 0.01956106908619404,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 11.109073750005336,
+          "l2": 0.030779708176851273
+        },
+        "60": {
+          "elapsed_seconds": 60.03698983299546,
+          "l2": 0.018458621576428413
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 474562560,
+      "seed": 20261010
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "renou-detector",
+      "parameter": "19/20",
+      "rep": 1,
+      "status": "completed",
+      "elapsed_seconds": 65.01373820801382,
+      "steps": 2333,
+      "best_l2": 0.018136532977223396,
+      "final_l2": 0.020095152780413628,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.86885150001035,
+          "l2": 0.031638797372579575
+        },
+        "60": {
+          "elapsed_seconds": 61.30290012501064,
+          "l2": 0.01895131915807724
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 490913792,
+      "seed": 20261010
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "renou",
+      "parameter": "17/20",
+      "rep": 1,
+      "status": "completed",
+      "elapsed_seconds": 65.01870141699328,
+      "steps": 2346,
+      "best_l2": 0.023425588384270668,
+      "final_l2": 0.023425588384270668,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 11.195700417010812,
+          "l2": 0.03508790582418442
+        },
+        "60": {
+          "elapsed_seconds": 60.98560612500296,
+          "l2": 0.024493327364325523
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 605749248,
+      "seed": 20261010
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "elegant-source",
+      "parameter": "4/5",
+      "rep": 2,
+      "seed": 20262019,
+      "status": "completed",
+      "elapsed_seconds": 65.01460949998,
+      "steps": 2984,
+      "best_l2": 0.04651562124490738,
+      "final_l2": 0.04951312392950058,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.912221707985736,
+          "l2": 0.0658247172832489
+        },
+        "60": {
+          "elapsed_seconds": 60.864755082991906,
+          "l2": 0.04651562124490738
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 634716160
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "elegant-source",
+      "parameter": "21/25",
+      "rep": 2,
+      "seed": 20262019,
+      "status": "completed",
+      "elapsed_seconds": 65.00581195799168,
+      "steps": 2895,
+      "best_l2": 0.06177959963679314,
+      "final_l2": 0.06813979148864746,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 12.082921583001735,
+          "l2": 0.08683467656373978
+        },
+        "60": {
+          "elapsed_seconds": 60.71371304101194,
+          "l2": 0.062266040593385696
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 594116608
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "elegant-detector",
+      "parameter": "43/50",
+      "rep": 2,
+      "seed": 20262019,
+      "status": "completed",
+      "elapsed_seconds": 65.01136454101652,
+      "steps": 2898,
+      "best_l2": 0.04962490499019623,
+      "final_l2": 0.05662629380822182,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.962792083009845,
+          "l2": 0.0649818405508995
+        },
+        "60": {
+          "elapsed_seconds": 60.6333278749953,
+          "l2": 0.04996154457330704
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 521273344
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "renou-detector",
+      "parameter": "93/100",
+      "rep": 2,
+      "seed": 20262019,
+      "status": "completed",
+      "elapsed_seconds": 65.01227308399393,
+      "steps": 2720,
+      "best_l2": 0.015687383711338043,
+      "final_l2": 0.01777438260614872,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 11.94386966698221,
+          "l2": 0.027543827891349792
+        },
+        "60": {
+          "elapsed_seconds": 62.14896429199143,
+          "l2": 0.015687383711338043
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 495927296
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "renou-detector",
+      "parameter": "19/20",
+      "rep": 2,
+      "seed": 20262019,
+      "status": "completed",
+      "elapsed_seconds": 65.00531866701203,
+      "steps": 2693,
+      "best_l2": 0.019215932115912437,
+      "final_l2": 0.028285594657063484,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 11.773879417014541,
+          "l2": 0.027233213186264038
+        },
+        "60": {
+          "elapsed_seconds": 62.454446082992945,
+          "l2": 0.019215932115912437
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 534282240
+    },
+    {
+      "solver": "LHV-Net-2020",
+      "family": "renou",
+      "parameter": "17/20",
+      "rep": 2,
+      "seed": 20262019,
+      "status": "completed",
+      "elapsed_seconds": 65.00732650002465,
+      "steps": 2862,
+      "best_l2": 0.0186145156621933,
+      "final_l2": 0.0186145156621933,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 11.234988125012023,
+          "l2": 0.0275384783744812
+        },
+        "60": {
+          "elapsed_seconds": 61.4580801660195,
+          "l2": 0.01891416497528553
+        }
+      },
+      "batch_size": 256,
+      "depth": 3,
+      "width": 16,
+      "objective": "KL training, independently evaluated full Cartesian Monte Carlo L2",
+      "peak_rss_bytes": 541048832
+    }
+  ]
+}

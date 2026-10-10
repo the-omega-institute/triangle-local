@@ -1,0 +1,26 @@
+{
+  "reference_revision": "9460fe5340016e9a2f954613a2c07e633449d455",
+  "original_source_sha256": "9cd7556a89c0c670238f97a87cd5b20a3b2618f09f67d5842d2f1c0fd33dc592",
+  "patch_sha256": "1a1b57c4a4f467797dc36dd5ddc4da37908827ff2730e3f097eaaee7ac7f4134",
+  "checks": [
+    {
+      "target": "ejm-source-080",
+      "sha256": "b006ed64fab04b9bcbb6df6fc39fd58e6e3f848676e63fa13779ad7f665254f1",
+      "max_entry_discrepancy": 1.3877787807814457e-17,
+      "l2_discrepancy": 2.964296775167217e-17
+    },
+    {
+      "target": "ejm-detector-086",
+      "sha256": "3ed71e63efb2776ca2ade99a6f3df16020547f839641549a2955e0f72e6062e7",
+      "max_entry_discrepancy": 1.3877787807814457e-17,
+      "l2_discrepancy": 2.7755575615628914e-17
+    },
+    {
+      "target": "renou-detector-093",
+      "sha256": "33670e65cb80be3c2fa4ddd25f3029a1176323285f51d82d3b475f921268c5f4",
+      "max_entry_discrepancy": 7.945033519973776e-15,
+      "l2_discrepancy": 2.2398395535339924e-14
+    }
+  ],
+  "meaning": "Point cross-checks; not target interval enclosures."
+}

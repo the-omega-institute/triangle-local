@@ -1,0 +1,272 @@
+{
+  "independent_method": "Fraction variable elimination; no package imports",
+  "checked_bundles": 22,
+  "results": [
+    {
+      "file": "extracted.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.0313576383",
+      "L1": "0.176897334",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.000642269109",
+      "L1": "0.00366640412",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-00-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.227888986",
+      "L1": "1.19349988",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-00-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00705246157",
+      "L1": "0.0284569936",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-01-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.260233576",
+      "L1": "1.20707037",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-01-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.000618998707",
+      "L1": "0.00415452724",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-02-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.279035767",
+      "L1": "1.34822501",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-02-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00226839192",
+      "L1": "0.0141459056",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-03-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.268565825",
+      "L1": "1.30970002",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-03-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00108837803",
+      "L1": "0.00733014936",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-04-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.241545611",
+      "L1": "1.19633707",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-04-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00802688182",
+      "L1": "0.0412436286",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-05-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.236113658",
+      "L1": "1.26918438",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-05-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00081369266",
+      "L1": "0.00513879951",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-06-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.248650843",
+      "L1": "1.30086033",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-06-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00158355555",
+      "L1": "0.00972810675",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-07-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.274047533",
+      "L1": "1.30942118",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-07-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00161935421",
+      "L1": "0.0107833803",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-08-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.253565908",
+      "L1": "1.23664651",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-08-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.000505088044",
+      "L1": "0.00320208171",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-09-initial.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.268547135",
+      "L1": "1.24884444",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "random-09-polished.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0.00262956047",
+      "L1": "0.0168878463",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    }
+  ],
+  "scope": "Exact locality and stored-target errors; intended-target interval enclosure is separate",
+  "seconds": 0.13043066699174233
+}

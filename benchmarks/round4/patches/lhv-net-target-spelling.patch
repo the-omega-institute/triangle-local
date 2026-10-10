@@ -1,0 +1,11 @@
+--- a/sample_code/targets.py
++++ b/sample_code/targets.py
+@@ -95,7 +95,7 @@
+         """ Info: If param_c >~ 0.886 or <~0.464, there is no classical 3-local model."""
+         """ In terms of c**2: above 0.785 or below 0.215 no classical 3-local model."""
+         param_c = parameter1
+-        param_s = np.np.sqrt(1-param_c**2)
++        param_s = np.sqrt(1-param_c**2)
+ 
+         # the si and ci functions
+         param2_c = {'2':param_c, '3':param_s}

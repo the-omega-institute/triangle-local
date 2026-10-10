@@ -1,0 +1,34 @@
+{
+  "target": "ejm-detector-086",
+  "method": "localmodels",
+  "rep": 3,
+  "seed": 3254994812,
+  "target_sha256": "3ed71e63efb2776ca2ade99a6f3df16020547f839641549a2955e0f72e6062e7",
+  "protocol_sha256": "7523a522a5615496778733a4691445467921dd4306075b3ec76484412b4d8ea1",
+  "checkpoints": {
+    "10": {
+      "l2": 0.09812892212088892,
+      "rmse": 0.012266115265111116,
+      "l2_equals_8_rmse": true,
+      "candidate_seconds": 9.761850957991555,
+      "output_sha256": "beb83cf88f821c612e791a840178bd224d9f1a3bb4726ee35818a9397d3ce5f2"
+    },
+    "60": {
+      "l2": 0.042576191241412355,
+      "rmse": 0.005322023905176544,
+      "l2_equals_8_rmse": true,
+      "candidate_seconds": 59.897354999993695,
+      "output_sha256": "36eba84823b9013f29006671d05f8f84d4bf95e861f2547b1a6fd73f653a44df"
+    }
+  },
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1"
+  },
+  "search_seconds": 60.109557749994565,
+  "evaluations": 92460,
+  "rejected_infeasible": 920,
+  "peak_rss_bytes": 211861504,
+  "finished_utc": "2026-10-10T19:43:19Z"
+}

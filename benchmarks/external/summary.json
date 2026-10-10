@@ -1,0 +1,470 @@
+[
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-detector",
+    "parameter": "43/50",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.07280924916267395,
+    "min_l2": 0.0649818405508995,
+    "max_l2": 0.0806366577744484,
+    "actual_checkpoint_seconds": [
+      11.176479999994626,
+      10.962792083009845
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-detector",
+    "parameter": "43/50",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.05189188942313194,
+    "min_l2": 0.04996154457330704,
+    "max_l2": 0.05382223427295685,
+    "actual_checkpoint_seconds": [
+      61.35847916599596,
+      60.6333278749953
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-detector",
+    "parameter": "43/50",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-source",
+    "parameter": "21/25",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.08612574264407158,
+    "min_l2": 0.08541680872440338,
+    "max_l2": 0.08683467656373978,
+    "actual_checkpoint_seconds": [
+      11.113577832991723,
+      12.082921583001735
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-source",
+    "parameter": "21/25",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.06310939230024815,
+    "min_l2": 0.062266040593385696,
+    "max_l2": 0.0639527440071106,
+    "actual_checkpoint_seconds": [
+      60.96404395799618,
+      60.71371304101194
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-source",
+    "parameter": "21/25",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-source",
+    "parameter": "4/5",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.07324004918336868,
+    "min_l2": 0.0658247172832489,
+    "max_l2": 0.08065538108348846,
+    "actual_checkpoint_seconds": [
+      12.310614624992013,
+      10.912221707985736
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-source",
+    "parameter": "4/5",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.048208801075816154,
+    "min_l2": 0.04651562124490738,
+    "max_l2": 0.04990198090672493,
+    "actual_checkpoint_seconds": [
+      61.896240125002805,
+      60.864755082991906
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "elegant-source",
+    "parameter": "4/5",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou",
+    "parameter": "17/20",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.03131319209933281,
+    "min_l2": 0.0275384783744812,
+    "max_l2": 0.03508790582418442,
+    "actual_checkpoint_seconds": [
+      11.195700417010812,
+      11.234988125012023
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou",
+    "parameter": "17/20",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.021703746169805527,
+    "min_l2": 0.01891416497528553,
+    "max_l2": 0.024493327364325523,
+    "actual_checkpoint_seconds": [
+      60.98560612500296,
+      61.4580801660195
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou",
+    "parameter": "17/20",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou-detector",
+    "parameter": "19/20",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.029436005279421806,
+    "min_l2": 0.027233213186264038,
+    "max_l2": 0.031638797372579575,
+    "actual_checkpoint_seconds": [
+      10.86885150001035,
+      11.773879417014541
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou-detector",
+    "parameter": "19/20",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.01908362563699484,
+    "min_l2": 0.01895131915807724,
+    "max_l2": 0.019215932115912437,
+    "actual_checkpoint_seconds": [
+      61.30290012501064,
+      62.454446082992945
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou-detector",
+    "parameter": "19/20",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou-detector",
+    "parameter": "93/100",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.029161768034100533,
+    "min_l2": 0.027543827891349792,
+    "max_l2": 0.030779708176851273,
+    "actual_checkpoint_seconds": [
+      11.109073750005336,
+      11.94386966698221
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou-detector",
+    "parameter": "93/100",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.01707300264388323,
+    "min_l2": 0.015687383711338043,
+    "max_l2": 0.018458621576428413,
+    "actual_checkpoint_seconds": [
+      60.03698983299546,
+      62.14896429199143
+    ]
+  },
+  {
+    "solver": "LHV-Net-2020",
+    "family": "renou-detector",
+    "parameter": "93/100",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-detector",
+    "parameter": "43/50",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.07745187492774155,
+    "min_l2": 0.06740271028004731,
+    "max_l2": 0.0875010395754358,
+    "actual_checkpoint_seconds": [
+      10.098645165999187,
+      10.026520917017478
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-detector",
+    "parameter": "43/50",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.0505521945497184,
+    "min_l2": 0.04980642507606887,
+    "max_l2": 0.05129796402336793,
+    "actual_checkpoint_seconds": [
+      55.75112012497266,
+      30.98515175000648
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-detector",
+    "parameter": "43/50",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-source",
+    "parameter": "21/25",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.07329965725675232,
+    "min_l2": 0.07243982518321676,
+    "max_l2": 0.07415948933028788,
+    "actual_checkpoint_seconds": [
+      10.000093707989436,
+      10.04548075000639
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-source",
+    "parameter": "21/25",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.05374065795278525,
+    "min_l2": 0.052932883771062804,
+    "max_l2": 0.0545484321345077,
+    "actual_checkpoint_seconds": [
+      60.306328583013965,
+      36.562522791995434
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-source",
+    "parameter": "21/25",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-source",
+    "parameter": "4/5",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.08599195925704606,
+    "min_l2": 0.06599476708992205,
+    "max_l2": 0.10598915142417005,
+    "actual_checkpoint_seconds": [
+      10.041538542020135,
+      10.013951166998595
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-source",
+    "parameter": "4/5",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.0460933489974173,
+    "min_l2": 0.040661466487500665,
+    "max_l2": 0.051525231507333936,
+    "actual_checkpoint_seconds": [
+      60.11062075002701,
+      54.36666745902039
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "elegant-source",
+    "parameter": "4/5",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou",
+    "parameter": "17/20",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.034903309136582,
+    "min_l2": 0.03000359076128118,
+    "max_l2": 0.039803027511882826,
+    "actual_checkpoint_seconds": [
+      10.022890416992595,
+      10.086885833996348
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou",
+    "parameter": "17/20",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.011592292147344727,
+    "min_l2": 0.011519377226348496,
+    "max_l2": 0.011665207068340958,
+    "actual_checkpoint_seconds": [
+      43.36564091700711,
+      57.17105633401661
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou",
+    "parameter": "17/20",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou-detector",
+    "parameter": "19/20",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.024985300952845534,
+    "min_l2": 0.024466564485359932,
+    "max_l2": 0.025504037420331135,
+    "actual_checkpoint_seconds": [
+      10.04629225001554,
+      10.116709750000155
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou-detector",
+    "parameter": "19/20",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.007340909852826647,
+    "min_l2": 0.007113122174920576,
+    "max_l2": 0.007568697530732717,
+    "actual_checkpoint_seconds": [
+      60.00000016702688,
+      60.051799791981466
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou-detector",
+    "parameter": "19/20",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou-detector",
+    "parameter": "93/100",
+    "budget_seconds": 10,
+    "n": 2,
+    "median_l2": 0.02838447003943742,
+    "min_l2": 0.023475141503864195,
+    "max_l2": 0.03329379857501065,
+    "actual_checkpoint_seconds": [
+      10.174280625011306,
+      10.056830917019397
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou-detector",
+    "parameter": "93/100",
+    "budget_seconds": 60,
+    "n": 2,
+    "median_l2": 0.005427555192201847,
+    "min_l2": 0.004351410708644155,
+    "max_l2": 0.0065036996757595385,
+    "actual_checkpoint_seconds": [
+      60.351516541006276,
+      60.1056637080037
+    ]
+  },
+  {
+    "solver": "localmodels",
+    "family": "renou-detector",
+    "parameter": "93/100",
+    "budget_seconds": 300,
+    "n": 0,
+    "median_l2": null,
+    "min_l2": null,
+    "max_l2": null,
+    "actual_checkpoint_seconds": []
+  }
+]

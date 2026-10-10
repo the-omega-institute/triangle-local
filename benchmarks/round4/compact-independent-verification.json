@@ -1,0 +1,20 @@
+{
+  "independent_method": "Fraction variable elimination; no package imports",
+  "checked_bundles": 1,
+  "results": [
+    {
+      "file": "renou-detector-93-100-trimmed-8-9-2.json.gz",
+      "source_sizes": [
+        8,
+        9,
+        2
+      ],
+      "Euclidean": "8.20762454e-09",
+      "L1": "3.84859406e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    }
+  ],
+  "scope": "Exact locality and stored-target errors; intended-target interval enclosure is separate",
+  "seconds": 0.015181374998064712
+}

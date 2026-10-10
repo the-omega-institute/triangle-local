@@ -1,0 +1,9 @@
+{
+  "completed": 13,
+  "total": 90,
+  "wall_seconds": 812.8290666250105,
+  "last": "renou-detector-093__LHV-Net-2020__06",
+  "reason": "Potential sequential restart-seed overlap; all preliminary runs excluded. Replaced by domain-separated SeedSequence streams.",
+  "exclusion": "No settings or thresholds tuned from these results.",
+  "archived_at_utc": "2026-10-10T19:37:23Z"
+}

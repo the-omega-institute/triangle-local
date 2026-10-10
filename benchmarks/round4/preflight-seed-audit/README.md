@@ -1,0 +1,1 @@
+Preliminary runs excluded from the counted comparison. The sequential restart seed rule could overlap between repetitions; the final protocol uses domain-separated SeedSequence streams. No solver hyperparameters, target arrays, threshold, or budgets were tuned from these results.

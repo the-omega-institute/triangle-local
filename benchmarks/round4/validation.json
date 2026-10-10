@@ -1,0 +1,52 @@
+{
+  "tests_passed": 68,
+  "test_command": "python -m pytest tool -q",
+  "native_outcomes": 180,
+  "finite_checkpoints_independently_certified": 120,
+  "visual_qa": "complete",
+  "no_push": true,
+  "no_email": true,
+  "pdf_pages": 7,
+  "pdf_pages_visually_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "figures_visually_inspected": [
+    "headline",
+    "baseline-time",
+    "local-model"
+  ],
+  "interoperability_bundles_independently_audited": 22,
+  "standalone_compact_audit": "passed",
+  "pdf_text_checks": "passed: no 13+ digit strings, internal file paths, undefined references, or AI-process prose; correct author order",
+  "latex_warnings": [],
+  "git_diff_check": "passed",
+  "note_pdf_sha256": "677e556be3b2d8e071e7095ad2b2936f400b48f6a645618e90687b602b85f0e5",
+  "round4b_review": {
+    "date": "2026-10-11",
+    "tests_passed": 68,
+    "test_seconds": 1.58,
+    "neural_scores_and_intervals_recomputed": 60,
+    "frozen_runner_hash_matches_protocol": true,
+    "pdf_pages_visually_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "figure_2_visually_inspected": true,
+    "latex_warnings": [],
+    "certificate_bundles_scanned_for_11_over_36": 195,
+    "certificate_11_over_36_found": false,
+    "commit_or_push": false,
+    "email_or_mail": false
+  }
+}

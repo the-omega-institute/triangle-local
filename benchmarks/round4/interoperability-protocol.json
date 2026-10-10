@@ -1,0 +1,16 @@
+{
+  "frozen_utc": "2026-10-10T19:28:23Z",
+  "checkpoint": "renou-detector-093__LHV-Net-2020__00__60s.weights.h5",
+  "selection": "repetition zero preselected; no held-out-result selection",
+  "support_points": [
+    0.125,
+    0.375,
+    0.625,
+    0.875
+  ],
+  "polish_seconds": 2,
+  "random_controls": 10,
+  "random_seed_base": 770000,
+  "initial_rationalization_cap": 1000000,
+  "final_rationalization_cap": 1000000000
+}

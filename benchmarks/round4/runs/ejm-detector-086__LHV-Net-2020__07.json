@@ -1,0 +1,54 @@
+{
+  "target": "ejm-detector-086",
+  "method": "LHV-Net-2020",
+  "rep": 7,
+  "seed": 1799576927,
+  "target_sha256": "3ed71e63efb2776ca2ade99a6f3df16020547f839641549a2955e0f72e6062e7",
+  "protocol_sha256": "7523a522a5615496778733a4691445467921dd4306075b3ec76484412b4d8ea1",
+  "checkpoints": {
+    "10": {
+      "l2": 0.0625056267891293,
+      "ci95": [
+        0.06225863552039819,
+        0.06275755486561851
+      ],
+      "mc_rms_l2": 0.0005036142297572465,
+      "l2_squared_variance_correction": 2.536272924139847e-07,
+      "bias_corrected_l2": 0.06250359792051578,
+      "samples": 1048576,
+      "evaluation_seconds": 0.8769987919949926,
+      "heldout_seed": 11495129796352701640,
+      "candidate_seconds": 9.731300207989989,
+      "selection_l2": 0.05925967315487485,
+      "checkpoint_sha256": "6003802ae82b26a3b4732169bb3e3dd1f015ee507153a0dc0e730b12c5ec8abb",
+      "output_sha256": "ebd91184863f5dd90cbc36c92159fe7b885cebf81ae9611ffb5307243d1c373e"
+    },
+    "60": {
+      "l2": 0.048611323282275715,
+      "ci95": [
+        0.048353725529786847,
+        0.04887684805937948
+      ],
+      "mc_rms_l2": 0.0005453617265606578,
+      "l2_squared_variance_correction": 2.974194127972217e-07,
+      "bias_corrected_l2": 0.04860826402826091,
+      "samples": 1048576,
+      "evaluation_seconds": 0.8684565410076175,
+      "heldout_seed": 653304549127230797,
+      "candidate_seconds": 50.83308787501301,
+      "selection_l2": 0.04453690442168107,
+      "checkpoint_sha256": "9ccc6adc3a01e8c2cc171953bcafee1258e4e4cca420b2e0ac37d9abe4610769",
+      "output_sha256": "e09b6552e18b0b9a95b1b8e3c1ba7c3305f95fcb8fab805097f23a05e33ee426"
+    }
+  },
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "tensorflow": "2.16.2",
+    "scipy": "1.17.1"
+  },
+  "search_seconds": 60.01169524999568,
+  "steps": 2187,
+  "peak_rss_bytes": 592560128,
+  "finished_utc": "2026-10-10T20:48:09Z"
+}

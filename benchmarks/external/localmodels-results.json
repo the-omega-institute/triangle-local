@@ -1,0 +1,406 @@
+{
+  "schema": "triangle-local-external-baseline/v1",
+  "solver": "localmodels",
+  "repository": "https://github.com/mariofilho281/localmodels",
+  "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+  "target_convention": "Our exact target generators; Renou detector uses independent K_v tensor K_v; localmodels receives float arrays. Cardinality 7^3, four outputs, one trust-constr trial per point; signal timeout 70 s. RMS is localmodels native sqrt(mean squared error)=L2/8.",
+  "repetitions": 2,
+  "results": [
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "elegant-source",
+      "parameter": "4/5",
+      "u_squared": null,
+      "rep": 1,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 66.28013900000951,
+      "best_l2": 0.05139349927299726,
+      "best_rms": 0.006424187409124657,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.041538542020135,
+          "l2": 0.10598915142417005,
+          "rms": 0.013248643928021256
+        },
+        "60": {
+          "elapsed_seconds": 60.11062075002701,
+          "l2": 0.051525231507333936,
+          "rms": 0.006440653938416742
+        }
+      },
+      "peak_rss_bytes": 213614592
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "elegant-source",
+      "parameter": "21/25",
+      "u_squared": null,
+      "rep": 1,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 62.65878079200047,
+      "best_l2": 0.054522987502175345,
+      "best_rms": 0.006815373437771918,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.000093707989436,
+          "l2": 0.07243982518321676,
+          "rms": 0.009054978147902095
+        },
+        "60": {
+          "elapsed_seconds": 60.306328583013965,
+          "l2": 0.0545484321345077,
+          "rms": 0.006818554016813462
+        }
+      },
+      "peak_rss_bytes": 213450752
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "elegant-detector",
+      "parameter": "43/50",
+      "u_squared": null,
+      "rep": 1,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 55.75112012497266,
+      "best_l2": 0.04980642507606887,
+      "best_rms": 0.0062258031345086085,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.098645165999187,
+          "l2": 0.0875010395754358,
+          "rms": 0.010937629946929475
+        }
+      },
+      "peak_rss_bytes": 199950336
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "renou-detector",
+      "parameter": "93/100",
+      "u_squared": "17/20",
+      "rep": 1,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "timeout",
+      "elapsed_seconds": 70.0507144999865,
+      "best_l2": 0.006454892672905841,
+      "best_rms": 0.0008068615841132301,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.174280625011306,
+          "l2": 0.03329379857501065,
+          "rms": 0.004161724821876331
+        },
+        "60": {
+          "elapsed_seconds": 60.351516541006276,
+          "l2": 0.0065036996757595385,
+          "rms": 0.0008129624594699423
+        }
+      },
+      "peak_rss_bytes": 215695360
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "renou-detector",
+      "parameter": "19/20",
+      "u_squared": "17/20",
+      "rep": 1,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "timeout",
+      "elapsed_seconds": 70.00474141701125,
+      "best_l2": 0.007117532329995343,
+      "best_rms": 0.0008896915412494179,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.04629225001554,
+          "l2": 0.024466564485359932,
+          "rms": 0.0030583205606699916
+        },
+        "60": {
+          "elapsed_seconds": 60.00000016702688,
+          "l2": 0.007568697530732717,
+          "rms": 0.0009460871913415897
+        }
+      },
+      "peak_rss_bytes": 199917568
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "renou",
+      "parameter": "17/20",
+      "u_squared": "17/20",
+      "rep": 1,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 43.36564091700711,
+      "best_l2": 0.011665207068340958,
+      "best_rms": 0.0014581508835426198,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.022890416992595,
+          "l2": 0.039803027511882826,
+          "rms": 0.004975378438985353
+        }
+      },
+      "peak_rss_bytes": 215007232
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "elegant-source",
+      "parameter": "4/5",
+      "u_squared": null,
+      "rep": 2,
+      "seed": 20262019,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 54.36666745902039,
+      "best_l2": 0.040661466487500665,
+      "best_rms": 0.005082683310937583,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.013951166998595,
+          "l2": 0.06599476708992205,
+          "rms": 0.008249345886240256
+        }
+      },
+      "peak_rss_bytes": 215826432
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "elegant-source",
+      "parameter": "21/25",
+      "u_squared": null,
+      "rep": 2,
+      "seed": 20262019,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 36.562522791995434,
+      "best_l2": 0.052932883771062804,
+      "best_rms": 0.0066166104713828505,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.04548075000639,
+          "l2": 0.07415948933028788,
+          "rms": 0.009269936166285984
+        }
+      },
+      "peak_rss_bytes": 215777280
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "elegant-detector",
+      "parameter": "43/50",
+      "u_squared": null,
+      "rep": 2,
+      "seed": 20262019,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 30.98515175000648,
+      "best_l2": 0.05129796402336793,
+      "best_rms": 0.006412245502920991,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.026520917017478,
+          "l2": 0.06740271028004731,
+          "rms": 0.008425338785005914
+        }
+      },
+      "peak_rss_bytes": 213549056
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "renou-detector",
+      "parameter": "93/100",
+      "u_squared": "17/20",
+      "rep": 2,
+      "seed": 20262019,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "timeout",
+      "elapsed_seconds": 70.00998495801468,
+      "best_l2": 0.0037095256877127687,
+      "best_rms": 0.0004636907109640961,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.056830917019397,
+          "l2": 0.023475141503864195,
+          "rms": 0.0029343926879830244
+        },
+        "60": {
+          "elapsed_seconds": 60.1056637080037,
+          "l2": 0.004351410708644155,
+          "rms": 0.0005439263385805193
+        }
+      },
+      "peak_rss_bytes": 213991424
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "renou-detector",
+      "parameter": "19/20",
+      "u_squared": "17/20",
+      "rep": 2,
+      "seed": 20262019,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 60.654466832987964,
+      "best_l2": 0.007112851905742227,
+      "best_rms": 0.0008891064882177783,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.116709750000155,
+          "l2": 0.025504037420331135,
+          "rms": 0.003188004677541392
+        },
+        "60": {
+          "elapsed_seconds": 60.051799791981466,
+          "l2": 0.007113122174920576,
+          "rms": 0.000889140271865072
+        }
+      },
+      "peak_rss_bytes": 215334912
+    },
+    {
+      "solver": "localmodels",
+      "revision": "28fd13ec30761d81eaa434a8545e02db5fe51ed7",
+      "family": "renou",
+      "parameter": "17/20",
+      "u_squared": "17/20",
+      "rep": 2,
+      "seed": 20262019,
+      "cardinalities": [
+        7,
+        7,
+        7
+      ],
+      "outputs": [
+        4,
+        4,
+        4
+      ],
+      "status": "completed",
+      "elapsed_seconds": 57.17105633401661,
+      "best_l2": 0.011519377226348496,
+      "best_rms": 0.001439922153293562,
+      "checkpoints": {
+        "10": {
+          "elapsed_seconds": 10.086885833996348,
+          "l2": 0.03000359076128118,
+          "rms": 0.0037504488451601476
+        }
+      },
+      "peak_rss_bytes": 215252992
+    }
+  ]
+}

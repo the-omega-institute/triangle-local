@@ -16,24 +16,31 @@ def main():
     out=ROOT/'benchmarks';best=read(out/'best-fits.csv');ablation=read(out/'ablation.csv')
     allrows=read(out/'all-fits.csv');old=read(out/'round1'/'best-fits.csv')
     env=json.loads((out/'environment.json').read_text());checks=json.loads((out/'verification.json').read_text())
+    bounds=json.loads((out/'target-bounds.json').read_text())['records']
+    bound_map={(r['family'], Fraction(r['parameter'])):r for r in bounds}
     def find(family,param,data=best):
         return next((r for r in data if r['family']==family and Fraction(r['parameter'])==Fraction(param)),None)
     def fmt(row,key='L2_rational'):
         return '-' if row is None else f'{float(row.get(key,row["L2_float"])):.6g}'
+    def bnd(row):
+        return bound_map[(row['family'], Fraction(row['parameter']))]
+    def fmt_u(row):
+        return bnd(row)['U_sqrtE_plus_delta_target_upper']
+    def fmt_delta(row):
+        return f'{float(bnd(row)["delta_target_L2_upper"]):.6g}'
     transitions=[]
     for label,family,param in [('EJM source','elegant-source','4/5'),('EJM detector','elegant-detector','43/50'),
                                ('Renou source','renou-source','89/100'),('Renou detector','renou-detector','91/100')]:
         row=find(family,param)
-        transitions.append(f'| {label} | {float(Fraction(param)):.2f} | {fmt(find(family,param,old),"L2_float")} | {fmt(row)} | {fmt(row,"L1_rational")} |')
+        transitions.append(f'| {label} | {float(Fraction(param)):.2f} | {fmt(find(family,param,old),"L2_float")} | {fmt(row)} | {fmt_delta(row)} | `{fmt_u(row)}` | {fmt(row,"L1_rational")} |')
     lines=['**Round 2 combines local-model seeds, convex factor updates, and perturbation searches with exact rational certificates.** '
-           'The benchmark now fits all four reported noise-transition targets with certified Euclidean distances below four times ten to the minus eight. '
-           'The tables below report the final candidates for all four reported noise transitions and preserve the remaining gaps. '
-           'Small residuals certify nearby local distributions; exact target locality requires `exact_match`.','',
-           '| Family | 2020 reported transition | Round 1 Euclidean error | Round 2 certified Euclidean error | Round 2 certified L1 |',
-           '|---|---:|---:|---:|---:|',*transitions,'',
+           'The principal metric below is the upward-rounded original-target bound `U = sqrt(E) + delta_target`. '
+           'The stored-target residual and target enclosure are shown separately; exact target locality requires `exact_match`.','',
+           '| Family | 2020 reported sample | Round 1 Euclidean error | Stored-target sqrt(E) | `delta_target` upper | Principal `U` | Stored-target L1 |',
+           '|---|---:|---:|---:|---:|---:|---:|',*transitions,'',
            'The 2020 references are Tamás Kriváchy et al., “A neural network oracle for quantum nonlocality problems in networks,” '
            '*npj Quantum Information* **6**, 70 (2020), [doi:10.1038/s41534-020-00305-x](https://doi.org/10.1038/s41534-020-00305-x). '
-           'Equation (3), p. 3, defines Euclidean distance. Equation (4), p. 3, gives the approximate reference curve. '
+           'The Euclidean distance is defined in the Results section; Eq. (3), p. 3, is the KL objective. Equation (4), p. 3, gives an approximate historical reference curve. '
            'Figure 4 and p. 5 give EJM source/detector estimates `(0.80, 50°)` and `(0.86, 60°)`. '
            'Figure 5 and p. 5 give Renou estimates `(0.89, 6°)` and `(0.91, 6°)` at `u²=0.85`, '
            'and independently reported noiseless errors around **0.0034** and **0.0055**. '
@@ -52,37 +59,37 @@ def main():
     for row in ablation:
         if row['family']=='elegant-source':
             lines.append(f'| {row["configuration"]} | {row["sizes"]} | {fmt(row)} | {float(row["search_seconds"]):.2f} |')
-    lines+=['','Seed lifting, convex polishing with free source weights, and perturbations supply the strongest improvement at this target. '
+    lines+=['','The combined seeded hybrid configuration achieved the smallest stored-target residual among the configurations tested at this target. '
             'Increasing cardinality alone and the tested symmetric extensions do not remove the gap. Deterministic descent and least squares improve some blind starts '
             'but remain weaker than the seeded hybrid result. The small NumPy response network is also weaker in these trials. '
             'It uses two hidden ReLU layers of width 24 on finite grids, so this is not a rerun of the paper’s depth-5, width-30 EJM architecture or its Monte Carlo training.',
             '', '**EJM source and independent detector noise.** Rational visibility gives exact target polynomials. A missing table cell means that family was not sampled at that visibility.','',
-            '| v | Source certified distance | Detector certified distance | 2020 source Eq. (4) | 2020 detector Eq. (4) |',
-            '|---:|---:|---:|---:|---:|']
+            '| v | Source stored sqrt(E) | Source `U` | Detector stored sqrt(E) | Detector `U` | 2020 Eq. (4) context |',
+            '|---:|---:|---:|---:|---:|---:|']
     grid=sorted(set(Fraction(r['parameter']) for r in best if r['family'].startswith('elegant')))
     for v in grid:
         a,b=find('elegant-source',str(v)),find('elegant-detector',str(v))
-        lines.append(f'| {float(v):.3g} | {fmt(a)} | {fmt(b)} | {fmt(a,"published_reference_L2")} | {fmt(b,"published_reference_L2")} |')
-    lines+=['','The reference estimates are approximate fitted curves. A candidate below an Eq. (4) value beats that estimate at that point, '
-            'not necessarily the authors’ best saved model. Positive errors above a transition can still include optimization or finite-alphabet error. '
+        lines.append(f'| {float(v):.3g} | {fmt(a)} | `{fmt_u(a) if a else "-"}` | {fmt(b)} | `{fmt_u(b) if b else "-"}` | {fmt(a,"published_reference_L2") if a else "-"} / {fmt(b,"published_reference_L2") if b else "-"} |')
+    lines+=['','The reference estimates are approximate fitted curves retained as historical context, not neural measurements or lower bounds. '
+            'Positive residuals above a reported transition can still include optimization or finite-alphabet error. '
             '__IDEAL_COMMENT__ The empirical comparison does not establish a new locality threshold. The EJM ideal endpoint is the same exact target in both noise families, '
             'so a common best candidate is reused by target hash.','', '**Noiseless Renou scan.**','',
-            '| u² | Round 1 distance, when sampled | Round 2 certified distance | Certified L1 | Exact stored target |',
-            '|---:|---:|---:|---:|:---:|']
+            '| u² | Round 1 distance, when sampled | Stored-target sqrt(E) | `delta_target` upper | Principal `U` | Certified L1 | Exact stored target |',
+            '|---:|---:|---:|---:|---:|---:|:---:|']
     for row in sorted([r for r in best if r['family']=='renou-u2'],key=lambda r:Fraction(r['parameter'])):
-        lines.append(f'| {float(Fraction(row["parameter"])):.3g} | {fmt(find("renou-u2",row["parameter"],old),"L2_float")} | {fmt(row)} | {fmt(row,"L1_rational")} | {"yes" if row["exact_match"]=="True" else "no"} |')
+        lines.append(f'| {float(Fraction(row["parameter"])):.3g} | {fmt(find("renou-u2",row["parameter"],old),"L2_float")} | {fmt(row)} | {fmt_delta(row)} | `{fmt_u(row)}` | {fmt(row,"L1_rational")} | {"yes" if row["exact_match"]=="True" else "no"} |')
     pure=find('renou-u2','17/20')
     d=float(pure['L2_rational']);comparison=('below both reported values' if d<.0034 else 'between the two reported values' if d<.0055 else 'above both reported values')
-    lines+=['',f'At `u²=0.85`, the certified distance **{d:.6g}** is {comparison}. '
+    lines+=['',f'At `u²=0.85`, the stored-target residual **{d:.6g}** has principal original-target bound **`U = {fmt_u(pure)}`** and is {comparison}. '
             'The decimal sample `0.785` is not the exact critical parameter of the original theorem. '
             'A remaining residual there cannot be interpreted as an exclusion. Blind L-BFGS still returns a nonzero residual at the known local half endpoint; '
             'the explicit token/parity control and the default hybrid recognizer recover its exact rational model. '
             'This separates a corrected default behavior from the persistent limitation of blind search.','',
             '**Renou independent noise, fixed u²=0.85.** General square-root probabilities are quantized rational targets; detector noise is exact convolution of the stored base target. Independent 70-digit evaluations give Euclidean target-approximation errors of 5.23e-13 at source v=0.89, 2.10e-14 at detector v=0.91, and 2.78e-14 at noiseless u²=0.85. These numerical target checks are separate from exact rational certificate verification.','',
-            '| Family | v | Certified Euclidean distance | Certified L1 | 2020 Eq. (4) estimate |','|---|---:|---:|---:|---:|']
+            '| Family | v | Stored-target sqrt(E) | `delta_target` upper | Principal `U` | Certified L1 | 2020 Eq. (4) context |','|---|---:|---:|---:|---:|---:|---:|']
     for name in ['renou-source','renou-detector']:
         for row in sorted([r for r in best if r['family']==name],key=lambda r:Fraction(r['parameter'])):
-            lines.append(f'| {name} | {float(Fraction(row["parameter"])):.3g} | {fmt(row)} | {fmt(row,"L1_rational")} | {fmt(row,"published_reference_L2")} |')
+            lines.append(f'| {name} | {float(Fraction(row["parameter"])):.3g} | {fmt(row)} | {fmt_delta(row)} | `{fmt_u(row)}` | {fmt(row,"L1_rational")} | {fmt(row,"published_reference_L2")} |')
     lines+=['','**Fritz.** The clipped-CHSH construction and seeded numerical checks are recorded separately. '
             'The reference is `max(v/sqrt(2)-1/2,0)/4`, with the reported transition at `1/sqrt(2)` (Figure 3, pp. 4–5). '
             'The visibility-derived irrational correlator is stored as an explicit decimal rational; exact controls at rational `t=0,1/4,1/2` establish locality separately. The CSV visibility parameter is a display label rounded to eight significant digits. In particular, the row labeled `0.70710678` was generated at the numerical value of `1/sqrt(2)`, not at that exact truncated decimal; its bundle records the exact stored correlator.','',
@@ -97,6 +104,15 @@ def main():
             '`OPENBLAS_NUM_THREADS=2`, and `VECLIB_MAXIMUM_THREADS=2`. The memory figure is a process high-water mark, not whole-machine memory. The first refinement was sampled below 83 MB; its high-water mark was not saved after a promotion error. '
             'Exploratory probes, documentation, plotting, tests, and certificate-only verification are excluded from this timing. '
             'There was no controlled hardware comparison with the original neural-network training.','',
+            '**Original-target bounds and external baselines.** The complete principal-metric receipt is '
+            '[target-bounds.json](benchmarks/target-bounds.json). It evaluates each featured EJM target exactly and each featured Renou target with '
+            '100-decimal outward-rounded `mpmath.iv` intervals, then reports an upward-rounded `U = sqrt(E) + delta_target`. '
+            'The detector convention is the independent channel `K_v` tensor `K_v`, not a global white-noise mixture. '
+            'The frozen six-point external comparison protocol, hardware limits, and run receipts are in [BENCHMARK.md](BENCHMARK.md); '
+            'a solver is marked unavailable when its dependencies or source do not support the selected machine.','',
+            '**Detector-noise monotonicity.** Applying `K_(v_L/v_H)` to every response row of the compact `v_H=0.93` witness gives an exact triangle-local witness for each lower `v_L`. '
+            'The identity `K_r K_v = K_(rv)` and the L2 contraction bound are implemented and tested in `triangle_local.apply_uniform_output_channel`; '
+            'the transformed model retains the product of the three independent source laws.','',
             f'There are **{len(allrows)} candidate rows**, **{len(best)} target summaries**, and '
             f'**{checks["independently_recomputed_certificates"]} selected bundles**. Every selected certificate was independently recomputed and matched exactly; '
             f'**{checks["exact_matches"]}** selected bundles have exact target equality. '

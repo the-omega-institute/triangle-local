@@ -1,0 +1,310 @@
+{
+  "checkpoint": "renou-detector-093__LHV-Net-2020__00__60s.weights.h5",
+  "checkpoint_sha256": "8452807c15fbcda51ce69495401d5fb8beb9532dbf8840045f3bf5d5fc662c1e",
+  "source_revision": "9460fe5340016e9a2f954613a2c07e633449d455",
+  "training_seconds": 60.022908582992386,
+  "selected_checkpoint_seconds": 57.06011424999451,
+  "native_heldout": {
+    "l2": 0.016525041620144728,
+    "ci95": [
+      0.01630854381644367,
+      0.016727571900528322
+    ],
+    "mc_rms_l2": 0.0006317402131655428,
+    "l2_squared_variance_correction": 3.9909569693044555e-07,
+    "bias_corrected_l2": 0.016512961722555557,
+    "samples": 1048576,
+    "evaluation_seconds": 0.8733417080075014,
+    "heldout_seed": 13662800615771692171,
+    "candidate_seconds": 57.06011424999451,
+    "selection_l2": 0.01610918752457452,
+    "checkpoint_sha256": "8452807c15fbcda51ce69495401d5fb8beb9532dbf8840045f3bf5d5fc662c1e",
+    "output_sha256": "092f5b82488bc5d02996eed8ce40d04fcd2c87fef2c08e9f3d9a311d1b42cbb2"
+  },
+  "extraction_seconds": 0.2877363330044318,
+  "support_points": [
+    0.125,
+    0.375,
+    0.625,
+    0.875
+  ],
+  "cardinalities": [
+    4,
+    4,
+    4
+  ],
+  "extracted": {
+    "U": "0.0313576383356",
+    "stored_target_residual": 0.03135763833551451,
+    "rationalization_seconds": 0.002122834004694596,
+    "verification_seconds": 0.002474417007761076,
+    "bundle": "extracted.json.gz",
+    "bundle_bytes": 2822,
+    "bundle_sha256": "4488d6f4cf084797d11e46636e0c623d71f3c3562f686706644893b02df6f81c",
+    "denominator_cap": 1000000
+  },
+  "polished": {
+    "U": "0.000642269109494",
+    "stored_target_residual": 0.0006422691094709654,
+    "rationalization_seconds": 0.0018237500044051558,
+    "verification_seconds": 0.0023288329830393195,
+    "bundle": "polished.json.gz",
+    "bundle_bytes": 4771,
+    "bundle_sha256": "559a3b13e7ce94e921e3e171f379df4e27411da9db2ea69d93bc3996b16c12e6",
+    "denominator_cap": 1000000000,
+    "polish_seconds": 2.003631667001173
+  },
+  "random_controls": [
+    {
+      "rep": 0,
+      "seed": 770000,
+      "initial": {
+        "U": "0.227888986304",
+        "stored_target_residual": 0.2278889863038119,
+        "rationalization_seconds": 0.002211957995314151,
+        "verification_seconds": 0.00261183301336132,
+        "bundle": "random-00-initial.json.gz",
+        "bundle_bytes": 3843,
+        "bundle_sha256": "9065f223bcea2ee529d9f84cee7a08d3e78fc57b4dede60f960c0c5619fb85e1",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.00705246157086",
+        "stored_target_residual": 0.007052461570835136,
+        "rationalization_seconds": 0.0016422909975517541,
+        "verification_seconds": 0.0021575829887297004,
+        "bundle": "random-00-polished.json.gz",
+        "bundle_bytes": 4870,
+        "bundle_sha256": "d1fa60f88e77ab27d688839e41d64f58098111c41371dad50023cdd960b3a360",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.003476458019577
+    },
+    {
+      "rep": 1,
+      "seed": 770001,
+      "initial": {
+        "U": "0.260233575801",
+        "stored_target_residual": 0.26023357580046114,
+        "rationalization_seconds": 0.0021981250029057264,
+        "verification_seconds": 0.0026217080012429506,
+        "bundle": "random-01-initial.json.gz",
+        "bundle_bytes": 3831,
+        "bundle_sha256": "bbd6c57ac417bde01a01f4cb58e7011846b05eeb97ddc9404f347f6ee1442ce3",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.000618998706989",
+        "stored_target_residual": 0.0006189987069656707,
+        "rationalization_seconds": 0.0016923749935813248,
+        "verification_seconds": 0.0021408330067060888,
+        "bundle": "random-01-polished.json.gz",
+        "bundle_bytes": 4504,
+        "bundle_sha256": "6cade55073597ea0be58e04ba2befbb81ee90a1066e27de2d3c29541b6c5d0a5",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.0035917919885833
+    },
+    {
+      "rep": 2,
+      "seed": 770002,
+      "initial": {
+        "U": "0.279035767428",
+        "stored_target_residual": 0.2790357674277837,
+        "rationalization_seconds": 0.0022084999945946038,
+        "verification_seconds": 0.0025970830174628645,
+        "bundle": "random-02-initial.json.gz",
+        "bundle_bytes": 3830,
+        "bundle_sha256": "368e4fb1d86fe0feb664b4d780b4b4d348b5908302f29992964200d9d7d5f5c9",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.00226839191625",
+        "stored_target_residual": 0.0022683919162218608,
+        "rationalization_seconds": 0.0016713340010028332,
+        "verification_seconds": 0.0021928340138401836,
+        "bundle": "random-02-polished.json.gz",
+        "bundle_bytes": 4802,
+        "bundle_sha256": "eea517f67396926adbdca81c28917fb6f2c6a2e90860ea36d29a06adb061fc58",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.0035077080246992
+    },
+    {
+      "rep": 3,
+      "seed": 770003,
+      "initial": {
+        "U": "0.268565825162",
+        "stored_target_residual": 0.2685658251610011,
+        "rationalization_seconds": 0.002199333015596494,
+        "verification_seconds": 0.002600499981781468,
+        "bundle": "random-03-initial.json.gz",
+        "bundle_bytes": 3854,
+        "bundle_sha256": "630231086e2744c40e0895a32f7bfe944f19192781da21ab7c8b2f1ad5204f3d",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.00108837803134",
+        "stored_target_residual": 0.0010883780313162737,
+        "rationalization_seconds": 0.0016277090180665255,
+        "verification_seconds": 0.0021356250217650086,
+        "bundle": "random-03-polished.json.gz",
+        "bundle_bytes": 4703,
+        "bundle_sha256": "3c602274db6e1d9fb10b0b2ffbf14f7fc1b9dfbd83070de3c498d5160c49e935",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.001095083018299
+    },
+    {
+      "rep": 4,
+      "seed": 770004,
+      "initial": {
+        "U": "0.24154561139",
+        "stored_target_residual": 0.2415456113891137,
+        "rationalization_seconds": 0.0022140410146676004,
+        "verification_seconds": 0.002599458006443456,
+        "bundle": "random-04-initial.json.gz",
+        "bundle_bytes": 3852,
+        "bundle_sha256": "15ad93e8a1bc9052d26187865d1640d3c38d9ca59f79b1e9fb096bd95569f55b",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.00802688182203",
+        "stored_target_residual": 0.008026881822002018,
+        "rationalization_seconds": 0.0016923330258578062,
+        "verification_seconds": 0.0020105000003241003,
+        "bundle": "random-04-polished.json.gz",
+        "bundle_bytes": 4456,
+        "bundle_sha256": "2db72c964f06ba5668c45a5d78adebde95999192b257150dbc1de66d7f722875",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.000833917001728
+    },
+    {
+      "rep": 5,
+      "seed": 770005,
+      "initial": {
+        "U": "0.236113657842",
+        "stored_target_residual": 0.23611365784155733,
+        "rationalization_seconds": 0.0021984160121064633,
+        "verification_seconds": 0.0025940409977920353,
+        "bundle": "random-05-initial.json.gz",
+        "bundle_bytes": 3833,
+        "bundle_sha256": "be47241385ba3adca7503861e35d75d2d7e33a21c94ff1ec0cde663822301c35",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.000813692659747",
+        "stored_target_residual": 0.0008136926597245994,
+        "rationalization_seconds": 0.001734916993882507,
+        "verification_seconds": 0.0023127919994294643,
+        "bundle": "random-05-polished.json.gz",
+        "bundle_bytes": 4764,
+        "bundle_sha256": "5d12797fa8c994d80d385a5c8d067515bab702884979200bd7375f08ed9ac6c3",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.000561374996323
+    },
+    {
+      "rep": 6,
+      "seed": 770006,
+      "initial": {
+        "U": "0.248650843061",
+        "stored_target_residual": 0.24865084306046864,
+        "rationalization_seconds": 0.002218124980572611,
+        "verification_seconds": 0.002630790986586362,
+        "bundle": "random-06-initial.json.gz",
+        "bundle_bytes": 3832,
+        "bundle_sha256": "5afb3cb21057d4558601379778c261ed3e0a54115cac001cc3efdb796c01ae6e",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.00158355555381",
+        "stored_target_residual": 0.0015835555537830664,
+        "rationalization_seconds": 0.0016368330107070506,
+        "verification_seconds": 0.002088875015033409,
+        "bundle": "random-06-polished.json.gz",
+        "bundle_bytes": 4465,
+        "bundle_sha256": "47b21acffe3eca6663c42c46f4e477d37f0856330c33019e8adb87b8a325824c",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.000417292001657
+    },
+    {
+      "rep": 7,
+      "seed": 770007,
+      "initial": {
+        "U": "0.274047532589",
+        "stored_target_residual": 0.27404753258856257,
+        "rationalization_seconds": 0.0022154170146677643,
+        "verification_seconds": 0.0026187499752268195,
+        "bundle": "random-07-initial.json.gz",
+        "bundle_bytes": 3797,
+        "bundle_sha256": "08c521d2458d9795413af4e776323a20173578c8dee7746175b55dd3694932da",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.00161935421117",
+        "stored_target_residual": 0.001619354211145303,
+        "rationalization_seconds": 0.001656957989325747,
+        "verification_seconds": 0.0023015000042505562,
+        "bundle": "random-07-polished.json.gz",
+        "bundle_bytes": 5434,
+        "bundle_sha256": "b0585d4e7d64b94aed6c71bf7e7484ec9fdea71539465c863dadf5f948fe6a2e",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.000658958015265
+    },
+    {
+      "rep": 8,
+      "seed": 770008,
+      "initial": {
+        "U": "0.253565908117",
+        "stored_target_residual": 0.2535659081162923,
+        "rationalization_seconds": 0.0022048749960958958,
+        "verification_seconds": 0.002603791013825685,
+        "bundle": "random-08-initial.json.gz",
+        "bundle_bytes": 3835,
+        "bundle_sha256": "0e1422884c7e1e896a97a1e8c725af75e3ab2020ff4740768d342ba176be6992",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.000505088044511",
+        "stored_target_residual": 0.0005050880444885682,
+        "rationalization_seconds": 0.0017727910017129034,
+        "verification_seconds": 0.0021306249836925417,
+        "bundle": "random-08-polished.json.gz",
+        "bundle_bytes": 4531,
+        "bundle_sha256": "25ff3d6dc2ba89d228edf3e11c040f1c720bf3c01090b8bade00128d8d18ab5d",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.004376083990792
+    },
+    {
+      "rep": 9,
+      "seed": 770009,
+      "initial": {
+        "U": "0.268547134827",
+        "stored_target_residual": 0.26854713482630366,
+        "rationalization_seconds": 0.0022274999937508255,
+        "verification_seconds": 0.002604292007163167,
+        "bundle": "random-09-initial.json.gz",
+        "bundle_bytes": 3835,
+        "bundle_sha256": "674e0546708a68f3d69438c9ed0ddd6a8c0e0f1601feaf34ae4d4b592efdc4e6",
+        "denominator_cap": 1000000
+      },
+      "polished": {
+        "U": "0.00262956047229",
+        "stored_target_residual": 0.0026295604722592534,
+        "rationalization_seconds": 0.001739625004120171,
+        "verification_seconds": 0.0020284999918658286,
+        "bundle": "random-09-polished.json.gz",
+        "bundle_bytes": 4540,
+        "bundle_sha256": "18ef570405e15df40c84e0ccaf9a05d4970f252e2feef198d5f9bb969980c47e",
+        "denominator_cap": 1000000000
+      },
+      "polish_seconds": 2.0000245419796556
+    }
+  ],
+  "interpretation": "The finite extraction is a new local model, not the unchanged continuous network. Random controls have equal polishing time; this one neural checkpoint is an interoperability demonstration, not evidence of typical initialization benefit."
+}

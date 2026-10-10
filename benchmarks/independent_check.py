@@ -140,7 +140,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--bundle", type=Path, action="append",
+                        help="Audit just this bundle; repeat for multiple portable witnesses")
     args = parser.parse_args()
+    if args.bundle:
+        started = time.perf_counter()
+        results = [audit(path) for path in args.bundle]
+        report = {"independent_method": "Fraction variable elimination; no package imports",
+                  "checked_bundles": len(results), "results": results,
+                  "scope": "Exact locality and stored-target errors; intended-target interval enclosure is separate",
+                  "seconds": time.perf_counter() - started}
+        if args.out:
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            args.out.write_text(json.dumps(report, indent=2) + "\n")
+        print(json.dumps(report, indent=2))
+        return
     start = time.perf_counter()
     results = []
     for path in sorted((args.repo / "benchmarks" / "models").glob("*.json.gz")):

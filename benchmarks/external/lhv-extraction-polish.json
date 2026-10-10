@@ -1,0 +1,42 @@
+{
+  "schema": "triangle-local-neural-extraction/v1",
+  "target": {
+    "family": "renou-detector",
+    "parameter": "93/100",
+    "u_squared": "17/20"
+  },
+  "training": {
+    "revision": "9460fe5340016e9a2f954613a2c07e633449d455",
+    "seconds": 65.00964424997801,
+    "steps": 2992,
+    "batch_size": 256,
+    "depth": 3,
+    "width": 16,
+    "objective": "KL"
+  },
+  "extraction": {
+    "supports": [
+      "0.125",
+      "0.375",
+      "0.625",
+      "0.875"
+    ],
+    "cardinalities": [
+      4,
+      4,
+      4
+    ],
+    "seconds": 0.17374912500963546,
+    "certified_L2": 0.04809339102631747,
+    "certified_L1": 0.22972325256512607,
+    "status": "approximate_fit"
+  },
+  "polish": {
+    "method": "triangle-local convex",
+    "seconds": 1.9027734579867683,
+    "certified_L2": 0.0035721117654119367,
+    "certified_L1": 0.01823444049222132,
+    "status": "approximate_fit"
+  },
+  "peak_rss_bytes": 641630208
+}
