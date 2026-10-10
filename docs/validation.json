@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-10",
+  "authors": [
+    "Haobo Ma",
+    "Wenlin Zhang"
+  ],
+  "license": "MIT",
+  "test_environment": {
+    "python": "3.10.20",
+    "triangle-local": "0.2.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.9",
+    "pytest": "9.1.1"
+  },
+  "tests": {
+    "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python -m pytest tool -q",
+    "passed": 58,
+    "failed": 0,
+    "seconds": 15.88,
+    "peak_RSS_bytes": 96206848
+  },
+  "quick_start": {
+    "exact_five_README_lines_executed": true,
+    "fresh_venv": true,
+    "python": "3.14.4",
+    "commands": [
+      "python3 -m venv .venv && .venv/bin/python -m pip install -e './tool[test,plot]'",
+      "export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1",
+      ".venv/bin/python -m triangle_local generate renou --parameter 1/2 --out tmp/renou-half.json",
+      ".venv/bin/python -m triangle_local solve tmp/renou-half.json --sizes 4 4 4 --starts 1 --steps 20 --out tmp/renou-half-fit.json.gz",
+      ".venv/bin/python -m triangle_local verify tmp/renou-half-fit.json.gz --input tmp/renou-half.json"
+    ],
+    "external_target_verified": true,
+    "recognized_control": "ring-half",
+    "status": "exact_match",
+    "exact_match": true,
+    "L1": "0",
+    "L2_squared": "0",
+    "model_sha256": "153808421b5066d7a4ec4ed567c7b2103bfca22951b8b1232cf2b74a3e2aa9f5",
+    "target_sha256": "5a29e0aec7933326cd59af716c7e51dd05bb3f9f38b5469524e144844a1a8c2f"
+  },
+  "independent_audit": {
+    "command": ".venv/bin/python benchmarks/independent_check.py --out tmp/showcase-independent-verification.json",
+    "independent_method": "Fraction variable elimination; no package imports",
+    "checked_bundles": 50,
+    "checked_target_summaries": 52,
+    "exact_matches": 8,
+    "witness_all_equal": "41/144",
+    "seconds": 2.564,
+    "peak_RSS_bytes": 25411584,
+    "all_checks_passed": true
+  },
+  "figures": {
+    "script": "docs/make_figures.py",
+    "script_sha256": "dcc5955eb9411cdfb1868b6892bfb64445dcdba826ee4d2d22486499c9b17172",
+    "generation_seconds": 2.39,
+    "generation_peak_RSS_bytes": 248545280,
+    "target_summary_rows_checked": 52,
+    "control_rows_checked": 8,
+    "selected_bundles_checked": 50,
+    "visual_QA": "All three final PNGs inspected; readable labels and probability scales, no clipping or overlap. Source/detector markers and line styles distinguish certified candidates from approximate estimates.",
+    "outputs": {
+      "headline": {
+        "PNG_sha256": "18fdae01681eac5898b398072f7824ea3490537b8b8b86eb2d3b95f71ecb0efa",
+        "SVG_sha256": "ea53c410f703c9b5c88b9d2aa45e3f9ff8a97e3ffc1136c03c22427184f362cb",
+        "PNG_pixels": [
+          3840,
+          2610
+        ],
+        "dpi": 300
+      },
+      "local-model": {
+        "PNG_sha256": "20ec358caf8a545aaa05de49e712c807849fbfeb272d935a3657793597a17532",
+        "SVG_sha256": "1a0af1856ed690ff47613c3a41d3032e45e4493f87e1f2df92350e9ee870759c",
+        "PNG_pixels": [
+          4140,
+          3570
+        ],
+        "dpi": 300
+      },
+      "search-improvement": {
+        "PNG_sha256": "610dab17a973211ad25029e67a130afed8704b77e8343b623b0d19be0e7ea7d2",
+        "SVG_sha256": "2e871beaf4f78c7b189a8f409681b89f096814611e3cb1fa4bdc92b13f3a926a",
+        "PNG_pixels": [
+          4260,
+          1950
+        ],
+        "dpi": 300
+      }
+    },
+    "workspace_headline_copy_matches": true
+  },
+  "data_sha256": {
+    "RESULTS.md": "ec71fe7dfee63887506eb3ca06996844ed52baa4b1f08c4f8a8dbbd8f4d2dd35",
+    "benchmarks/best-fits.csv": "dbde7ae95d8661d9ef4773a4bc6ba9d7c23ba42e622377dff6d3a29a7c7fb64f",
+    "benchmarks/round1/best-fits.csv": "fb617306b1afa866b0829593417f09ab09b0bc193efb931f11a7db60e83f7dda",
+    "benchmarks/ablation.csv": "c2640366b7938ed329b12d55161ee5eeae0bcf70ebfbfd7433d7cd738f58ea36",
+    "benchmarks/controls.csv": "4348a5c485cda0a4db8b76213a8cf4f7032aea4fd3f7b706e5f7141209e7fccf"
+  },
+  "model_bundle_sha256": {
+    "benchmarks/models/000-note-41-144-explicit.json.gz": "bc27a8986b5ebb8752eca7cf585cc5d4c2bd0ecce0b6094ea3870cc5372629dd",
+    "benchmarks/models/001-parity-1-explicit.json.gz": "0d25a9957888b4129bb47049e10da6b8e31f7ffd2d20bdc5add30902afb25d1f",
+    "benchmarks/models/002-ring-half-1-2-explicit.json.gz": "5ee957c4a3ae3b0e1cf4740bb17517ede26be885ed2eb5d44e76f8f6d469f31b",
+    "benchmarks/models/003-ring-endpoint-1-explicit.json.gz": "78e400f9c69f4c5d328fc77dd248f04e74e09871f731838a266b7add274ae437",
+    "benchmarks/models/004-uniform-0-explicit.json.gz": "36fd8b31f7a474fdb9c72df26b881c7decb189a3037975484a4365d21df5105d",
+    "benchmarks/models/005-fritz-local-0-explicit.json.gz": "ca94fc1f97c8a99068e07b747eca7bb95f15d8f1879013b46d4dc180dbb9491c",
+    "benchmarks/models/006-fritz-local-1-4-explicit.json.gz": "dec87fd30bc2bbf50cd0251d90a5c3c628edb7bbae1db3de208edf8c2584851a",
+    "benchmarks/models/007-fritz-local-1-2-explicit.json.gz": "18d1cadb3a21cf3479238be0b2a923157c8e3c003b54220f7e84a61d93dc9835",
+    "benchmarks/models/031-elegant-source-3-4-hybrid-forward.json.gz": "09aa401068f9391a875438399ec34180048993b0a89e727293bb6eb8453c7822",
+    "benchmarks/models/034-elegant-source-4-5-hybrid-forward.json.gz": "284c470a0a60015d37862096922e29d0768aceb7f6b0a9dd3a1a7326437d235d",
+    "benchmarks/models/041-elegant-source-9-10-hybrid-reverse.json.gz": "1215a6de53e1493f9a8983f4e16c283fac40a9420e898121dc5809795064779f",
+    "benchmarks/models/042-elegant-source-43-50-hybrid-reverse.json.gz": "d9bc2201ff7b959d4d29972ba87c95e2e9a2f3d14d43e023684c4550b94a5df0",
+    "benchmarks/models/043-elegant-source-21-25-hybrid-reverse.json.gz": "9290a8f8e4f1642479e812682d6537220694d6ffc308d1e4d179ab56d8d518c9",
+    "benchmarks/models/044-elegant-source-81-100-hybrid-reverse.json.gz": "aacfa9cae9cd9fd48a3f76f67386c13bec9accbc1e041bb55a1268822715cd59",
+    "benchmarks/models/046-elegant-source-79-100-hybrid-reverse.json.gz": "6bd88df652a59cc53e7ba8d019e7e9240854b6dab9390d692ba4dafb07682e77",
+    "benchmarks/models/047-elegant-source-39-50-hybrid-reverse.json.gz": "9ac62156e89ebd027270231d58eb05977604316c709d667f57a8cfa2c9911ea8",
+    "benchmarks/models/050-elegant-source-1-2-hybrid-reverse.json.gz": "8955bcb02521c772afed51c6c692c364f861d30fedcad611653c32164a428f19",
+    "benchmarks/models/063-elegant-detector-9-10-hybrid-reverse.json.gz": "cf7ce50fb4868f64ae6dc11406da9dd6f94903da7ab84b0cec1cb204a68649e5",
+    "benchmarks/models/064-elegant-detector-87-100-hybrid-reverse.json.gz": "8d0ddf998fefb758fe89b7e225acda436601eed43143e09cdcedb9a6f98cebad",
+    "benchmarks/models/067-elegant-detector-21-25-hybrid-reverse.json.gz": "c3d9ec82afe044af36a900abd73f23280d026564c05fb6fe5f1cc729891255e0",
+    "benchmarks/models/068-elegant-detector-4-5-hybrid-reverse.json.gz": "0d772f62eab410e5095f7ecac77c0d6e7d0791be959a96e8c8cf081b7999ac2f",
+    "benchmarks/models/069-elegant-detector-7-10-hybrid-reverse.json.gz": "166fca19283424991fc913f6b42812b03040055eee81677c9a18dddf7dffb993",
+    "benchmarks/models/070-elegant-detector-1-2-hybrid-reverse.json.gz": "c7ad754d4d32e748cbeef66dd5eac655dcf75bcb9e4a1a46d75dcfce9de22194",
+    "benchmarks/models/102-renou-source-19-20-hybrid-reverse.json.gz": "5bb5c1dc00c1a16a02f6108d3a747ab007cb7619bc0fe3dff78ec2ab83e82fed",
+    "benchmarks/models/103-renou-source-9-10-hybrid-reverse.json.gz": "2a3d34a1a5f0867e144350f7925a05fcba5b570a15cd860aa2cf9cb0fef70eb6",
+    "benchmarks/models/106-renou-source-4-5-hybrid-reverse.json.gz": "26af294cf6130380ef99f121d16034d21f65ae55638bbf6706e187a48e75ce6d",
+    "benchmarks/models/116-renou-detector-19-20-hybrid-reverse.json.gz": "ee3dbb121c512a900cef982e73099e9b21fe331b5c08f698ef01dc9cecd8da79",
+    "benchmarks/models/117-renou-detector-93-100-hybrid-reverse.json.gz": "545eef154fbcdf3eda65286393ddda364ea66e93ed5b7767c9c6b622fd970715",
+    "benchmarks/models/119-renou-detector-89-100-hybrid-reverse.json.gz": "9a2d53c2c20fdeb50abf437b792d4a742c962b61a30dd0921a91f4ce5e4fae56",
+    "benchmarks/models/120-renou-detector-4-5-hybrid-reverse.json.gz": "7d25a4140086595fc5d4236b202cb8752156f4443d695b6d0e7a5bf8a70822e1",
+    "benchmarks/models/124-renou-source-89-100-boundary-polish.json.gz": "6b22fe1a289aee40f67359f1207b698138205dd55cffa31691299deea276d0e2",
+    "benchmarks/models/125-renou-detector-91-100-boundary-polish.json.gz": "3ae1b2a2db14f3f8a973712059f607708e57bbab0d6093074d6b2ea8071cd202",
+    "benchmarks/models/127-fritz-visibility-0.5-clipped-CHSH.json.gz": "a7dc332ee7a1989983aa259c5a66b9832788611836217c9bee208a590ac324c8",
+    "benchmarks/models/128-fritz-visibility-0.70710678-clipped-CHSH.json.gz": "f5c36e282c38490a205a4a2759d3b7cedb232885f8a1cd54b1dc39daf96e982c",
+    "benchmarks/models/129-fritz-visibility-0.8-clipped-CHSH.json.gz": "88b7fbceb07acbaed230aec451523e49efba42d6e25c8e6bd8c3637da1d24cf9",
+    "benchmarks/models/130-fritz-visibility-1-clipped-CHSH.json.gz": "1ceee0a22cceebbe96c64d0f5aba1f2e4bd78f8803b297149b62476932bf1aec",
+    "benchmarks/models/131-elegant-source-7-10-symmetric-fallback.json.gz": "821cb33409f47f9312dcc1d56b7d032be1d39bea88bfc5dbacde53c1e8a9fb9e",
+    "benchmarks/models/143-elegant-detector-17-20-extra-hops.json.gz": "561aab0e79b33abf3c7f342574e9536e79506294ca3fb5e65a9b2a757a389fb9",
+    "benchmarks/models/144-renou-u2-157-200-extra-hops.json.gz": "c93f418793ad19b9ed805a3d4506f724e3443021779dbb9e67db55e60a52695c",
+    "benchmarks/models/154-elegant-detector-43-50-lifted-boundary-24.json.gz": "74b3ddc0bdc2b6e8774a29a2e4d956f2f06e193ed6be60ea17a640e8d14087f5",
+    "benchmarks/models/156-elegant-source-1-ideal-seeded-hybrid.json.gz": "4cbf8ab2363c6d3c23b355d4bda21e1467c8c8738fe89053c38700d564b477ca",
+    "benchmarks/models/157-renou-u2-17-20-critical-point-continuation.json.gz": "9a0144277e244df03d3eb511ea5e84321859af85a421ef6f3c4e40c2f1735e88",
+    "benchmarks/models/158-renou-source-87-100-low-noise-consistency-polish.json.gz": "dcb7bb252554f4485b28830f81a7fa83510124a5d59015e0a0e219fa7c88793d",
+    "benchmarks/models/159-renou-u2-4-5-critical-continuation-up.json.gz": "9d2fe0984bffc5aa1e069b6071fd6792a001a3681efb02a2b5a69c2c4ce64315",
+    "benchmarks/models/161-renou-u2-9-10-critical-continuation-up.json.gz": "13f8b2eb6242eb134cb87b455111bc2b8c91f32cd2636d6ec57ce4d856cbcd89",
+    "benchmarks/models/162-renou-u2-19-20-critical-continuation-up.json.gz": "492bae113b4fd08cfff7e0de04df3162027de6d710db5f471c5f97e611ce373f",
+    "benchmarks/models/163-renou-u2-3-4-critical-continuation-down.json.gz": "6c0828fc61acecc4eb15fe8e6a941da8b4a3baad972e078ee30d0436e7676411",
+    "benchmarks/models/164-renou-u2-7-10-critical-continuation-down.json.gz": "7fc156f0920bea4c0529c341d45c6745d429be13db0457e985485cd92bb39302",
+    "benchmarks/models/165-renou-u2-63-100-critical-continuation-down.json.gz": "e85f4056048b5746c9db502766b871fb5e93da4f27ad43798739341152aa4420",
+    "benchmarks/models/166-renou-u2-3-5-critical-continuation-down.json.gz": "2a27712e8fbf1702eb4887b86d5604f1ce79786495cf0f70dd5606ffadb9d3be"
+  },
+  "execution": {
+    "optimizer_processes_at_once": 1,
+    "numerical_library_threads": 1,
+    "benchmark_fits_reused": true,
+    "new_optimizer_sweeps": 0,
+    "git_push": false,
+    "email_operations": false
+  }
+}

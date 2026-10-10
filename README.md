@@ -1,18 +1,111 @@
 # triangle-local
 
-Search for finite local models in the triangle network, export rational
-certificates, and independently check every output probability and distance.
-The three sources remain independent throughout optimization and verification.
-The package uses NumPy and SciPy; it needs no GPU or deep-learning runtime.
+**Find an explicit classical model for a three-source quantum network, and check
+its distance to the target exactly.** Given a joint distribution `P(a,b,c)`,
+triangle-local searches for finite hidden-variable models in which each party
+sees only its two incident, independent sources. It exports the source weights,
+stochastic response tables, and a rational certificate that independently
+recomputes every output probability. The saved models fit all four noise
+transitions estimated by Kriváchy et al. (2020) to within `3.27e-8`, and remain
+particularly close to the Renou targets beyond those estimates. The package
+uses NumPy and SciPy on a CPU.
 
-Round 2 adds convex response/source updates, deterministic coordinate descent,
-seed lifting, perturbation searches, bidirectional continuation, and a small
-NumPy response-network experiment. [RESULTS.md](RESULTS.md) reports the measured
-comparison with Kriváchy et al., *npj Quantum Information* **6**, 70 (2020),
-[DOI](https://doi.org/10.1038/s41534-020-00305-x). The
-[technical note](note.pdf), [literature review](LITERATURE.md),
-[benchmark summaries](benchmarks/best-fits.csv), and selected compressed
-[model bundles](benchmarks/models/) accompany the source.
+**Authors:** Haobo Ma and Wenlin Zhang. **License:** [MIT](LICENSE).
+
+![Certified local-model distances and 2020 estimates for Renou and EJM source and detector noise, with log-scale detail](docs/figures/headline.png)
+
+The Renou detector model at `u² = 0.85`, efficiency `v = 0.93`, has certified
+distance `8.207624541e-9`, while the 2020 Eq. (4) estimate is `0.001260030627`.
+Solid markers show saved local models; dashed lines connect approximate
+analytic estimates evaluated at the sampled parameters, **not digitized
+neural-network data**. Dotted lines mark the 2020 estimated transitions.
+The lower panels resolve residuals hidden on a linear scale.
+
+## Results
+
+Here `d = sqrt(sum((P_target - P_model)²))`, the Euclidean distance used in the
+2020 paper's Eq. (3). Each candidate is certified local, so **its distance is an
+upper bound on distance to the unrestricted local set**. The displayed decimals
+have ten significant digits; the certificates retain exact rational L1 and
+squared L2 distances.
+
+| Target | Certified distance `d` | Comparison |
+|---|---:|---|
+| EJM source, `v = 0.80` (2020 estimated transition) | `5.773336608e-11` | Round 1: `0.00537512503` |
+| EJM detector, `v = 0.86` (2020 estimated transition) | `1.509705617e-9` | Round 1: `0.01088298077` |
+| Renou source, `v = 0.89` (2020 estimated transition) | `3.269903713e-8` | Round 1: `0.001073918666` |
+| Renou detector, `v = 0.91` (2020 estimated transition) | `5.909466315e-9` | Round 1: `8.289418225e-4` |
+| Renou source, `v = 0.90` | `8.809609828e-6` | 2020 Eq. (4): `4.739586006e-4` |
+| Renou source, `v = 0.95` | `3.037946704e-5` | 2020 Eq. (4): `0.002952369414` |
+| Renou detector, `v = 0.93` | `8.207624541e-9` | 2020 Eq. (4): `0.001260030627` |
+| Renou detector, `v = 0.95` | `5.581997047e-8` | 2020 Eq. (4): `0.002568680931` |
+| Noiseless Renou, `u² = 0.85` | `0.002240845347` | 2020 independent runs: about `0.0034` and `0.0055`; round 1: `0.006201116283` |
+| Noiseless Renou, `u² = 1/2` | **`0` — exact witness** | Independent token/parity model; four symbols per source |
+
+All noisy Renou rows fix `u² = 0.85`. The source sweep has no stored sample at
+`v = 0.93`, and the detector sweep has none at `v = 0.90`. General Renou targets
+are stored rational approximations to the quantum probabilities; certificates
+refer to those stored targets. **Small positive residuals certify nearby local
+distributions, and do not establish exact target locality or a new threshold.**
+Beating an Eq. (4) estimate does not necessarily beat the authors' best saved
+model. The round and component comparisons use different search settings and
+are descriptive, rather than equal-budget comparisons.
+
+The reference is Tamás Kriváchy et al., “A neural network oracle for quantum
+nonlocality problems in networks,” *npj Quantum Information* **6**, 70 (2020),
+[doi:10.1038/s41534-020-00305-x](https://doi.org/10.1038/s41534-020-00305-x).
+See [RESULTS.md](RESULTS.md) for the complete sweeps and target-approximation
+checks, [the technical note](note.pdf) for the mathematical constructions, and
+[LITERATURE.md](LITERATURE.md) for conventions and reference checks. All
+[52 target summaries](benchmarks/best-fits.csv) point to
+[50 selected bundles](benchmarks/models/); independent recomputation checks
+every selected certificate, including **8 exact matches**.
+
+## Quick start
+
+Run these five lines from the repository root with Python 3.10 or later. They
+install the package, solve the Renou half endpoint, and verify its certificate
+against the generated input:
+
+```sh
+python3 -m venv .venv && .venv/bin/python -m pip install -e './tool[test,plot]'
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+.venv/bin/python -m triangle_local generate renou --parameter 1/2 --out tmp/renou-half.json
+.venv/bin/python -m triangle_local solve tmp/renou-half.json --sizes 4 4 4 --starts 1 --steps 20 --out tmp/renou-half-fit.json.gz
+.venv/bin/python -m triangle_local verify tmp/renou-half-fit.json.gz --input tmp/renou-half.json
+```
+
+The verifier prints `"status": "exact_match"`, `"exact_match": true`,
+`"L1": "0"`, and `"L2_squared": "0"`. This endpoint uses the default hybrid
+method's known-control recognizer; it demonstrates an exact construction.
+The [command-line example below](#command-line) performs a numerical EJM fit.
+For an approximate fit, successful verification means the model and its
+distance were recomputed correctly; inspect `exact_match` for target equality.
+
+## Inspect a found model
+
+![Independent source weights and the three parties' four response probabilities for a saved Renou detector model at efficiency 0.93](docs/figures/local-model.png)
+
+This is the [saved Renou detector model at `v = 0.93`](benchmarks/models/117-renou-detector-93-100-hybrid-reverse.json.gz).
+Each source has 12 stored symbols. The heatmaps show **all four response
+probabilities**, retaining the original symbol order; grey cells have an
+incident source symbol with zero weight. Stochastic responses are preserved.
+The model's certified L1 distance is `3.848594064e-8`.
+
+The [round and component figure](docs/figures/search-improvement.png) shows how
+seeded search, convex polishing, and perturbations improve on the earlier
+fits. [Figure captions and provenance](docs/figures/README.md) explain the
+comparisons. Regenerate all three PNG/SVG pairs from committed data, without
+running any optimization:
+
+```sh
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+  .venv/bin/python docs/make_figures.py
+```
+
+Round 2 also provides deterministic coordinate descent, seed lifting,
+bidirectional continuation, and a small NumPy response-network experiment.
+The detailed interface, assumptions, and reproduction commands follow.
 
 ## Install and test
 

@@ -6,10 +6,11 @@ ROOT=Path(__file__).resolve().parent.parent
 
 
 def main():
-    files=[ROOT/name for name in ['README.md','RESULTS.md','LITERATURE.md','LICENSE','.gitignore','note.tex','note.pdf']]
+    files=[ROOT/name for name in ['README.md','RESULTS.md','LITERATURE.md','CHANGES.md','HEADLINE.md','LICENSE','.gitignore','note.tex','note.pdf']]
     files += [ROOT/'tool'/name for name in ['pyproject.toml','README.md','LICENSE']]
     for pattern in ['tool/triangle_local/*.py','tool/tests/test*.py','benchmarks/*.py',
-                    'benchmarks/*.csv','benchmarks/models/*.json.gz']:
+                    'benchmarks/*.csv','benchmarks/models/*.json.gz',
+                    'docs/*.py','docs/*.json','docs/figures/*.md','docs/figures/*.png','docs/figures/*.svg']:
         files += list(ROOT.glob(pattern))
     for name in ['environment.json','verification.json','validation.json','independent-verification.json','noise-curves.png','noise-curves.svg']:
         files.append(ROOT/'benchmarks'/name)
