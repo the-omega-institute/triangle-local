@@ -1,0 +1,17 @@
+family,parameter,configuration,sizes,symmetry,L2_float,L1_float,L1_rational,L2_rational,exact_match,S3_exact,search_seconds,certificate_seconds,published_reference_L2,model_file
+note,41-144,explicit,12x12x12,outcome-equivariant,2.804034415e-16,8.465450563e-16,0,0,True,True,0,0.01184404099,,models/note_41-144_explicit.json
+parity,1,explicit,2x2x2,exchangeable,0,0,0,0,True,True,0,6.926250062e-04,,models/parity_1_explicit.json
+fritz-local,0,explicit,2x2x8,none,0,0,0,0,True,False,0,0.001592458008,,models/fritz-local_0_explicit.json
+fritz-local,1/4,explicit,2x2x8,none,0,0,0,0,True,False,0,0.001501874998,,models/fritz-local_1-4_explicit.json
+fritz-local,1/2,explicit,2x2x8,none,0,0,0,0,True,False,0,0.001467708993,,models/fritz-local_1-2_explicit.json
+ring-endpoint,1,explicit,2x2x2,none,0,0,0,0,True,False,0,0.00100033301,,models/ring-endpoint_1_explicit.json
+biased-product,1,adam-none-1,1x1x1,none,3.443658926e-07,8.356865693e-07,8.356865694e-07,3.443658927e-07,False,False,0.400464875,8.039999957e-04,,models/biased-product_1_adam-none-1.json
+biased-product,1,lbfgs-none-1,1x1x1,none,7.889397204e-11,1.585803988e-10,0,0,True,False,0.02858991601,5.747919931e-04,,models/biased-product_1_lbfgs-none-1.json
+biased-product,1,alternating-none-1,1x1x1,none,1.11265753e-07,2.545611518e-07,2.545611515e-07,1.112844309e-07,False,False,0.213874166,0.002011125005,,models/biased-product_1_alternating-none-1.json
+biased-product,1,em-none-1,1x1x1,none,4.377059922e-13,8.545351926e-13,0,0,True,False,0.002744833007,7.647500024e-04,,models/biased-product_1_em-none-1.json
+parity-blind,1,lbfgs-none-2,2x2x2,none,2.648214521e-08,7.224674107e-08,7.188582462e-08,2.63552015e-08,False,False,0.312265334,0.001107000004,,models/parity-blind_1_lbfgs-none-2.json
+note-blind,1,lbfgs-outcome-equivariant-12,12x12x12,outcome-equivariant,2.569924773e-08,9.520834161e-08,9.674939886e-08,2.595080424e-08,False,True,1.076041625,0.026107375,,models/note-blind_1_lbfgs-outcome-equivariant-12.json
+ring-half,1-2,explicit-half,4x4x4,none,0,0,0,0,True,True,0,0.002829458012,,models/ring-half_1-2_explicit-half.json
+uniform,0,explicit-uniform,1x1x1,exchangeable,0,0,0,0,True,True,0,0.001569458007,,models/uniform_0_explicit-uniform.json
+parity-blind,1,rounded-recheck,2x2x2,none,5.62245861e-09,1.124491722e-08,0,0,True,True,0,6.075410056e-04,,models/parity-blind_1_rounded-recheck.json
+note-blind,1,rounded-recheck,12x12x12,none,0.01098013076,0.08333333333,0.08333333333,0.01098013076,False,True,0,0.01142112499,,models/note-blind_1_rounded-recheck.json

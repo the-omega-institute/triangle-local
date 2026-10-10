@@ -1,0 +1,17 @@
+{
+  "python": "3.14.4",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "seed": 20261009,
+  "starts": 4,
+  "steps": 1000,
+  "total_wall_seconds": 198.3572985,
+  "peak_RSS_bytes": 76611584,
+  "processes": 1,
+  "max_source_size": 12,
+  "max_outputs": 4,
+  "rational_denominator_cap": 100000000,
+  "notes": "One optimizer at a time. Timings include full contractions; certificates separately timed."
+}

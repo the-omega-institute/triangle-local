@@ -1,0 +1,9 @@
+family,parameter,configuration,group,sizes,symmetry,L2_float,L1_float,L2_rational,L1_rational,exact_match,S3_exact,search_seconds,certificate_seconds,published_reference_L2,target_sha256,model_file
+note,41/144,explicit,control,12x12x12,outcome-equivariant,2.804034415e-16,8.465450563e-16,0,0,True,True,0,0.012245541,,5b36abce:8a7387ca:fc34641c:43fdd110:02d50192:6c753312:16146da3:93341913,models/000-note-41-144-explicit.json.gz
+parity,1,explicit,control,2x2x2,exchangeable,0,0,0,0,True,True,0,7.558340003e-04,,afa55693:3f7613b8:aa6595b0:569b7fd3:9cc1829e:0ec0347b:f0d9748f:7338112f,models/001-parity-1-explicit.json.gz
+ring-half,1/2,explicit,control,4x4x4,none,0,0,0,0,True,True,0,0.002175166999,,5a29e0ae:c7933326:cd59af71:6c7e51dd:05bb3f9f:38b54695:24e14484:4a1a8c2f,models/002-ring-half-1-2-explicit.json.gz
+ring-endpoint,1,explicit,control,2x2x2,none,0,0,0,0,True,False,0,0.001326000012,,58942284:b0e453b2:5d61bb05:f771c805:357b7ee8:d8ca3400:bace29c6:9ea4ac24,models/003-ring-endpoint-1-explicit.json.gz
+uniform,0,explicit,control,1x1x1,none,0,0,0,0,True,True,0,0.001727832991,,4697824f:73ede711:3651e7f6:c90293eb:4f3ec4d2:5b373772:2f7429fc:f2756975,models/004-uniform-0-explicit.json.gz
+fritz-local,0,explicit,control,2x2x8,none,0,0,0,0,True,False,0,0.001756625003,,ed2708bf:a4c5f974:6a45915c:acf8a70e:d8f4f560:caedff9a:d9f87b89:8514b2ec,models/005-fritz-local-0-explicit.json.gz
+fritz-local,1/4,explicit,control,2x2x8,none,0,0,0,0,True,False,0,0.001578791998,,81b53a19:1336adf5:32e74169:933b36dc:b6f2482d:b353c132:7c3408d3:b8c63b15,models/006-fritz-local-1-4-explicit.json.gz
+fritz-local,1/2,explicit,control,2x2x8,none,0,0,0,0,True,False,0,0.001543709004,,bbc48b27:597db7e6:3829e1d1:48ff9097:dbe54cf8:504a063f:4e123abe:acba519e,models/007-fritz-local-1-2-explicit.json.gz

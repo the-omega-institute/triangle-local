@@ -1,0 +1,137 @@
+{
+  "revision": "9460fe5340016e9a2f954613a2c07e633449d455",
+  "checks": [
+    {
+      "family": "elegant-source",
+      "v": 0.0,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "elegant-source",
+      "v": 0.5,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "elegant-source",
+      "v": 0.8,
+      "max_entry_error": 1.387778781e-17
+    },
+    {
+      "family": "elegant-source",
+      "v": 1.0,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "elegant-detector",
+      "v": 0.0,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "elegant-detector",
+      "v": 0.5,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "elegant-detector",
+      "v": 0.8,
+      "max_entry_error": 1.387778781e-17
+    },
+    {
+      "family": "elegant-detector",
+      "v": 1.0,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "fritz",
+      "v": 0.0,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "fritz",
+      "v": 0.5,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "fritz",
+      "v": 0.8,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "fritz",
+      "v": 1.0,
+      "max_entry_error": 3.469446952e-18
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.5,
+      "v": 0.5,
+      "max_entry_error": 6.938893904e-18
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.5,
+      "v": 0.89,
+      "max_entry_error": 2.081668171e-17
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.5,
+      "v": 1.0,
+      "max_entry_error": 1.387778781e-17
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.63,
+      "v": 0.5,
+      "max_entry_error": 4.200528814e-13
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.63,
+      "v": 0.89,
+      "max_entry_error": 2.037710278e-13
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.63,
+      "v": 1.0,
+      "max_entry_error": 3.603922716e-13
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.85,
+      "v": 0.5,
+      "max_entry_error": 2.512365316e-13
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.85,
+      "v": 0.89,
+      "max_entry_error": 1.847966224e-13
+    },
+    {
+      "family": "renou-source",
+      "u2": 0.85,
+      "v": 1.0,
+      "max_entry_error": 9.853229344e-15
+    },
+    {
+      "family": "renou-source",
+      "u2": 1.0,
+      "v": 0.5,
+      "max_entry_error": 0.0
+    },
+    {
+      "family": "renou-source",
+      "u2": 1.0,
+      "v": 0.89,
+      "max_entry_error": 1.387778781e-17
+    },
+    {
+      "family": "renou-source",
+      "u2": 1.0,
+      "v": 1.0,
+      "max_entry_error": 0.0
+    }
+  ]
+}

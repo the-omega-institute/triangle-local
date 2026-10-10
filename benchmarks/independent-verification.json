@@ -1,0 +1,611 @@
+{
+  "independent_method": "Fraction variable elimination; no package imports",
+  "checked_bundles": 50,
+  "checked_target_summaries": 52,
+  "exact_matches": 8,
+  "witness_all_equal": "41/144",
+  "seconds": 1.906,
+  "peak_RSS_bytes": 27770880,
+  "results": [
+    {
+      "file": "000-note-41-144-explicit.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "001-parity-1-explicit.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        2
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "002-ring-half-1-2-explicit.json.gz",
+      "source_sizes": [
+        4,
+        4,
+        4
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "003-ring-endpoint-1-explicit.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        2
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "004-uniform-0-explicit.json.gz",
+      "source_sizes": [
+        1,
+        1,
+        1
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "005-fritz-local-0-explicit.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        8
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "006-fritz-local-1-4-explicit.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        8
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "007-fritz-local-1-2-explicit.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        8
+      ],
+      "Euclidean": "0",
+      "L1": "0",
+      "status": "exact_match",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "031-elegant-source-3-4-hybrid-forward.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "1.63219997e-11",
+      "L1": "1.05723826e-10",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "034-elegant-source-4-5-hybrid-forward.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "5.77333661e-11",
+      "L1": "3.69549831e-10",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "041-elegant-source-9-10-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.0221296467",
+      "L1": "0.132156495",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "042-elegant-source-43-50-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.0128865568",
+      "L1": "0.0791773365",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "043-elegant-source-21-25-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00763465839",
+      "L1": "0.0475415247",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "044-elegant-source-81-100-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.000615834005",
+      "L1": "0.00395746964",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "046-elegant-source-79-100-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "8.22093654e-11",
+      "L1": "5.08079267e-10",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "047-elegant-source-39-50-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "7.65001416e-11",
+      "L1": "4.74438817e-10",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "050-elegant-source-1-2-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "1.77648613e-10",
+      "L1": "1.1063644e-09",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "063-elegant-detector-9-10-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.0126089756",
+      "L1": "0.0781569346",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "064-elegant-detector-87-100-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00473398785",
+      "L1": "0.0315038589",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "067-elegant-detector-21-25-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "9.86652099e-11",
+      "L1": "6.20871779e-10",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "068-elegant-detector-4-5-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "6.11105938e-11",
+      "L1": "3.77980029e-10",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "069-elegant-detector-7-10-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "2.16273218e-10",
+      "L1": "1.31398393e-09",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "070-elegant-detector-1-2-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "1.30387758e-10",
+      "L1": "8.7068126e-10",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "102-renou-source-19-20-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "3.0379467e-05",
+      "L1": "0.000155101984",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "103-renou-source-9-10-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "8.80960983e-06",
+      "L1": "5.2019675e-05",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "106-renou-source-4-5-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "1.49681725e-09",
+      "L1": "8.18792677e-09",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "116-renou-detector-19-20-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "5.58199705e-08",
+      "L1": "2.27132919e-07",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "117-renou-detector-93-100-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "8.20762454e-09",
+      "L1": "3.84859406e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "119-renou-detector-89-100-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "4.99500291e-09",
+      "L1": "2.92848932e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "120-renou-detector-4-5-hybrid-reverse.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "2.67350001e-09",
+      "L1": "1.4942716e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "124-renou-source-89-100-boundary-polish.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "3.26990371e-08",
+      "L1": "2.04648506e-07",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "125-renou-detector-91-100-boundary-polish.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "5.90946631e-09",
+      "L1": "3.86993863e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "127-fritz-visibility-0.5-clipped-CHSH.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        8
+      ],
+      "Euclidean": "2.34793699e-19",
+      "L1": "9.39174797e-19",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "128-fritz-visibility-0.70710678-clipped-CHSH.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        8
+      ],
+      "Euclidean": "1.5e-17",
+      "L1": "6e-17",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "129-fritz-visibility-0.8-clipped-CHSH.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        8
+      ],
+      "Euclidean": "0.0164213562",
+      "L1": "0.0656854249",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "130-fritz-visibility-1-clipped-CHSH.json.gz",
+      "source_sizes": [
+        2,
+        2,
+        8
+      ],
+      "Euclidean": "0.0517766953",
+      "L1": "0.207106781",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "131-elegant-source-7-10-symmetric-fallback.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "3.12664665e-09",
+      "L1": "1.76553225e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "143-elegant-detector-17-20-extra-hops.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "4.76720379e-10",
+      "L1": "2.53575675e-09",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "144-renou-u2-157-200-extra-hops.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "5.51535355e-09",
+      "L1": "2.50720946e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "154-elegant-detector-43-50-lifted-boundary-24.json.gz",
+      "source_sizes": [
+        24,
+        24,
+        24
+      ],
+      "Euclidean": "1.50970562e-09",
+      "L1": "8.68418558e-09",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "156-elegant-source-1-ideal-seeded-hybrid.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.0483442475",
+      "L1": "0.267511959",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "157-renou-u2-17-20-critical-point-continuation.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00224084535",
+      "L1": "0.0107431629",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "158-renou-source-87-100-low-noise-consistency-polish.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "3.66784706e-08",
+      "L1": "7.66878085e-08",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "159-renou-u2-4-5-critical-continuation-up.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.000763772776",
+      "L1": "0.00365829015",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "161-renou-u2-9-10-critical-continuation-up.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00227656063",
+      "L1": "0.0107801739",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "162-renou-u2-19-20-critical-continuation-up.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00124114303",
+      "L1": "0.00584298789",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "163-renou-u2-3-4-critical-continuation-down.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "2.40226598e-08",
+      "L1": "1.46558941e-07",
+      "status": "nearby_local_model",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "164-renou-u2-7-10-critical-continuation-down.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00159344044",
+      "L1": "0.00569924224",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "165-renou-u2-63-100-critical-continuation-down.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00801052475",
+      "L1": "0.0319321515",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    },
+    {
+      "file": "166-renou-u2-3-5-critical-continuation-down.json.gz",
+      "source_sizes": [
+        12,
+        12,
+        12
+      ],
+      "Euclidean": "0.00732372806",
+      "L1": "0.0279570123",
+      "status": "approximate_fit",
+      "all_probabilities_and_distances_match": true
+    }
+  ]
+}

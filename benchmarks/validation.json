@@ -1,0 +1,158 @@
+{
+  "review_date": "2026-10-10",
+  "package_version": "0.2.0",
+  "authors": [
+    "Haobo Ma",
+    "Wenlin Zhang"
+  ],
+  "original_archive_tests": {
+    "passed": 55,
+    "seconds": 12.24
+  },
+  "review_tests_python314": {
+    "passed": 58,
+    "seconds": 11.88,
+    "fresh_archive_noneditable_wheel": true,
+    "peak_RSS_bytes": 96927744
+  },
+  "review_tests_python310": {
+    "passed": 58,
+    "seconds": 1.97,
+    "peak_RSS_bytes": 84475904
+  },
+  "selected_certificates_recomputed_by_package": 50,
+  "selected_certificates_recomputed_without_package_imports": 50,
+  "selected_exact_matches": 8,
+  "target_generator_cases_checked": 74,
+  "target_summaries_bound_to_selected_bundles": 52,
+  "published_reference_values_independently_checked": 41,
+  "restricted_witness_class": {
+    "tables": 4096,
+    "maximum_count": 492,
+    "maximizers": 16,
+    "all_equal": "41/144"
+  },
+  "original_README_examples": {
+    "all_passed": true,
+    "optimizer_processes": 1,
+    "numerical_library_threads": 1,
+    "peak_RSS_bytes": 78675968
+  },
+  "pdf_pages": 4,
+  "pdf_visual_QA": "All four final pages inspected; no clipping, overlap or glyph defects.",
+  "scientific_figure_visual_QA": "All six panels inspected; legends distinguish candidate distances and heuristic reference curves.",
+  "pdf_compiled_without_warnings": true,
+  "final_pdf_sha256": "1a0bbade7eae74cbec954ef96a5f43a2be469c6b0f325920516d02c2a2854a0e",
+  "measurement_provenance": "Archived optimizer measurements retained. The complete optimizer sweep was not rerun for the review.",
+  "historical_validation": {
+    "pytest": {
+      "passed": 55,
+      "elapsed_seconds": 1.69
+    },
+    "package_version": "0.2.0",
+    "wheel_and_sdist_built": true,
+    "selected_certificates_independently_recomputed": 50,
+    "selected_exact_matches": 8,
+    "pdf_visual_QA": "Latest final renders: all four pages visually inspected after the last continuation; no clipping, overlap or glyph defects.",
+    "wheel_installed_and_gzip_control_verified": true,
+    "cli_seeded_EJM_example": {
+      "verified_against_external_input": true,
+      "rational_L1": 2.399773748e-09
+    },
+    "authors": [
+      "Haobo Ma",
+      "Wenlin Zhang"
+    ],
+    "pdf_pages": 4,
+    "pdf_compiled_without_warnings": true,
+    "pdf_authors_and_affiliations_checked": true,
+    "pdf_no_long_digit_strings": true,
+    "scientific_figure_visual_QA": "Latest final six-panel figure inspected; axis labels, legends and references readable.",
+    "final_candidate_rows": 167,
+    "selected_target_summaries": 52,
+    "final_pdf_sha256": "f1b5cffd598749474a51be6f2bb78f954982a8e12e7d2e6ac414e8162154f87f",
+    "public_archive_QA": {
+      "public_file_count": 112,
+      "CRC_checked": true,
+      "all_members_match_source_bytes": true,
+      "all_52_selected_model_paths_resolve": true,
+      "extracted_source_imports_confirmed": true,
+      "extracted_source_exact_Renou_endpoint_CLI_verified": true,
+      "extracted_source_EJM_boundary_CLI_verified_against_external_input": true,
+      "task_briefs_environments_logs_intermediate_models_and_downloaded_full_texts_excluded": true
+    }
+  },
+  "corrected_README_examples": {
+    "all_passed": true,
+    "installed_entry_point": "passed",
+    "optimizer_processes": 1,
+    "numerical_library_threads": 1,
+    "peak_RSS_bytes": 79544320,
+    "commands_executed": 8
+  },
+  "fresh_wheel_metadata": {
+    "version": "0.2.0",
+    "authors": [
+      "Haobo Ma",
+      "Wenlin Zhang"
+    ],
+    "license_expression": "MIT",
+    "correct_copyright_license_included": true,
+    "imports_from_installed_wheel": true
+  },
+  "fresh_archive_independent_checker": {
+    "checked_bundles": 50,
+    "checked_target_summaries": 52,
+    "all_matched": true,
+    "exact_matches": 8
+  },
+  "public_archive_QA": {
+    "public_file_count": 117,
+    "CRC_checked": true,
+    "all_members_match_source_bytes": true,
+    "all_52_selected_model_paths_resolve": true,
+    "fresh_noneditable_install_tests_and_README_examples_passed": true,
+    "code_configuration_and_license_bytes_match_tested_archive": true
+  },
+  "public_hygiene": {
+    "no_detected_secret_patterns": true,
+    "no_local_absolute_paths": true,
+    "no_process_disclosure_boilerplate": true,
+    "no_runs_of_thirteen_or_more_decimal_digits_in_public_text_or_decompressed_JSON": true,
+    "generated_gzip_fits_ignored": true,
+    "no_git_directory": true
+  },
+  "review_code_sha256": {
+    "benchmarks/continue_renou.py": "4ebb227b913971ec30203bd69860f08c57bf97688bff5b0593f2e646f91b0ee9",
+    "benchmarks/finalize.py": "3f7948d36638cbd5bc502d1945b7eb1b6d68e22f19ad1e7b2327beac16eabe62",
+    "benchmarks/finish_search.py": "c04a6a63223d9d2a72c0b4f3e8c34532a59158a45b22936e5135aeea18eb88d6",
+    "benchmarks/independent_check.py": "058cea5f033d58e627d6c77b792c1c241d62ef0a86eadcad1d38d2b2e190c981",
+    "benchmarks/package_public.py": "cd9cbfc2b36b960f299b4502a41bd5696651fc8c540d6f231e9273214b8dfd6b",
+    "benchmarks/plot.py": "4bd123006b2f307ad2cc101872747b3e791f5d023ad1113f745d15c536044543",
+    "benchmarks/refine.py": "e3b2981216fc95226e0a2b07153ad367615417bc16d157d7018a1dfdcad468e1",
+    "benchmarks/round2.py": "a20808b7b3ee6b9185fb874ba578c21c1604e959f4889128670b038daf41ff2e",
+    "benchmarks/run.py": "36f8a49d7f605b556e041603ed25fd06d4bf0ec988260eaa46b2fae5428d4cb9",
+    "benchmarks/verify.py": "b4d51f664019fb7130e9147a29142528c8a574b5c839c5727586c8d8d709c112",
+    "benchmarks/write_note.py": "1f1e694cb0ad96490c49cc0c598173062b60759789e502258aad7e5c2754ba7d",
+    "benchmarks/write_results.py": "f2d273805393c4acf80b9e1c59e73a360b48bb6a6ab68f1e871ed4168cb56009",
+    "benchmarks/write_round2_results.py": "c8eb4c82f2b1331e773e048f99829e01631b42ff35a8ca3042fca1b9f20fce81",
+    "tool/tests/test_exact.py": "d818a0b57e3262f740ed0b78d03ba3a90ea267082e00b5207d1aea602e0be78f",
+    "tool/tests/test_numerical.py": "c73064e35e0260faf3797678ff4ae892de8e2efcd520f6ba59b9d9a06e8d157a",
+    "tool/tests/test_round2.py": "591713e0120869c3d8e4b751bc7feed16506eb89dffc1477e77317d6b164043b",
+    "tool/tests/test_serialization.py": "21d87e96bb2bf41d63fc3bbd8d46ad5d87401bc8684570d7ab83148234a98ffa",
+    "tool/triangle_local/__init__.py": "12df0d98a067d8de086fd8941f092d106625ebebaabc945bb7cfa62ba8c83fdf",
+    "tool/triangle_local/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "tool/triangle_local/benchmarks.py": "a080b01d3f04b9e9a0dd4b0c7913baa6f195b8f28c5b1c7266f52f65f89213a8",
+    "tool/triangle_local/cli.py": "63a8504090df1538f5dd7be9430a7ad96e233bc3f4bc36a695cf8689e556ef67",
+    "tool/triangle_local/convex.py": "226019464f78bd322d19ce95bbe09e8e34e3189b459289eb5f366ef265128b66",
+    "tool/triangle_local/deterministic.py": "4e7c11ae5813b936c3cc5222e3705f565a24a88baa2cbf9f4aae4dcdb996c85f",
+    "tool/triangle_local/exact.py": "23538ebc4f5a01ee603926d4c056258604f61155dff7389aa0852eb0f437b655",
+    "tool/triangle_local/families.py": "617191622b35c9bf73c61de5235b9c72319d6512c0486aa11c854ecf0bd3a129",
+    "tool/triangle_local/io.py": "09ad871adc9a6b75941d64a6d9f2bedbfebcf510b062f25613edf3af702e458a",
+    "tool/triangle_local/model.py": "9cd5b4bbe773d621ab438074f6bb56266b1412b0fc27d94c6e1cfd789278ed6d",
+    "tool/triangle_local/neural.py": "a0701e2fb3ab3dac79fe008e7a720abd7e9a1bf4cc0c9d5f12f57a91c1032bdc",
+    "tool/triangle_local/optimize.py": "8bac6487efaa96e9f5d7d5056884451ca937300f7a57e6ef958b0693dfb69015",
+    "tool/triangle_local/search.py": "72b0d86915df999220dda9a9d38ef4354decc9e5e430fd172721df31decca150",
+    "tool/triangle_local/serialization.py": "a6d20dbf55f154cf4153d3350627fe025f96e13665d77566396394bc0979c86b"
+  }
+}

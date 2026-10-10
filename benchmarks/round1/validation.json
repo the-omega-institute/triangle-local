@@ -1,0 +1,10 @@
+{
+  "pytest_command": ".venv/bin/python -m pytest tool -q",
+  "passed": 39,
+  "failed": 0,
+  "certificate_bundles_rechecked": 77,
+  "json_solve_verify": "passed",
+  "csv_solve_verify": "passed",
+  "normalized_input_solve_verify": "passed",
+  "plot_visual_inspection": "passed"
+}

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "triangle-local"
+version = "0.2.0"
+description = "Finite triangle-local search with exact rational certificates"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Haobo Ma"}, {name = "Wenlin Zhang"}]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+plot = ["matplotlib>=3.7"]
+
+[project.scripts]
+triangle-local = "triangle_local.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["triangle_local*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

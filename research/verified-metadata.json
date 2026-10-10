@@ -1,0 +1,492 @@
+{
+  "review_date": "2026-10-10",
+  "journal_records": [
+    {
+      "doi": "10.1038/s41534-020-00305-x",
+      "title": [
+        "A neural network oracle for quantum nonlocality problems in networks"
+      ],
+      "authors": [
+        "Tamás Kriváchy",
+        "Yu Cai",
+        "Daniel Cavalcanti",
+        "Arash Tavakoli",
+        "Nicolas Gisin",
+        "Nicolas Brunner"
+      ],
+      "container": [
+        "npj Quantum Information"
+      ],
+      "volume": "6",
+      "issue": "1",
+      "page": null,
+      "article_number": "70",
+      "published": {
+        "date-parts": [
+          [
+            2020,
+            8,
+            21
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1038%2Fs41534-020-00305-x",
+      "source_sha256": "4935020f57a658f92eabebf11cbbb5cb44e7e78800878ee91fda1fb152d7e455"
+    },
+    {
+      "doi": "10.1088/1367-2630/14/10/103001",
+      "title": [
+        "Beyond Bell's theorem: correlation scenarios"
+      ],
+      "authors": [
+        "Tobias Fritz"
+      ],
+      "container": [
+        "New Journal of Physics"
+      ],
+      "volume": "14",
+      "issue": "10",
+      "page": "103001",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2012,
+            10,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1088%2F1367-2630%2F14%2F10%2F103001",
+      "source_sha256": "0c92e7fe85773e5bcac5ba768892b6386e95fa9f24bfec9db8d447635e4ed936"
+    },
+    {
+      "doi": "10.1103/244y-nh5n",
+      "title": [
+        "Fully Quantum Inflation: Quantum Marginal Problem Constraints in the Service of Causal Inference"
+      ],
+      "authors": [
+        "Isaac D. Smith",
+        "Elie Wolfe",
+        "Robert W. Spekkens"
+      ],
+      "container": [
+        "PRX Quantum"
+      ],
+      "volume": "7",
+      "issue": "1",
+      "page": null,
+      "article_number": "010351",
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            3,
+            13
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1103%2F244y-nh5n",
+      "source_sha256": "d6ca2e06daa6ebe85a91677881b30bb288f2d5218537432cd85b62b1596d88be"
+    },
+    {
+      "doi": "10.1103/PhysRevA.107.062413",
+      "title": [
+        "Towards a minimal example of quantum nonlocality without inputs"
+      ],
+      "authors": [
+        "Sadra Boreiri",
+        "Antoine Girardin",
+        "Bora Ulu",
+        "Patryk Lipka-Bartosik",
+        "Nicolas Brunner",
+        "Pavel Sekatski"
+      ],
+      "container": [
+        "Physical Review A"
+      ],
+      "volume": "107",
+      "issue": "6",
+      "page": null,
+      "article_number": "062413",
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            6,
+            13
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1103%2FPhysRevA.107.062413",
+      "source_sha256": "d6bbb05859922ed1df5bfb219537ab3cedfd6a504fde48b09745fca36cca1452"
+    },
+    {
+      "doi": "10.1103/PhysRevA.111.052453",
+      "title": [
+        "Exploring the local landscape in the triangle network"
+      ],
+      "authors": [
+        "Elisa Bäumer",
+        "Victor Gitton",
+        "Tamás Kriváchy",
+        "Nicolas Gisin",
+        "Renato Renner"
+      ],
+      "container": [
+        "Physical Review A"
+      ],
+      "volume": "111",
+      "issue": "5",
+      "page": null,
+      "article_number": "052453",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            5,
+            29
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1103%2FPhysRevA.111.052453",
+      "source_sha256": "908f740f37bfb244f94bfc4d9209ed0d8de7fa290cf8bdbc8d174f62027e03bc"
+    },
+    {
+      "doi": "10.1103/PhysRevLett.123.140401",
+      "title": [
+        "Genuine Quantum Nonlocality in the Triangle Network"
+      ],
+      "authors": [
+        "Marc-Olivier Renou",
+        "Elisa Bäumer",
+        "Sadra Boreiri",
+        "Nicolas Brunner",
+        "Nicolas Gisin",
+        "Salman Beigi"
+      ],
+      "container": [
+        "Physical Review Letters"
+      ],
+      "volume": "123",
+      "issue": "14",
+      "page": null,
+      "article_number": "140401",
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            9,
+            30
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1103%2FPhysRevLett.123.140401",
+      "source_sha256": "6ed7f0c295bb2a927683353e04494c764c91c8ba1245b81efafb2df868f4f9e1"
+    },
+    {
+      "doi": "10.1103/PhysRevX.11.021043",
+      "title": [
+        "Quantum Inflation: A General Approach to Quantum Causal Compatibility"
+      ],
+      "authors": [
+        "Elie Wolfe",
+        "Alejandro Pozas-Kerstjens",
+        "Matan Grinberg",
+        "Denis Rosset",
+        "Antonio Acín",
+        "Miguel Navascués"
+      ],
+      "container": [
+        "Physical Review X"
+      ],
+      "volume": "11",
+      "issue": "2",
+      "page": null,
+      "article_number": "021043",
+      "published": {
+        "date-parts": [
+          [
+            2021,
+            5,
+            26
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1103%2FPhysRevX.11.021043",
+      "source_sha256": "67ce6968c280404333dc52dce06e4996ce485fabc1b287586cc3a6972c4be3bb"
+    },
+    {
+      "doi": "10.1103/cg9v-wv2t",
+      "title": [
+        "Local models and Bell inequalities for the minimal triangle network"
+      ],
+      "authors": [
+        "José Mário da Silva",
+        "Alejandro Pozas-Kerstjens",
+        "Fernando Parisio"
+      ],
+      "container": [
+        "Physical Review A"
+      ],
+      "volume": "112",
+      "issue": "3",
+      "page": null,
+      "article_number": "L030403",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            9,
+            24
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1103%2Fcg9v-wv2t",
+      "source_sha256": "61697e1378f5899f498924e3dbdee336afbef86c2d35802d492308c142eafd4a"
+    },
+    {
+      "doi": "10.1515/jci-2017-0020",
+      "title": [
+        "The Inflation Technique for Causal Inference with Latent Variables"
+      ],
+      "authors": [
+        "Elie Wolfe",
+        "Robert W. Spekkens",
+        "Tobias Fritz"
+      ],
+      "container": [
+        "Journal of Causal Inference"
+      ],
+      "volume": "7",
+      "issue": "2",
+      "page": null,
+      "article_number": "20170020",
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            7,
+            16
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1515%2Fjci-2017-0020",
+      "source_sha256": "d2a44fec24cb2f5ac37c78d76ed0add836e44fa013422b5e65ae29488e632616"
+    },
+    {
+      "doi": "10.1515/jci-2018-0008",
+      "title": [
+        "The Inflation Technique Completely Solves the Causal Compatibility Problem"
+      ],
+      "authors": [
+        "Miguel Navascués",
+        "Elie Wolfe"
+      ],
+      "container": [
+        "Journal of Causal Inference"
+      ],
+      "volume": "8",
+      "issue": "1",
+      "page": "70-91",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2020,
+            9,
+            3
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1515%2Fjci-2018-0008",
+      "source_sha256": "a840fd3ed366c739048c4ec894f4950216b9f757562e67a72bddbf8e8562f035"
+    },
+    {
+      "doi": "10.22331/q-2025-08-27-1830",
+      "title": [
+        "Noise-robust proofs of quantum network nonlocality"
+      ],
+      "authors": [
+        "Sadra Boreiri",
+        "Bora Ulu",
+        "Nicolas Brunner",
+        "Pavel Sekatski"
+      ],
+      "container": [
+        "Quantum"
+      ],
+      "volume": "9",
+      "issue": null,
+      "page": "1830",
+      "article_number": "1830",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            27
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.22331%2Fq-2025-08-27-1830",
+      "source_sha256": "d6deeb4e9817609b2023765c08c7cbf19d9b9de1ff249193cce9cfd1d42e5f85"
+    },
+    {
+      "doi": "10.26421/QIC18.11-12-2",
+      "title": [
+        "Universal bound on the cardinality of local hidden variables in networks"
+      ],
+      "authors": [
+        "Denis Rosset",
+        "Nicolas Gisin",
+        "Elie Wolfe"
+      ],
+      "container": [
+        "Quantum Information and Computation"
+      ],
+      "volume": "18",
+      "issue": "11&12",
+      "page": "910-926",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            9
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.26421%2FQIC18.11-12-2",
+      "source_sha256": "8ddce2ca39aa23b80f5c5a77f6a698393e44209a1526d434d83e45445a3645a3"
+    }
+  ],
+  "arxiv_records": [
+    {
+      "identifier": "2207.08532v2",
+      "title": [
+        "Towards a minimal example of quantum nonlocality without inputs"
+      ],
+      "authors": [
+        "Boreiri, Sadra",
+        "Girardin, Antoine",
+        "Ulu, Bora",
+        "Lypka-Bartosik, Patryk",
+        "Brunner, Nicolas",
+        "Sekatski, Pavel"
+      ],
+      "date": [
+        "2022/07/18"
+      ],
+      "source": "https://arxiv.org/abs/2207.08532v2",
+      "comments": "In the initial version of our manuscript, we discovered a mistake in the proof of Theorem 2. Consequently, in the updated version, Theorem 2 has been revised. Furthermore, in Appendix C, we include an updated proof applicable to a broader range of entangled states",
+      "abstract": "Abstract:The network scenario offers interesting new perspectives on the phenomenon of quantum nonlocality. Notably, when considering networks with independent sources, it is possible to demonstrate quantum nonlocality without the need for measurements inputs, i.e. with all parties performing a fixed quantum measurement. Here we aim to find minimal examples of this effect. Focusing on the minimal case of the triangle network, we present examples involving output cardinalities of $3-3-3$ and $3-3-2$. Finally, we discuss the prospects of finding an example of quantum nonlocality in the triangle network with binary outputs, and point out a connection to the Lovasz local lemma.",
+      "version_date": [
+        "2024/01/18"
+      ]
+    },
+    {
+      "identifier": "2405.08939v1",
+      "title": [
+        "Exploring the Local Landscape in the Triangle Network"
+      ],
+      "authors": [
+        "Bäumer, Elisa",
+        "Gitton, Victor",
+        "Kriváchy, Tamás",
+        "Gisin, Nicolas",
+        "Renner, Renato"
+      ],
+      "date": [
+        "2024/05/14"
+      ],
+      "source": "https://arxiv.org/abs/2405.08939v1",
+      "comments": "8 + 19 pages, 19 figures",
+      "abstract": "Abstract:Characterizing the set of distributions that can be realized in the triangle network is a notoriously difficult problem. In this work, we investigate inner approximations of the set of local (classical) distributions of the triangle network. A quantum distribution that appears to be nonlocal is the Elegant Joint Measurement (EJM) [Entropy. 2019; 21(3):325], which motivates us to study distributions having the same symmetries as the EJM. We compare analytical and neural-network-based inner approximations and find a remarkable agreement between the two methods. Using neural network tools, we also conjecture network Bell inequalities that give a trade-off between the levels of correlation and symmetry that a local distribution may feature. Our results considerably strengthen the conjecture that the EJM is nonlocal.",
+      "version_date": [
+        "2024/05/14"
+      ]
+    },
+    {
+      "identifier": "2503.24213v3",
+      "title": [
+        "Closing the detection loophole in the triangle network with high-dimensional photonic states"
+      ],
+      "authors": [
+        "Kriváchy, Tamás",
+        "Kerschbaumer, Martin"
+      ],
+      "date": [
+        "2025/03/31"
+      ],
+      "source": "https://arxiv.org/abs/2503.24213v3",
+      "comments": "",
+      "abstract": "Abstract:Bell nonlocality without input settings, e.g. in the triangle network, has been perceived to be particularly fragile, with low robustness to noise in physical implementations. Here we show to the contrary that nonlocality based on N00N states already for $N=2$ has an exceptionally high robustness to photon loss. For the dominant noise factor, single photon loss in the transmission channels, we can certify noise robustness up to $10\\%$ loss, while for a realistic noise model we use neural network-based heuristics to observe $\\sim 50\\%$ robustness. Moreover we show that the robustness holds even for imperfect sources based on SPDC sources, where the heralding information of the sources can be used to avoid any global post-processing of the outcomes, such as discarding rounds when photons fail to arrive, and thus demonstrate how the detection loophole in the triangle network can be closed.",
+      "version_date": [
+        "2025/10/24"
+      ]
+    },
+    {
+      "identifier": "2510.15143v1",
+      "title": [
+        "The Elegant Joint Measurement is Non-Classical in the Triangle Network"
+      ],
+      "authors": [
+        "Gitton, Victor",
+        "Renner, Renato"
+      ],
+      "date": [
+        "2025/10/16"
+      ],
+      "source": "https://arxiv.org/abs/2510.15143v1",
+      "comments": "24+24 pages, 5 figures",
+      "abstract": "Abstract:When quantum systems are shared by multiple parties in a network, the measurement outcomes of the parties can exhibit non-classical correlations, i.e., correlations that cannot be obtained if the parties shared classical systems instead. This phenomenon is known as quantum nonlocality and is typically demonstrated in the Bell scenario. However, the Bell scenario is fundamentally simpler to investigate than general networks, since the latter come with non-convex optimization problems that are often intractable. The triangle network is one of the simplest networks exhibiting this non-convexity due to the presence of three independent sources. Although some special cases of quantum nonlocality are known in the triangle network, general methods to certify classical incompatibility are still lacking, which suggests that our understanding of networks is still rather limited. For instance, the Elegant Joint Measurement (EJM) distribution is a simple and highly-symmetric outcome distribution that can be obtained with quantum systems and measurements in the triangle network. This distribution was conjectured to be non-classical eight years ago. In this article, we provide the first proof of non-classicality of the EJM distribution. To do so, we show how to combine inflation, a causal inference technique, with powerful symmetry reductions and Frank-Wolfe algorithms for large-scale optimization. We then use these methods to obtain computer-assisted proofs of non-classicality in exact arithmetic.",
+      "version_date": [
+        "2025/10/16"
+      ]
+    },
+    {
+      "identifier": "2605.00981v1",
+      "title": [
+        "The minimal example of quantum network Bell nonlocality"
+      ],
+      "authors": [
+        "Don, Erwan",
+        "Bavaresco, Jessica",
+        "Lipka-Bartosik, Patryk",
+        "Gisin, Nicolas",
+        "Brunner, Nicolas",
+        "Pozas-Kerstjens, Alejandro"
+      ],
+      "date": [
+        "2026/05/01"
+      ],
+      "source": "https://arxiv.org/abs/2605.00981v1",
+      "comments": "8 pages, 4 figures, RevTeX 4.2. The computational appendix is available at this https URL",
+      "abstract": "Abstract:In recent years, the study of Bell nonlocality has been generalized to quantum networks, where multiple independent sources distribute physical systems to distant parties who perform local measurements. In this context, a central open question is to identify the minimal network configuration in which quantum resources produce Bell nonlocal correlations. Here we address this question and show that quantum nonlocality is possible in the triangle network where the parties have no input choices and produce only binary-valued outcomes. To do so, we start by identifying a family of target distributions and proving their nonlocality. Next, we construct an explicit quantum model that reproduces the target distributions to machine precision. For this, we develop an efficient method for parameterizing quantum distributions in networks, inspired by the formalism of higher-order quantum operations. When considering the number of observed variables and their cardinality, this constitutes the smallest scenario possible that supports quantum nonlocality in networks. Moreover, by analyzing the explicit quantum model, we obtain new insights into how nonlocal distributions can be generated in quantum networks.",
+      "version_date": [
+        "2026/05/01"
+      ]
+    },
+    {
+      "identifier": "2609.11451v1",
+      "title": [
+        "Self-guided certification of nonlocality in quantum networks"
+      ],
+      "authors": [
+        "Cortés, Jean",
+        "Pereira, Luciano",
+        "Delgado, Aldo"
+      ],
+      "date": [
+        "2026/09/10"
+      ],
+      "source": "https://arxiv.org/abs/2609.11451v1",
+      "comments": "10 pages, 3 figures",
+      "abstract": "Abstract:Bell's theorem shows that quantum theory is incompatible with local hidden-variable models. In recent years, research on nonlocality has moved beyond Bell's original scenario to quantum networks, where multiple independent sources distribute physical systems among distant parties, giving rise to correlations certified by nonlinear rather than standard Bell inequalities. Here, we introduce a self-guided protocol that variationally optimizes each party's measurement to maximize the violation of a network Bell inequality, with the violation evaluated efficiently at each step via local Pauli classical shadows and the search driven by the Complex Simultaneous Perturbation Stochastic Approximation (CSPSA) algorithm. Once converged, the measurement settings it returns are implemented directly and the inequality is re-evaluated without shadows. This two-stage structure separates a device-dependent search from a certificate that depends only on the observed statistics and on the causal structure of the network. We validate the protocol by numerically simulating it on the triangle network using the Wagon-Wheel inequality, recovering the violation achieved by the Fritz distribution, and extending the certification to non-maximally entangled and noisy states.",
+      "version_date": [
+        "2026/09/10"
+      ]
+    }
+  ]
+}

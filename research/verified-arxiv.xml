@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/iA8UXrn3jmAPFKAwTuPdt/1CTpM</id>
+  <title>arXiv Query: search_query=&amp;id_list=2510.15143,2503.16654,2605.00981,2609.11451,2503.24213,1206.5115,1905.04902&amp;start=0&amp;max_results=20</title>
+  <updated>2026-10-09T15:37:28Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=20&amp;id_list=2510.15143,2503.16654,2605.00981,2609.11451,2503.24213,1206.5115,1905.04902" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>20</opensearch:itemsPerPage>
+  <opensearch:totalResults>7</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1905.04902v1</id>
+    <title>Genuine quantum nonlocality in the triangle network</title>
+    <updated>2019-05-13T08:17:19Z</updated>
+    <link href="https://arxiv.org/abs/1905.04902v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1905.04902v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum networks allow in principle for completely novel forms of quantum correlations. In particular, quantum nonlocality can be demonstrated here without the need of having various input settings, but only by considering the joint statistics of fixed local measurement outputs. However, previous examples of this intriguing phenomenon all appear to stem directly from the usual form of quantum nonlocality, namely via the violation of a standard Bell inequality. Here we present novel examples of 'quantum nonlocality without inputs', which we believe represent a new form of quantum nonlocality, genuine to networks. Our simplest examples, for the triangle network, involve both entangled states and joint entangled measurements. A generalization to any odd-cycle network is also presented. Finally, we conclude with some open questions.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-05-13T08:17:19Z</published>
+    <arxiv:comment>16 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 123, 140401 (2019)</arxiv:journal_ref>
+    <author>
+      <name>Marc-Olivier Renou</name>
+    </author>
+    <author>
+      <name>Elisa Bäumer</name>
+    </author>
+    <author>
+      <name>Sadra Boreiri</name>
+    </author>
+    <author>
+      <name>Nicolas Brunner</name>
+    </author>
+    <author>
+      <name>Nicolas Gisin</name>
+    </author>
+    <author>
+      <name>Salman Beigi</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.123.140401</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.123.140401" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.15143v1</id>
+    <title>The Elegant Joint Measurement is Non-Classical in the Triangle Network</title>
+    <updated>2025-10-16T21:03:11Z</updated>
+    <link href="https://arxiv.org/abs/2510.15143v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.15143v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When quantum systems are shared by multiple parties in a network, the measurement outcomes of the parties can exhibit non-classical correlations, i.e., correlations that cannot be obtained if the parties shared classical systems instead. This phenomenon is known as quantum nonlocality and is typically demonstrated in the Bell scenario. However, the Bell scenario is fundamentally simpler to investigate than general networks, since the latter come with non-convex optimization problems that are often intractable. The triangle network is one of the simplest networks exhibiting this non-convexity due to the presence of three independent sources. Although some special cases of quantum nonlocality are known in the triangle network, general methods to certify classical incompatibility are still lacking, which suggests that our understanding of networks is still rather limited. For instance, the Elegant Joint Measurement (EJM) distribution is a simple and highly-symmetric outcome distribution that can be obtained with quantum systems and measurements in the triangle network. This distribution was conjectured to be non-classical eight years ago. In this article, we provide the first proof of non-classicality of the EJM distribution. To do so, we show how to combine inflation, a causal inference technique, with powerful symmetry reductions and Frank-Wolfe algorithms for large-scale optimization. We then use these methods to obtain computer-assisted proofs of non-classicality in exact arithmetic.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-16T21:03:11Z</published>
+    <arxiv:comment>24+24 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Victor Gitton</name>
+    </author>
+    <author>
+      <name>Renato Renner</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.16654v2</id>
+    <title>Local models and Bell inequalities for the minimal triangle network</title>
+    <updated>2025-09-26T16:01:22Z</updated>
+    <link href="https://arxiv.org/abs/2503.16654v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.16654v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Nonlocal correlations created in networks with multiple independent sources enable surprising phenomena in quantum information and quantum foundations. The presence of independent sources, however, makes the analysis of network nonlocality challenging, and even in the simplest nontrivial scenarios a complete characterization is lacking. In this work we study one of the simplest of these scenarios, namely that of distributions invariant under permutations of parties in the minimal triangle network, which features no inputs and binary outcomes. We perform an exhaustive search for triangle-local models, and from it we infer analytic expressions for the boundaries of the set of distributions that admit such models, which we conjecture to be all the tight Bell inequalities for the scenario. Armed with them and with improved outer approximations of the set, we provide insights on the existence of a classical-quantum gap in the triangle network with binary outcomes.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-20T19:11:06Z</published>
+    <arxiv:comment>15 pages, 5 figures. Computational appendix available at https://github.com/mariofilho281/symmetric_triangle</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <arxiv:journal_ref>Phys. Rev. A 112, L030403 (2025)</arxiv:journal_ref>
+    <author>
+      <name>José Mário da Silva</name>
+    </author>
+    <author>
+      <name>Alejandro Pozas-Kerstjens</name>
+    </author>
+    <author>
+      <name>Fernando Parisio</name>
+    </author>
+    <arxiv:doi>10.1103/cg9v-wv2t</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/cg9v-wv2t" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.00981v1</id>
+    <title>The minimal example of quantum network Bell nonlocality</title>
+    <updated>2026-05-01T18:00:00Z</updated>
+    <link href="https://arxiv.org/abs/2605.00981v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.00981v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In recent years, the study of Bell nonlocality has been generalized to quantum networks, where multiple independent sources distribute physical systems to distant parties who perform local measurements. In this context, a central open question is to identify the minimal network configuration in which quantum resources produce Bell nonlocal correlations. Here we address this question and show that quantum nonlocality is possible in the triangle network where the parties have no input choices and produce only binary-valued outcomes. To do so, we start by identifying a family of target distributions and proving their nonlocality. Next, we construct an explicit quantum model that reproduces the target distributions to machine precision. For this, we develop an efficient method for parameterizing quantum distributions in networks, inspired by the formalism of higher-order quantum operations. When considering the number of observed variables and their cardinality, this constitutes the smallest scenario possible that supports quantum nonlocality in networks. Moreover, by analyzing the explicit quantum model, we obtain new insights into how nonlocal distributions can be generated in quantum networks.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-01T18:00:00Z</published>
+    <arxiv:comment>8 pages, 4 figures, RevTeX 4.2. The computational appendix is available at https://www.github.com/Shamaii/minimal-network-nonlocality</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Erwan Don</name>
+    </author>
+    <author>
+      <name>Jessica Bavaresco</name>
+    </author>
+    <author>
+      <name>Patryk Lipka-Bartosik</name>
+    </author>
+    <author>
+      <name>Nicolas Gisin</name>
+    </author>
+    <author>
+      <name>Nicolas Brunner</name>
+    </author>
+    <author>
+      <name>Alejandro Pozas-Kerstjens</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1206.5115v2</id>
+    <title>Beyond Bell's Theorem: Correlation Scenarios</title>
+    <updated>2012-09-02T14:18:38Z</updated>
+    <link href="https://arxiv.org/abs/1206.5115v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1206.5115v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Bell's Theorem witnesses that the predictions of quantum theory cannot be reproduced by theories of local hidden variables in which observers can choose their measurements independently of the source. Working out an idea of Branciard, Rosset, Gisin and Pironio, we consider scenarios which feature several sources, but no choice of measurement for the observers. Every Bell scenario can be mapped into such a \emph{correlation scenario}, and Bell's Theorem then discards those local hidden variable theories in which the sources are independent. However, most correlation scenarios do not arise from Bell scenarios, and we describe examples of (quantum) nonlocality in some of these scenarios, while posing many open problems along the way. Some of our scenarios have been considered before by mathematicians in the context of causal inference.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2012-06-22T11:15:09Z</published>
+    <arxiv:comment>new title and abstract, introduction updated, main text and results the same. To appear in New J. Phys</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <arxiv:journal_ref>New J. Phys. 14 103001 (2012)</arxiv:journal_ref>
+    <author>
+      <name>Tobias Fritz</name>
+    </author>
+    <arxiv:doi>10.1088/1367-2630/14/10/103001</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1088/1367-2630/14/10/103001" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.11451v1</id>
+    <title>Self-guided certification of nonlocality in quantum networks</title>
+    <updated>2026-09-10T12:18:11Z</updated>
+    <link href="https://arxiv.org/abs/2609.11451v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.11451v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Bell's theorem shows that quantum theory is incompatible with local hidden-variable models. In recent years, research on nonlocality has moved beyond Bell's original scenario to quantum networks, where multiple independent sources distribute physical systems among distant parties, giving rise to correlations certified by nonlinear rather than standard Bell inequalities. Here, we introduce a self-guided protocol that variationally optimizes each party's measurement to maximize the violation of a network Bell inequality, with the violation evaluated efficiently at each step via local Pauli classical shadows and the search driven by the Complex Simultaneous Perturbation Stochastic Approximation (CSPSA) algorithm. Once converged, the measurement settings it returns are implemented directly and the inequality is re-evaluated without shadows. This two-stage structure separates a device-dependent search from a certificate that depends only on the observed statistics and on the causal structure of the network. We validate the protocol by numerically simulating it on the triangle network using the Wagon-Wheel inequality, recovering the violation achieved by the Fritz distribution, and extending the certification to non-maximally entangled and noisy states.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-10T12:18:11Z</published>
+    <arxiv:comment>10 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Jean Cortés</name>
+    </author>
+    <author>
+      <name>Luciano Pereira</name>
+    </author>
+    <author>
+      <name>Aldo Delgado</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.24213v3</id>
+    <title>Closing the detection loophole in the triangle network with high-dimensional photonic states</title>
+    <updated>2025-10-24T07:41:15Z</updated>
+    <link href="https://arxiv.org/abs/2503.24213v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.24213v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Bell nonlocality without input settings, e.g. in the triangle network, has been perceived to be particularly fragile, with low robustness to noise in physical implementations. Here we show to the contrary that nonlocality based on N00N states already for $N=2$ has an exceptionally high robustness to photon loss. For the dominant noise factor, single photon loss in the transmission channels, we can certify noise robustness up to $10\%$ loss, while for a realistic noise model we use neural network-based heuristics to observe $\sim 50\%$ robustness. Moreover we show that the robustness holds even for imperfect sources based on SPDC sources, where the heralding information of the sources can be used to avoid any global post-processing of the outcomes, such as discarding rounds when photons fail to arrive, and thus demonstrate how the detection loophole in the triangle network can be closed.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-31T15:31:34Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 135, 160803 (2025)</arxiv:journal_ref>
+    <author>
+      <name>Tamás Kriváchy</name>
+    </author>
+    <author>
+      <name>Martin Kerschbaumer</name>
+    </author>
+    <arxiv:doi>10.1103/nwzw-tqzp</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/nwzw-tqzp" title="doi"/>
+  </entry>
+</feed>

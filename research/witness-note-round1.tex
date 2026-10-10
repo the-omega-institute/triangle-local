@@ -1,0 +1,191 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,listings}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\lstset{basicstyle=\ttfamily\footnotesize,columns=fullflexible,keepspaces=true,
+  showstringspaces=false,frame=single,breaklines=true}
+\begin{document}
+\begin{center}
+{\Large An exact triangle-local witness and a finite-class ceiling}\\[5pt]
+Haobo Ma and Wenlin Zhang \qquad 9 October 2026
+\end{center}
+
+\textbf{The question.}
+B\"aumer, Gitton, Kriv\'achy, Gisin and Renner ask in the conclusion of
+\emph{Exploring the Local Landscape in the Triangle Network},
+arXiv:2405.08939v1, whether a four-outcome, fully symmetric triangle-local
+distribution can satisfy $p(A=B=C)>1/4$. Their Appendix D.3 gives numerical
+evidence for a positive answer. Here is a finite, exact witness, followed by
+an exhaustive computation of the optimum in its restricted response-rule class.
+
+\textbf{Definitions and statement.}
+Let $O=\{0,1,2,3\}$ and $S=\{(i,j)\in O^2:i\ne j\}$.
+Take $\alpha,\beta,\gamma$ independently and uniformly from $S$ and put
+\[
+ f(x,y)=\begin{cases}x_2,&x_2\in\{y_1,y_2\},\\x_1,&\text{otherwise},\end{cases}
+ \qquad (A,B,C)=(f(\beta,\gamma),f(\gamma,\alpha),f(\alpha,\beta)).
+\]
+The resulting distribution is triangle-local and invariant under every
+permutation of the three parties and every simultaneous permutation of $O$.
+Its probabilities are
+\[
+ p(a,b,c)=\frac{1}{1728}
+ \begin{cases}123,&|\{a,b,c\}|=1,\\19,&|\{a,b,c\}|=2,\\23,&|\{a,b,c\}|=3.\end{cases}
+ \qquad p(A=B=C)=\frac{41}{144}=\frac14+\frac5{144}.
+\]
+
+\textbf{Proof and exact verification.}
+The response is deterministic and each party uses only its two incident sources,
+so this is a triangle-local model. To obtain the paper's $[0,1]$ source convention,
+partition that interval into twelve measurable cells of length $1/12$, with the
+last cell including $1$, and assign one symbol of $S$ to each cell. Cellwise
+constant responses then give exactly the same distribution: every source triple
+has probability $12^{-3}=1/1728$.
+
+The following complete integer enumeration verifies all 64 probabilities.
+There are 4 output triples with one distinct outcome, 36 with two, and 24 with
+three; normalization also follows from
+$4(123)+36(19)+24(23)=1728$.
+The displayed formula depends only on the number of distinct outputs, proving
+both required symmetries. Finally $4(123)/1728=41/144>1/4$.
+\begin{lstlisting}[language=Python]
+from itertools import permutations, product
+from collections import Counter
+O = range(4)
+S = list(permutations(O, 2))
+def f(x, y):
+    return x[1] if x[1] in y else x[0]
+C = Counter((f(b,c), f(c,a), f(a,b))
+            for a,b,c in product(S, repeat=3))
+assert sum(C.values()) == 1728
+for a,b,c in product(O, repeat=3):
+    assert C[a,b,c] == {1:123, 2:19, 3:23}[len({a,b,c})]
+\end{lstlisting}
+
+\newpage
+\textbf{A restricted-class optimum (exhaustive integer computation).}
+Keep the three sources independent and uniform on $S$, and require all three
+parties to use the same deterministic function $h:S\times S\to O$ in the
+cyclic arrangement above. Impose outcome equivariance:
+\[
+ h(\sigma x,\sigma y)=\sigma h(x,y)\quad\text{for every }\sigma\in S_4,
+ \qquad \sigma(i,j)=(\sigma i,\sigma j).
+\]
+There are exactly 4096 such functions. Exhaustive enumeration on page 3 gives
+\[
+ \max_h p_h(A=B=C)=\frac{492}{1728}=\frac{41}{144};
+\]
+exactly 16 of the 4096 tables attain this value. This is a ceiling for this
+specified finite class, not an upper bound for all triangle-local models.
+
+\textbf{Why the enumeration is complete.}
+Under the diagonal $S_4$ action, the 144 inputs in $S\times S$ split into the
+following seven orbits. A representative output must be fixed by the
+representative's stabilizer; this condition is also sufficient to extend it
+uniquely and equivariantly over the orbit.
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$x$ & $y$ & Orbit size & Permitted outputs\\
+\midrule
+$(0,1)$ & $(0,1)$ & 12 & $0,1$\\
+$(0,1)$ & $(0,2)$ & 24 & $0,1,2,3$\\
+$(0,1)$ & $(1,0)$ & 12 & $0,1$\\
+$(0,1)$ & $(1,2)$ & 24 & $0,1,2,3$\\
+$(0,1)$ & $(2,0)$ & 24 & $0,1,2,3$\\
+$(0,1)$ & $(2,1)$ & 24 & $0,1,2,3$\\
+$(0,1)$ & $(2,3)$ & 24 & $0,1,2,3$\\
+\bottomrule
+\end{tabular}
+\end{center}
+For the two size-12 orbits the unused labels may be exchanged by the
+stabilizer, so only $0$ and $1$ are fixed. The other stabilizers are trivial.
+Consequently there are $2\cdot4\cdot2\cdot4^4=4096$ choices. The code constructs
+the orbits directly, checks their partition and the permitted outputs, extends
+every choice, and counts all $1728$ source triples for each table.
+
+Every table in this class in fact has a fully symmetric output distribution.
+Outcome equivariance and uniform sources give joint outcome-relabeling symmetry.
+Using one shared response rule and three identically distributed independent
+sources gives cyclic party symmetry. For three outputs, relabeling symmetry
+identifies all all-equal triples and all all-distinct triples; cyclic party
+symmetry identifies the three possible positions of the exceptional output
+when exactly two outputs agree. Thus the probability depends only on
+$|\{a,b,c\}|$, which gives all party permutations. The code also checks this
+conclusion for every table.
+
+\textbf{What this identifies.}
+Changing an equivariant response on these twelve equally likely source symbols
+cannot improve the witness's $41/144$. An improvement therefore requires leaving
+at least one of the stated restrictions. The unrestricted four-outcome local
+supremum is not determined by this computation.
+
+\newpage
+\textbf{Complete verifier for the finite-class ceiling.}
+This uses only the Python standard library and integer arithmetic. It runs
+independently of Lean; the final assertions are its reported output.
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\scriptsize]
+from itertools import permutations, product
+from collections import Counter
+O = range(4)
+S = list(permutations(O, 2))
+G = list(permutations(O))
+todo = set(product(S, repeat=2))
+extensions, sizes, allowed = [], [], []
+def act(p, x):
+    return (p[x[0]], p[x[1]])
+while todo:
+    x,y = min(todo)
+    orbit = {(act(p,x),act(p,y)) for p in G}
+    assert orbit <= todo
+    stab = [p for p in G if act(p,x)==x and act(p,y)==y]
+    fixed = [k for k in O if all(p[k]==k for p in stab)]
+    choices = []
+    for k in fixed:
+        table = {}
+        for p in G:
+            z = (act(p,x),act(p,y))
+            assert z not in table or table[z] == p[k]
+            table[z] = p[k]
+        choices.append(table)
+    extensions.append(choices)
+    sizes.append(len(orbit)); allowed.append(fixed)
+    todo -= orbit
+assert sizes == [12,24,12,24,24,24,24]
+assert allowed == [[0,1],list(O),[0,1]] + [list(O)]*4
+best, winners, total = -1, 0, 0
+for parts in product(*extensions):
+    R = {z:k for part in parts for z,k in part.items()}
+    assert len(R) == 144
+    C = Counter((R[b,c],R[c,a],R[a,b])
+                for a,b,c in product(S, repeat=3))
+    for n in (1,2,3):
+        assert len({C[a,b,c] for a,b,c in product(O, repeat=3)
+                    if len({a,b,c})==n}) == 1
+    score = sum(C[k,k,k] for k in O)
+    total += 1
+    if score > best:
+        best, winners = score, 0
+    if score == best:
+        winners += 1
+assert (total,best,winners) == (4096,492,16)
+print(total, best, winners)  # 4096 492 16
+\end{lstlisting}
+
+\textbf{What the Lean development checks.}
+At revision\\
+\texttt{59c09d64d1050c396df54b58b4f410f09f0c25d0},\\
+\texttt{TriangleSymmetricLocalRefutation.lean} proves measurable normalized
+responses, the reduction of the $[0,1]^3$ integral to finite counts, the
+123/19/23 count by kernel computation, full symmetry, and the refutation of
+the universal $1/4$ bound. It does not check the 4096-rule optimum above.
+The source was inspected for this note; no new Lean build was run.
+
+\textbf{Sources.}
+Original question: \url{https://arxiv.org/abs/2405.08939v1}.\\
+Lean source (revision pinned):
+\href{https://github.com/the-omega-institute/trureturing/blob/59c09d64d1050c396df54b58b4f410f09f0c25d0/D5/S3/Quantum/Entanglement/TriangleSymmetricLocalRefutation.lean}{\texttt{TriangleSymmetricLocalRefutation.lean}}.
+\end{document}
